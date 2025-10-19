@@ -1,0 +1,29 @@
+---
+PRP_ID: DUMMY-TEST-PRP-V1.0
+PRP_NAME: "Dummy Test PRP"
+DOMAIN: "Testing"
+GOAL: "This is a dummy PRP for testing purposes."
+
+CONTEXT_ENGINEERING:
+  PERSONA: "Test Persona"
+
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - "None"
+  INVARIANTS:
+    - "None"
+  POSTCONDITIONS:
+    - "None"
+
+EXECUTION_PLAN:
+  - step: "Test Step"
+    role: "Tester"
+    action: "Execute a test."
+
+SELF_TEST:
+  commands:
+    - "echo 'Self-test successful'"
+  success_condition: "The command returns 'Self-test successful'"
+
+REFLEXIVE_CHECK:
+  prompt: "This is a reflexive check for the dummy PRP."
