@@ -19,6 +19,12 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: "Validate PRP files against schema"
+        if: steps.changed-files.outputs.any_changed == 'true'
+        uses: RomanosTrechlis/actions-validate-yaml@master
+        with:
+          schema: schemas/prp_schema.yml
+          data: ${{ steps.changed-files.outputs.all_changed_files }}
       - name: Install dependencies
         run: pip install yamllint check-jsonschema
 
