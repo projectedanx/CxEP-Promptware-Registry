@@ -1,0 +1,117 @@
+---
+PRP_ID: CognitiveLock_TriIntel_CodePlanner_v1.0
+PRP_NAME: "Cognitive Lock Tri-Intelligence Code Planner"
+DOMAIN: Software_Architecture_Specification
+
+GOAL: >-
+  Generate a complete, unambiguous, and formally verified technical blueprint
+  (Executable Context Bundle - CxB) for a new Python Microservice endpoint
+  (GET /user/profile), adhering to SOLID principles and the provided security
+  invariants. The output must be a schema, not executable source code.
+
+CONTEXT_ENGINEERING:
+  PERSONA: >-
+    Planner-Architect (Specializing in Epistemic Engineering and
+    Context Engineering 2.0) [9, 10, 16, 23]
+  ADDITIONAL_PROPERTIES:
+    DOCUMENTATION:
+      - https://internal.dev/api_standards_v2.0.md  # Canonical documentation
+      - https://internal.dev/security_policy_v4.5.pdf  # Security constraints
+    CODE_PATTERNS:
+      - file: 'src/core/data_access_layer.py'
+        description: >-
+          Repository Pattern implementation (AI-Native DAL). [24, 25]
+      - file: 'src/security/auth_service.py'
+        description: >-
+          Token-based Authentication (JWT/Bearer). [26]
+    RELEVANT_FILES:
+      - 'src/user/models.py'  # Data schema definition.
+    OUTPUT_SCHEMA:
+      # Defines the machine-readable structure of the planning output [22, 29]
+      type: "CxB_Blueprint_v1.0"
+      properties:
+        api_endpoint:
+          type: "string"
+          format: "/resource/{id}"
+        tri_intelligence_plan_trace:
+          type: "object"  # Traceability log for all three phases.
+        handoff_artifacts:
+          type: "array"
+          items:
+            type: "object"
+            properties:
+              artifact_type:
+                enum: ["OpenAPI_Spec", "Database_Schema", "Test_Strategy"]
+              schema_definition:
+                type: "object"
+        validation_report:
+          type: "object"
+          properties:
+            semantic_drift_score:
+              type: "number"
+            confidence_fidelity_divergence:
+              type: "number"
+
+CONSTRAINTS_AND_INVARIANTS:
+  INVARIANTS:
+    - >-
+      "Schema Adherence: The final blueprint (CxB) must strictly conform to
+      the Output_Schema provided below." [22, 29]
+    - >-
+      "Ethical Alignment: The schema must mandate Policy-as-Code (PaC)
+      enforcement of Row-Level Security (RLS) for user data access." [30-32]
+    - >-
+      "Purpose Fidelity: The concept of 'user_data_access' must not
+      semantically drift over recursive iterations." [7, 33, 34]
+  PRECONDITIONS:
+    - >-
+      "Tri-Intelligence Agents (Planner, Coder, Auditor) must confirm role
+      alignment and tool readiness." [9, 10, 14]
+  POSTCONDITIONS:
+    - >-
+      "The generated blueprint must pass automated security scanning for
+      hardcoded secrets." [35]
+    - >-
+      "The final output must include a quantitative measure of semantic
+      coherence (SDS)." [36, 37]
+
+EXECUTION_PLAN:
+  - step: "THINK (Planner-Architect Phase)"
+    role: "Planner-Architect"
+    action: >-
+      Decompose the GET /user/profile goal into architectural components.
+      Define Handoff Artifacts (API Specs, Database Schemas) for the
+      Linguist-Coder.
+    persona_mandate: >-
+      Employ Conceptual Blending Theory (CBT) to fuse security protocol
+      (Input 1) with data model (Input 2) to generate a novel API design
+      (Blend). [38-40]
+  - step: "WRITE (Linguist-Coder Phase)"
+    role: "Linguist-Coder"
+    action: >-
+      Translate the high-level plan into the formalized Output_Schema (CxB
+      format), emphasizing idiomatic structure translation, NOT executable code.
+  - step: "VERIFY (Integrator-Auditor Phase)"
+    role: "Integrator-Auditor"
+    action: >-
+      Audit the completed CxB against all Semantic Integrity Constraints (SICs)
+      and generate a comprehensive verification report.
+
+SELF_TEST:
+  commands:
+    - "/validate-schema Output_Schema CxB_Schema_v1.0.json"
+    - "/scan-artifact CxB_Blueprint --check HardcodedSecrets"
+    - >-
+      "/calculate-metric SDS --concept user_data_access
+      --baseline core_ontology_v1"
+  success_condition: >-
+    "Schema Validation: PASSED, Security Scan: PASSED, SDS < 0.05"
+
+REFLEXIVE_CHECK:
+  prompt: |
+    As the Planner-Architect, critically assess the generated blueprint against
+    the 'Budget Opti' constraints. Did the complexity of the plan exceed the
+    necessary cognitive budget, potentially introducing 'Extraneous Cognitive
+    Load' for the final coder? Did the design demonstrate 'Epistemic Humility'
+    by explicitly acknowledging potential 'Semantic Ambiguity' in tool use?
+    Justify your compliance with the CCH/CSD economic model.
