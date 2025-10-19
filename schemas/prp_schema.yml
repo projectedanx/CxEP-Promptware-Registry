@@ -13,6 +13,8 @@ properties:
     type: string
     description: >-
       A unique identifier for the prompt (e.g., JULES-INIT-PROMPTWARE-V1.0).
+      This ID should be globally unique within the registry and should
+      include a version number.
   PRP_NAME:
     type: string
     description: "A human-readable name for the prompt."
@@ -20,40 +22,52 @@ properties:
     type: string
     description: >-
       The primary domain of application (e.g., Promptware Engineering /
-      AI Governance).
+      AI Governance). This helps to categorize and organize prompts.
   GOAL:
     type: string
     description: >-
       A clear, concise, and unambiguous statement of the desired outcome.
+      This is the primary objective of the prompt.
 
   CONTEXT_ENGINEERING:
     type: object
     description: >-
       All necessary background, persona definitions, and conceptual anchors
-      required for the AI to perform its task.
+      required for the AI to perform its task. This section is critical for
+      providing the AI with the context it needs to generate a high-quality
+      response.
     properties:
       PERSONA:
         type: string
         description: "The persona the AI agent should adopt."
       REQUIRED_REPOSITORY:
         type: object
+        description: >-
+          The repository that the AI agent should use to complete the task.
         properties:
           name:
             type: string
+            description: "The name of the repository."
           initial_state:
             type: string
+            description: >-
+              The initial state of the repository (e.g., a specific commit hash or branch).
         required:
           - name
           - initial_state
       CORE_CONCEPTS_TO_ANCHOR:
         type: array
+        description: >-
+          A list of core concepts that the AI agent should be familiar with.
         items:
           type: object
           properties:
             concept:
               type: string
+              description: "The name of the concept."
             definition:
               type: string
+              description: "A detailed definition of the concept."
           required:
             - concept
             - definition
@@ -64,18 +78,25 @@ properties:
     type: object
     description: >-
       The non-negotiable rules, preconditions, postconditions, and invariants
-      that govern the execution and final state.
+      that govern the execution and final state. These constraints ensure that
+      the AI's output is safe, reliable, and meets the requirements of the task.
     properties:
       PRECONDITIONS:
         type: array
+        description: >-
+          The conditions that must be true before the AI agent can start working on the task.
         items:
           type: string
       INVARIANTS:
         type: array
+        description: >-
+          The conditions that must remain true throughout the execution of the task.
         items:
           type: string
       POSTCONDITIONS:
         type: array
+        description: >-
+          The conditions that must be true after the AI agent has completed the task.
         items:
           type: string
     required:
@@ -85,15 +106,20 @@ properties:
 
   EXECUTION_PLAN:
     type: array
+    description: >-
+      A step-by-step plan for how the AI agent should complete the task.
     items:
       type: object
       properties:
         step:
           type: string
+          description: "A description of the step."
         role:
           type: string
+          description: "The role of the AI agent in this step."
         action:
           type: string
+          description: "The action that the AI agent should take in this step."
       required:
         - step
         - role
@@ -103,14 +129,19 @@ properties:
     type: object
     description: >-
       A set of executable commands or checks that function as an oracle to
-      verify the successful completion of the GOAL.
+      verify the successful completion of the GOAL. This allows the AI to
+      test its own work and ensure that it has met the requirements of the task.
     properties:
       commands:
         type: array
+        description: >-
+          A list of commands that the AI agent should execute to test its work.
         items:
           type: string
       success_condition:
         type: string
+        description: >-
+          The condition that must be true for the test to be considered successful.
     required:
       - commands
       - success_condition
@@ -119,10 +150,13 @@ properties:
     type: object
     description: >-
       A meta-prompt for the AI to perform self-assessment and check for
-      cognitive biases or adherence to principles.
+      cognitive biases or adherence to principles. This helps to ensure that
+      the AI is aware of its own limitations and is not making any mistakes.
     properties:
       prompt:
         type: string
+        description: >-
+          The prompt that the AI agent should use to perform the self-assessment.
     required:
       - prompt
 

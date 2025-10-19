@@ -1,3 +1,13 @@
+#
+# **Title:** Executable Context Bundle (CxB) for an educational website
+# **Version:** 1.0
+# **Purpose:** To generate a complete, formally verified technical blueprint
+# (Executable Context Bundle - CxB) for a full-stack educational website.
+# **Usage:** This prompt is intended to be used by an AI Systems Architect
+# to generate a detailed plan for a new educational website. It is not
+# intended to generate executable source code, but rather a schema that can
+# be used to guide the development process.
+#
 ---
 PRP_ID: EpistemicArchitect_WebsiteCreator_v1.0
 PRP_NAME: "Executable Context Bundle (CxB) for an educational website"
