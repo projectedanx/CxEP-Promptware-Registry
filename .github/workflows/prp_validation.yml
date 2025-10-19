@@ -19,20 +19,21 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v44
+        with:
+          files: prompts/**.yml
+
       - name: "Validate PRP files against schema"
         if: steps.changed-files.outputs.any_changed == 'true'
-        uses: RomanosTrechlis/actions-validate-yaml@master
+        uses: OrRosenblatt/validate-yaml-action@v1.0.1
         with:
+          files: ${{ steps.changed-files.outputs.all_changed_files }}
           schema: schemas/prp_schema.yml
-          data: ${{ steps.changed-files.outputs.all_changed_files }}
+
       - name: Install dependencies
-        run: pip install yamllint check-jsonschema
+        run: pip install yamllint
 
       - name: Lint YAML files
         run: yamllint .
-
-      - name: Validate PRP files
-        run: |
-          for f in prompts/*.yml; do
-            check-jsonschema --schemafile schemas/prp_schema.yml "$f"
-          done
