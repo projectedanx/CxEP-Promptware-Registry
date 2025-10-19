@@ -1,3 +1,13 @@
+#
+# **Title:** Cognitive Lock Tri-Intel Emergent Design for Urban Energy Grid
+# **Version:** 1.0
+# **Purpose:** To generate a novel, optimized architectural blueprint for a
+# scalable, self-healing urban energy grid.
+# **Usage:** This prompt is intended to be used by an AI Systems Architect
+# to generate a high-level architectural design for a complex system.
+# It is not intended to generate executable source code, but rather a
+# conceptual blueprint that can be used to guide the development process.
+#
 ---
 PRP_ID: CognitiveLock_TriIntel_EmergentDesign_v1.0
 PRP_NAME: "Cognitive Lock Tri-Intel Emergent Design for Urban Energy Grid"

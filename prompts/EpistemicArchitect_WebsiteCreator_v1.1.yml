@@ -1,3 +1,14 @@
+#
+# **Title:** Executable Context Bundle (CxB) for an educational website
+# **Version:** 1.1
+# **Purpose:** To generate a detailed implementation plan, including API
+# contracts and database schemas, for the microservices defined in the
+# `CxB_WebsiteBlueprint_v1.0`.
+# **Usage:** This prompt is intended to be used by an AI Systems Architect
+# to generate a detailed implementation plan for a new educational website.
+# It is not intended to generate executable source code, but rather a
+# formal document that can be used to guide the development process.
+#
 ---
 PRP_ID: EpistemicArchitect_WebsiteCreator_v1.1
 PRP_NAME: "Executable Context Bundle (CxB) for an educational website"
