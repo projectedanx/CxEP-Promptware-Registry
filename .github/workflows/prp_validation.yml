@@ -36,7 +36,7 @@ jobs:
 
       - name: "Validate PRP files against schema"
         if: steps.changed-files.outputs.any_changed == 'true'
-        uses: RomanosTrechlis/actions-validate-yaml@v1
+        uses: RomanosTrechlis/actions-validate-yaml@master
         with:
           schema: schemas/prp_schema.yml
           data: ${{ steps.changed-files.outputs.all_changed_files }}
