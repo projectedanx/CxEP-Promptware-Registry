@@ -13,44 +13,22 @@ CONTEXT_ENGINEERING:
   PERSONA: >-
     Planner-Architect (Specializing in Epistemic Engineering and
     Context Engineering 2.0) [9, 10, 16, 23]
-  ADDITIONAL_PROPERTIES:
-    DOCUMENTATION:
-      - https://internal.dev/api_standards_v2.0.md  # Canonical documentation
-      - https://internal.dev/security_policy_v4.5.pdf  # Security constraints
-    CODE_PATTERNS:
-      - file: 'src/core/data_access_layer.py'
-        description: >-
-          Repository Pattern implementation (AI-Native DAL). [24, 25]
-      - file: 'src/security/auth_service.py'
-        description: >-
-          Token-based Authentication (JWT/Bearer). [26]
-    RELEVANT_FILES:
-      - 'src/user/models.py'  # Data schema definition.
-    OUTPUT_SCHEMA:
-      # Defines the machine-readable structure of the planning output [22, 29]
-      type: "CxB_Blueprint_v1.0"
-      properties:
-        api_endpoint:
-          type: "string"
-          format: "/resource/{id}"
-        tri_intelligence_plan_trace:
-          type: "object"  # Traceability log for all three phases.
-        handoff_artifacts:
-          type: "array"
-          items:
-            type: "object"
-            properties:
-              artifact_type:
-                enum: ["OpenAPI_Spec", "Database_Schema", "Test_Strategy"]
-              schema_definition:
-                type: "object"
-        validation_report:
-          type: "object"
-          properties:
-            semantic_drift_score:
-              type: "number"
-            confidence_fidelity_divergence:
-              type: "number"
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: "API Standards"
+      definition: "Canonical documentation at https://internal.dev/api_standards_v2.0.md"
+    - concept: "Security Policy"
+      definition: "Security constraints at https://internal.dev/security_policy_v4.5.pdf"
+    - concept: "Repository Pattern"
+      definition: "AI-Native DAL implementation in src/core/data_access_layer.py [24, 25]"
+    - concept: "Token-based Authentication"
+      definition: "JWT/Bearer implementation in src/security/auth_service.py [26]"
+    - concept: "Data Schema Definition"
+      definition: "Located in src/user/models.py"
+    - concept: "Output Schema"
+      definition: >-
+        Defines the machine-readable structure of the planning output [22, 29].
+        Type: CxB_Blueprint_v1.0. Properties include api_endpoint,
+        tri_intelligence_plan_trace, handoff_artifacts, and validation_report.
 
 CONSTRAINTS_AND_INVARIANTS:
   INVARIANTS:

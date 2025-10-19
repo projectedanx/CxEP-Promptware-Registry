@@ -25,18 +25,16 @@ jobs:
       - name: "Checkout repository"
         uses: actions/checkout@v4
 
-      - name: "Get changed PRP files"
-        id: changed-files
-        uses: tj-actions/changed-files@v41
+      - name: "Set up Python"
+        uses: actions/setup-python@v4
         with:
-          files: |
-            prompts/**.yml
-            prompts/**.yaml
-          separator: "\n"
+          python-version: '3.x'
+
+      - name: "Install dependencies"
+        run: pip install check-jsonschema
 
       - name: "Validate PRP files against schema"
-        if: steps.changed-files.outputs.any_changed == 'true'
-        uses: RomanosTrechlis/actions-validate-yaml@v1
-        with:
-          schema: schemas/prp_schema.yml
-          data: ${{ steps.changed-files.outputs.all_changed_files }}
+        run: |
+          for f in prompts/*.yml; do
+            check-jsonschema --schemafile schemas/prp_schema.yml "$f"
+          done
