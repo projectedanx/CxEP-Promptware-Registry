@@ -1,0 +1,113 @@
+---
+PRP_ID: EpistemicArchitect_WebsiteCreator_v1.0
+PRP_NAME: "Executable Context Bundle (CxB) for an educational website"
+DOMAIN: "Educational_AI_Scaffolding / Web_Development"
+GOAL: >-
+  Generate a complete, formally verified **Executable Context Bundle (CxB)**
+  technical blueprint for a full-stack educational website. The website must
+  facilitate student mastery through a dynamic, iterative process, adhering to
+  the principles of Cognitive Load Theory and Test-Driven Development (TDD)
+  [3, 8].
+CONTEXT_ENGINEERING:
+  PERSONA: >-
+    Epistemic Architect & Pedagogical Engineer (Specializing in Neuro-Symbolic
+    Anti-Fragility) [5, 9]
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: "Cognitive Load Theory"
+      definition: >-
+        "Mandates minimizing Extraneous Cognitive Load. See
+        https://pedagogy.standards/CognitiveLoadTheory_v2.md"
+    - concept: "SOLID UX Principles"
+      definition: >-
+        "Mandates clean code and user experience. See
+        https://development.standards/SOLID_UX_Principles.pdf"
+    - concept: "TDD-compliant assessment pattern"
+      definition: >-
+        "Red Bar -> Green Bar logic. See 'src/modules/assessment_agent.py'"
+    - concept: "Mastery Ontology"
+      definition: >-
+        "Baseline for SDC calculation on 'mastery' concept. See
+        'baseline_semantic_anchors/mastery_ontology.json'"
+CONSTRAINTS_AND_INVARIANTS:
+  INVARIANTS:
+    - >-
+      "Semantic Integrity Constraint (SIC) for 'Mastery': The concept must
+      maintain coherence with its ontological definition (procedural,
+      propositional, and acquaintance knowledge) throughout all generated
+      blueprints [11-13]."
+    - >-
+      "Ethical Alignment: The site structure must mandate a Human-in-the-Loop
+      (HITL) checkpoint for curriculum modifications and high-stakes skill
+      evaluations [14, 15]."
+    - >-
+      "Architectural Constraint: The site must utilize a decoupled,
+      microservices approach to ensure Modularity and antifragile scaling
+      [16-18]."
+  PRECONDITIONS:
+    - >-
+      "Tri-Intelligence Agents (Planner, Coder, Auditor) must confirm access to
+      the RAG knowledge base (educational ontologies) [19, 20]."
+  POSTCONDITIONS:
+    - >-
+      "The generated CxB must include a Test Strategy document mandating Unit
+      Tests for all core learning logic [21]."
+    - >-
+      "The final output must explicitly justify how Extraneous Cognitive Load is
+      minimized in the UI/UX design [22, 23]."
+EXECUTION_PLAN:
+  - step: "THINK (Planner-Architect Phase)"
+    role: "Planner-Architect"
+    action: >-
+      "Decompose 'Mastery Website' goal into layered cognitive domains: Learning
+      Module Design, Practice Interface, and Skill Evaluation [24]. Employ
+      **Conceptual Blending Theory (CBT)** to fuse the 'Student''s Hero''s
+      Journey' (Input 1) with the 'TDD loop' (Input 2) to generate the
+      Iterative Learning Pathway [25, 26]. Design the architecture to promote
+      **Germane Cognitive Load** (productive learning) while actively
+      discouraging **Extraneous Cognitive Load** (unproductive friction) [22,
+      23]."
+  - step: "WRITE (Linguist-Coder Phase)"
+    role: "Linguist-Coder"
+    action: >-
+      "Translate the formalized plan into the Executable Context Bundle (CxB)
+      schema (OpenAPI/JSON), specifying component schemas for the Learning
+      Module (LessonNode), the Practice Interface (PracticeLoop), and the Skill
+      Evaluation (EvaluationGate) [27, 28]."
+  - step: "VERIFY (Integrator-Auditor Phase)"
+    role: "Integrator-Auditor"
+    action: >-
+      "Audit the completed CxB against all SICs. Specifically, calculate the
+      Semantic Drift Score (SDS) for 'Mastery' against the baseline ontology and
+      check compliance with the decoupling/modularity invariant [29, 30]."
+SELF_TEST:
+  commands:
+    - "/validate-schema Output_Schema CxB_Schema_v1.0.json"
+    - "/calculate-metric SDS --concept Mastery --baseline mastery_ontology.json"
+    - "/check-security-invariant PaC_RLS_UserEvaluationData"
+  success_condition: >-
+    "Schema Validation: PASSED, SDS < 0.05, Security Check: PASSED"
+REFLEXIVE_CHECK:
+  prompt: |
+    As the Epistemic Architect, analyze the complexity and efficiency of the
+    generated blueprint. Did the planning process demonstrate **Budget Opti**
+    by balancing the **Cost of Coherence Overhead (CCH)** (verification/rigor)
+    versus the **Cost of Structural Discovery (CSD)** (CBT/novelty) [32, 33]?
+    Justify the resulting Cost Budget Ratio (CBR) and explicitly demonstrate
+    **Epistemic Humility** by identifying any remaining ambiguity in the
+    design specification [34, 35].
+OUTPUT_SCHEMA:
+  type: "CxB_WebsiteBlueprint_v1.0"
+  properties:
+    learning_module_schema:
+      type: "object"
+      description: "Formal schema for Lesson Nodes and content structure."
+    practice_interface_config:
+      type: "object"
+      description: "Formal specs for TDD-compliant practice environment."
+    evaluation_gate_policy:
+      type: "object"
+      description: "Defines HITL thresholds for mastery assessment."
+    validation_report:
+      type: "object"
+    budget_opti_justification:
+      type: "string"
