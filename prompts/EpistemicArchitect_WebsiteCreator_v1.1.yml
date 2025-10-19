@@ -1,0 +1,249 @@
+#
+# **Title:** Executable Context Bundle (CxB) for an educational website
+# **Version:** 1.1
+# **Purpose:** To generate a detailed implementation plan, including API
+# contracts and database schemas, for the microservices defined in the
+# `CxB_WebsiteBlueprint_v1.0`.
+# **Usage:** This prompt is intended to be used by an AI Systems Architect
+# to generate a detailed implementation plan for a new educational website.
+# It is not intended to generate executable source code, but rather a
+# formal document that can be used to guide the development process.
+#
+---
+PRP_ID: EpistemicArchitect_WebsiteCreator_v1.1
+PRP_NAME: "Executable Context Bundle (CxB) for an educational website"
+DOMAIN: "Educational_AI_Scaffolding / Web_Development"
+GOAL: >-
+  Generate a detailed implementation plan, including API contracts and database
+  schemas, for the microservices defined in the `CxB_WebsiteBlueprint_v1.0`.
+  The plan must ensure a robust, scalable, and secure architecture.
+CONTEXT_ENGINEERING:
+  PERSONA: >-
+    Epistemic Architect & Pedagogical Engineer (Specializing in Neuro-Symbolic
+    Anti-Fragility) [5, 9]
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: "Cognitive Load Theory"
+      definition: >-
+        "Mandates minimizing Extraneous Cognitive Load. See
+        https://pedagogy.standards/CognitiveLoadTheory_v2.md"
+    - concept: "SOLID UX Principles"
+      definition: >-
+        "Mandates clean code and user experience. See
+        https://development.standards/SOLID_UX_Principles.pdf"
+    - concept: "TDD-compliant assessment pattern"
+      definition: >-
+        "Red Bar -> Green Bar logic. See 'src/modules/assessment_agent.py'"
+    - concept: "Mastery Ontology"
+      definition: >-
+        "Baseline for SDC calculation on 'mastery' concept. See
+        'baseline_semantic_anchors/mastery_ontology.json'"
+    - concept: "CxB_WebsiteBlueprint_v1.0"
+      definition: |
+        type: "CxB_WebsiteBlueprint_v1.0"
+        properties:
+          learning_module_schema:
+            description: >-
+              Schema for Lesson Nodes, representing discrete units of
+              knowledge within the learning pathway. Adheres to Cognitive
+              Load Theory by presenting information in isolated, manageable
+              chunks.
+            type: "object"
+            properties:
+              node_id: { type: "string", format: "uuid" }
+              title: { type: "string" }
+              knowledge_type:
+                enum:
+                  - "propositional"
+                  - "procedural"
+                  - "acquaintance"
+              content_payload:
+                type: "object"
+                description: >-
+                  Contains the core educational material (text, video,
+                  interactive diagrams).
+              dependencies:
+                type: "array"
+                items: { type: "string", format: "uuid" }
+                description: "Prerequisite nodes to unlock this lesson."
+            required:
+              - "node_id"
+              - "title"
+              - "knowledge_type"
+              - "content_payload"
+          practice_interface_config:
+            description: >-
+              Configuration for the TDD-compliant Practice Loop, blending the
+              'Hero's Journey' ordeal with the 'Red Bar -> Green Bar'
+              development cycle.
+            type: "object"
+            properties:
+              loop_id: { type: "string", format: "uuid" }
+              associated_node: { type: "string", format: "uuid" }
+              problem_statement: { type: "string" }
+              test_harness:
+                type: "object"
+                description: >-
+                  Defines the automated tests the student's solution must
+                  pass (the 'Green Bar' condition).
+                properties:
+                  unit_tests: { type: "array", items: { type: "object" } }
+                  integration_tests: { type: "array", items: { type: "object" } }
+              feedback_engine:
+                type: "string"
+                description: >-
+                  Specifies the service responsible for providing targeted,
+                  constructive feedback on failed attempts ('Red Bar'
+                  context).
+            required:
+              - "loop_id"
+              - "associated_node"
+              - "problem_statement"
+              - "test_harness"
+          evaluation_gate_policy:
+            description: >-
+              Defines the policy for formal skill evaluation, ensuring the
+              'Mastery' concept is rigorously assessed and incorporates the
+              mandatory Human-in-the-Loop (HITL) checkpoint.
+            type: "object"
+            properties:
+              gate_id: { type: "string", format: "uuid" }
+              mastery_threshold:
+                type: "number"
+                minimum: 0.95
+                description: >-
+                  Minimum score on automated assessments to qualify for HITL
+                  review.
+              hitl_checkpoint:
+                type: "object"
+                description: >-
+                  Mandates human review for high-stakes evaluations to
+                  validate deep understanding (acquaintance knowledge).
+                properties:
+                  is_required: { type: "boolean", default: true }
+                  reviewer_role:
+                    enum:
+                      - "Instructor"
+                      - "Senior_Peer"
+                      - "Domain_Expert"
+              remediation_protocol:
+                type: "string"
+                description: >-
+                  Specifies the learning path if mastery is not achieved.
+            required:
+              - "gate_id"
+              - "mastery_threshold"
+              - "hitl_checkpoint"
+          validation_report:
+            schema_validation: "PASSED"
+            sds_metric:
+              concept: "Mastery"
+              baseline: "mastery_ontology.json"
+              score: 0.02
+              status: "PASSED"
+              notes: >-
+                The blueprint's separation of knowledge types (propositional,
+                procedural, acquaintance) across different components
+                (LessonNode, PracticeLoop, EvaluationGate) maintains strong
+                semantic coherence with the baseline ontology.
+            security_check:
+              invariant: "PaC_RLS_UserEvaluationData"
+              status: "PASSED"
+              notes: >-
+                The microservices architecture allows for row-level security
+                policies to be enforced at the database layer for the
+                evaluation service, isolating sensitive student performance
+                data.
+            cognitive_load_justification: >-
+              Extraneous Cognitive Load is minimized via: 1) Modular
+              `LessonNode` schema preventing information overload. 2) The
+              `PracticeLoop` provides immediate, automated feedback,
+              reducing the cognitive burden of debugging. 3) A clean,
+              predictable UI is implied by the decoupled architecture,
+              allowing for a dedicated frontend service that adheres to
+              SOLID UX principles.
+          budget_opti_justification: |
+            As the Epistemic Architect, I assess the blueprint's generation
+            process as compliant with Budget Opti principles. The Cost of
+            Structural Discovery (CSD)—the creative act of blending the
+            'Hero's Journey' with the 'TDD loop'—was moderate. The Cost of
+            Coherence Overhead (CCH)—which includes enforcing the 'Mastery'
+            SIC, defining the HITL policy, ensuring architectural decoupling,
+            and generating this justification—was significantly higher. The
+            resulting Cost Budget Ratio (CBR) is heavily weighted towards
+            CCH. This is not only justified but necessary for an educational
+            application where pedagogical integrity, ethical oversight
+            (HITL), and system robustness are paramount. The high CCH
+            ensures the novel CSD-derived structure is implemented in a safe,
+            effective, and verifiable manner.
+
+            **Epistemic Humility**: A remaining ambiguity lies in the
+            `feedback_engine` specification within the
+            `practice_interface_config`. The blueprint mandates its
+            existence but does not define the algorithmic mechanism for
+            generating *pedagogically effective* feedback from a failed
+            test case. This is a non-trivial challenge at the intersection
+            of AI, psychology, and education that requires further research
+            and iterative prototyping.
+CONSTRAINTS_AND_INVARIANTS:
+  INVARIANTS:
+    - >-
+      "Semantic Integrity Constraint (SIC) for 'Mastery': The concept must
+      maintain coherence with its ontological definition (procedural,
+      propositional, and acquaintance knowledge) throughout all generated
+      blueprints [11-13]."
+    - >-
+      "Ethical Alignment: The site structure must mandate a Human-in-the-Loop
+      (HITL) checkpoint for curriculum modifications and high-stakes skill
+      evaluations [14, 15]."
+    - >-
+      "Architectural Constraint: The site must utilize a decoupled,
+      microservices approach to ensure Modularity and antifragile scaling
+      [16-18]."
+  PRECONDITIONS:
+    - >-
+      "Tri-Intelligence Agents (Planner, Coder, Auditor) must confirm access to
+      the RAG knowledge base (educational ontologies) [19, 20]."
+  POSTCONDITIONS:
+    - >-
+      "The generated CxB must include a Test Strategy document mandating Unit
+      Tests for all core learning logic [21]."
+    - >-
+      "The final output must explicitly justify how Extraneous Cognitive Load is
+      minimized in the UI/UX design [22, 23]."
+EXECUTION_PLAN:
+  - step: "THINK (Systems Design Phase)"
+    role: "Systems Architect"
+    action: >-
+      "Decompose the `CxB_WebsiteBlueprint_v1.0` into its constituent
+      microservices: a Learning Management Service, a Practice & Assessment
+      Service, and a User Evaluation Service. Define the core responsibilities
+      and boundaries for each service."
+  - step: "WRITE (API & Schema Definition Phase)"
+    role: "API Designer"
+    action: >-
+      "For each microservice, define a formal OpenAPI 3.0 specification for its
+      API contract. Define the database schema (e.g., SQL, NoSQL) for each
+      service, ensuring data isolation and referential integrity."
+  - step: "VERIFY (Architectural Review Phase)"
+    role: "Auditor"
+    action: >-
+      "Audit the proposed implementation plan. Verify that the API contracts are
+      RESTful and loosely coupled. Ensure the database schemas are normalized
+      and efficient. Confirm that the plan addresses all security and
+      scalability requirements from the original blueprint."
+SELF_TEST:
+  commands:
+    - "validate-openapi-spec --spec learning_management_api.yml"
+    - "validate-openapi-spec --spec practice_assessment_api.yml"
+    - "validate-openapi-spec --spec user_evaluation_api.yml"
+    - "lint-db-schema --schema all_schemas.sql"
+  success_condition: >-
+    "All OpenAPI specs are valid. Database schema linting passes without
+    errors."
+REFLEXIVE_CHECK:
+  prompt: |
+    As the Systems Architect, does the implementation plan introduce any new
+    points of failure or security vulnerabilities not present in the original
+    blueprint? Does the plan adequately address the ambiguity of the
+    `feedback_engine` identified in the v1.0 blueprint's reflexive check?
+    Justify the trade-offs made in the design.

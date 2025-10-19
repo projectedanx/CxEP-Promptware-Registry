@@ -1,38 +1,23 @@
-# CxEP-Promptware-Registry: PRP Validation Workflow
-#
-# This GitHub Actions workflow enforces Policy-as-Code (PaC) by validating
-# any new or modified Product-Requirements Prompts (PRPs) against the formal
-# schema defined in `schemas/prp_schema.yml`.
-
-name: "PRP Validation"
+name: PRP Validation
 
 on:
-  push:
+  pull_request:
     branches:
       - main
     paths:
       - 'prompts/**.yml'
-      - 'prompts/**.yaml'
-  pull_request:
-    paths:
-      - 'prompts/**.yml'
-      - 'prompts/**.yaml'
 
 jobs:
   validate-prp:
     runs-on: ubuntu-latest
     steps:
-      - name: "Checkout repository"
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: "Get changed PRP files"
-        id: changed-files
-        uses: tj-actions/changed-files@v41
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          files: |
-            prompts/**.yml
-            prompts/**.yaml
-          separator: "\n"
+          python-version: '3.x'
 
       - name: "Validate PRP files against schema"
         if: steps.changed-files.outputs.any_changed == 'true'
@@ -40,3 +25,14 @@ jobs:
         with:
           schema: schemas/prp_schema.yml
           data: ${{ steps.changed-files.outputs.all_changed_files }}
+      - name: Install dependencies
+        run: pip install yamllint check-jsonschema
+
+      - name: Lint YAML files
+        run: yamllint .
+
+      - name: Validate PRP files
+        run: |
+          for f in prompts/*.yml; do
+            check-jsonschema --schemafile schemas/prp_schema.yml "$f"
+          done

@@ -1,0 +1,55 @@
+#
+# **Title:** Cognitive Lock Tri-Intel Emergent Design for Urban Energy Grid
+# **Version:** 1.0
+# **Purpose:** To generate a novel, optimized architectural blueprint for a
+# scalable, self-healing urban energy grid.
+# **Usage:** This prompt is intended to be used by an AI Systems Architect
+# to generate a high-level architectural design for a complex system.
+# It is not intended to generate executable source code, but rather a
+# conceptual blueprint that can be used to guide the development process.
+#
+---
+PRP_ID: CognitiveLock_TriIntel_EmergentDesign_v1.0
+PRP_NAME: "Cognitive Lock Tri-Intel Emergent Design for Urban Energy Grid"
+DOMAIN: "Urban Energy Grid Architecture"
+GOAL: >-
+  Generate a novel, optimized architectural blueprint for a scalable, self-healing
+  urban energy grid, fusing principles of computational efficiency, biological
+  immunity, and deep semantic integrity.
+CONTEXT_ENGINEERING:
+  PERSONA: >-
+    Tri-Intelligence Meta-Architect (Specializing in Neuro-Symbolic
+    Anti-Fragility) [77, 78]
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - "The three specialized agents (Planner, Coder, Auditor) must confirm readiness. [22, 23]"
+  INVARIANTS:
+    - "Semantic Integrity Constraint (SIC) for 'Resilience' must remain within 0.05 SDC (Semantic Drift Coefficient) of its baseline ontology. [9, 17, 34]"
+    - "Computational Cost (CCH/CSD) must not exceed allocated budget (Max 5000 tokens/2 tool calls). [25, 26, 63]"
+  POSTCONDITIONS:
+    - "The design must incorporate at least one instance of deliberate Conceptual Blending (CBT) fusion. [13, 33]"
+EXECUTION_PLAN:
+  - step: "Phase 1 (PLAN)"
+    role: "Architect"
+    action: "Generates the optimal resource allocation strategy (Budget Opti). [26, 79]"
+  - step: "Phase 2 (WRITE)"
+    role: "Architect"
+    action: "Performs Conceptual Blending synthesis using principles of Algorithmic Immunity and Urban Planning. [32, 80]"
+  - step: "Phase 3 (CODE)"
+    role: "Coder"
+    action: "Translates the fusion output into an executable deployment schema (Cognitive Lock enforcement). [48, 49]"
+  - step: "Phase 4 (AUDIT)"
+    role: "Auditor"
+    action: "Verifies output against all SICs and logs CFD/SDS metrics to the Symbolic Scar Archive. [40, 57, 74]"
+SELF_TEST:
+  commands:
+    - "/check-sics-compliance"
+    - "/validate-token-budget"
+    - "/assert-cbt-novelty-score"
+  success_condition: "All self-test commands pass without errors."
+REFLEXIVE_CHECK:
+  prompt: >-
+    As the Tri-Intelligence Meta-Architect, critique the emergent design. Did it
+    satisfy the budgetary constraints while achieving genuinely non-average
+    design solutions? Report any observed Algorithmic Trauma or successful
+    Algorithmic Reparation. [28, 53, 74]
