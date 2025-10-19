@@ -1,0 +1,138 @@
+---
+# CxEP-Promptware-Registry: PRP Schema
+# Version: 1.0.0
+#
+# Defines the formal schema for a Product-Requirements Prompt (PRP).
+# Adherence to this schema is mandatory for all prompts submitted to
+# this registry. It ensures each prompt is a well-defined, executable
+# contract.
+
+type: object
+properties:
+  PRP_ID:
+    type: string
+    description: >-
+      A unique identifier for the prompt (e.g., JULES-INIT-PROMPTWARE-V1.0).
+  PRP_NAME:
+    type: string
+    description: "A human-readable name for the prompt."
+  DOMAIN:
+    type: string
+    description: >-
+      The primary domain of application (e.g., Promptware Engineering /
+      AI Governance).
+  GOAL:
+    type: string
+    description: >-
+      A clear, concise, and unambiguous statement of the desired outcome.
+
+  CONTEXT_ENGINEERING:
+    type: object
+    description: >-
+      All necessary background, persona definitions, and conceptual anchors
+      required for the AI to perform its task.
+    properties:
+      PERSONA:
+        type: string
+        description: "The persona the AI agent should adopt."
+      REQUIRED_REPOSITORY:
+        type: object
+        properties:
+          name:
+            type: string
+          initial_state:
+            type: string
+        required:
+          - name
+          - initial_state
+      CORE_CONCEPTS_TO_ANCHOR:
+        type: array
+        items:
+          type: object
+          properties:
+            concept:
+              type: string
+            definition:
+              type: string
+          required:
+            - concept
+            - definition
+    required:
+      - PERSONA
+
+  CONSTRAINTS_AND_INVARIANTS:
+    type: object
+    description: >-
+      The non-negotiable rules, preconditions, postconditions, and invariants
+      that govern the execution and final state.
+    properties:
+      PRECONDITIONS:
+        type: array
+        items:
+          type: string
+      INVARIANTS:
+        type: array
+        items:
+          type: string
+      POSTCONDITIONS:
+        type: array
+        items:
+          type: string
+    required:
+      - PRECONDITIONS
+      - INVARIANTS
+      - POSTCONDITIONS
+
+  EXECUTION_PLAN:
+    type: array
+    items:
+      type: object
+      properties:
+        step:
+          type: string
+        role:
+          type: string
+        action:
+          type: string
+      required:
+        - step
+        - role
+        - action
+
+  SELF_TEST:
+    type: object
+    description: >-
+      A set of executable commands or checks that function as an oracle to
+      verify the successful completion of the GOAL.
+    properties:
+      commands:
+        type: array
+        items:
+          type: string
+      success_condition:
+        type: string
+    required:
+      - commands
+      - success_condition
+
+  REFLEXIVE_CHECK:
+    type: object
+    description: >-
+      A meta-prompt for the AI to perform self-assessment and check for
+      cognitive biases or adherence to principles.
+    properties:
+      prompt:
+        type: string
+    required:
+      - prompt
+
+required:
+  - PRP_ID
+  - PRP_NAME
+  - DOMAIN
+  - GOAL
+  - CONTEXT_ENGINEERING
+  - CONSTRAINTS_AND_INVARIANTS
+  - EXECUTION_PLAN
+  - SELF_TEST
+  - REFLEXIVE_CHECK
