@@ -1,3 +1,14 @@
+#
+# **Title:** Cognitive Lock Tri-Intelligence Code Planner
+# **Version:** 1.0
+# **Purpose:** To generate a complete, unambiguous, and formally verified
+# technical blueprint (Executable Context Bundle - CxB) for a new Python
+# Microservice endpoint (GET /user/profile).
+# **Usage:** This prompt is intended to be used by an AI Systems Architect
+# to generate a detailed plan for a new microservice. It is not intended
+# to generate executable source code, but rather a schema that can be used
+# to guide the development process.
+#
 ---
 PRP_ID: CognitiveLock_TriIntel_CodePlanner_v1.0
 PRP_NAME: "Cognitive Lock Tri-Intelligence Code Planner"
