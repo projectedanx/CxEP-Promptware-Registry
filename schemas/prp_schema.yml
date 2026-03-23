@@ -132,18 +132,49 @@ properties:
       verify the successful completion of the GOAL. This allows the AI to
       test its own work and ensure that it has met the requirements of the task.
     properties:
-      commands:
+      checks:
         type: array
         description: >-
-          A list of commands that the AI agent should execute to test its work.
+          A list of structured checks that the AI agent should perform to
+          verify its work.
         items:
-          type: string
+          type: object
+          properties:
+            check_id:
+              type: string
+              description: "A unique identifier for the check."
+            description:
+              type: string
+              description: "A human-readable description of the check."
+            method:
+              type: string
+              enum:
+                - VALIDATE_SCHEMA
+                - SCAN_ARTIFACT
+                - CALCULATE_METRIC
+                - CHECK_SICS_COMPLIANCE
+                - VALIDATE_TOKEN_BUDGET
+                - ASSERT_CBT_NOVELTY_SCORE
+                - VALIDATE_DOCUMENT_SCHEMA
+                - CHECK_SIMULATION_METRICS_CLARITY
+                - ASSERT_BLUEPRINT_CONSISTENCY
+                - CHECK_SECURITY_INVARIANT
+                - VALIDATE_OPENAPI_SPEC
+                - LINT_DB_SCHEMA
+                - LOG_MESSAGE
+            params:
+              type: object
+              description: "Optional parameters for the verification method."
+          required:
+            - check_id
+            - description
+            - method
       success_condition:
         type: string
         description: >-
           The condition that must be true for the test to be considered successful.
     required:
-      - commands
+      - checks
       - success_condition
 
   REFLEXIVE_CHECK:

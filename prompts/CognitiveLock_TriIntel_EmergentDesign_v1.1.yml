@@ -93,10 +93,16 @@ EXECUTION_PLAN:
     action: "Review the strategy document for feasibility, clarity, and adherence to the v1.0 blueprint."
 
 SELF_TEST:
-  commands:
-    - "/validate-document-schema"
-    - "/check-simulation-metrics-clarity"
-    - "/assert-blueprint-consistency"
+  checks:
+    - check_id: "validate-doc-schema"
+      description: "Validate the document schema of the strategy."
+      method: VALIDATE_DOCUMENT_SCHEMA
+    - check_id: "check-metrics-clarity"
+      description: "Ensure the simulation metrics are clear and measurable."
+      method: CHECK_SIMULATION_METRICS_CLARITY
+    - check_id: "assert-consistency"
+      description: "Assert consistency with the v1.0 blueprint."
+      method: ASSERT_BLUEPRINT_CONSISTENCY
   success_condition: "All validation commands pass, confirming the strategy is complete and compliant."
 
 REFLEXIVE_CHECK:
