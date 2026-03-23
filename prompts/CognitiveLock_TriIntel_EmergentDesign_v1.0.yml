@@ -42,10 +42,16 @@ EXECUTION_PLAN:
     role: "Auditor"
     action: "Verifies output against all SICs and logs CFD/SDS metrics to the Symbolic Scar Archive. [40, 57, 74]"
 SELF_TEST:
-  commands:
-    - "/check-sics-compliance"
-    - "/validate-token-budget"
-    - "/assert-cbt-novelty-score"
+  checks:
+    - check_id: "check-sics"
+      description: "Verify compliance with Semantic Integrity Constraints (SICs)."
+      method: CHECK_SICS_COMPLIANCE
+    - check_id: "validate-budget"
+      description: "Validate the token budget for the execution."
+      method: VALIDATE_TOKEN_BUDGET
+    - check_id: "assert-novelty"
+      description: "Assert the novelty score of the Conceptual Blending Theory (CBT) fusion."
+      method: ASSERT_CBT_NOVELTY_SCORE
   success_condition: "All self-test commands pass without errors."
 REFLEXIVE_CHECK:
   prompt: >-

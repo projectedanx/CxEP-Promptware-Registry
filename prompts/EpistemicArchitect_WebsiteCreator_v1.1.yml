@@ -232,11 +232,27 @@ EXECUTION_PLAN:
       and efficient. Confirm that the plan addresses all security and
       scalability requirements from the original blueprint."
 SELF_TEST:
-  commands:
-    - "validate-openapi-spec --spec learning_management_api.yml"
-    - "validate-openapi-spec --spec practice_assessment_api.yml"
-    - "validate-openapi-spec --spec user_evaluation_api.yml"
-    - "lint-db-schema --schema all_schemas.sql"
+  checks:
+    - check_id: "validate-learning-api"
+      description: "Validate the Learning Management API specification."
+      method: VALIDATE_OPENAPI_SPEC
+      params:
+        spec: "learning_management_api.yml"
+    - check_id: "validate-practice-api"
+      description: "Validate the Practice & Assessment API specification."
+      method: VALIDATE_OPENAPI_SPEC
+      params:
+        spec: "practice_assessment_api.yml"
+    - check_id: "validate-evaluation-api"
+      description: "Validate the User Evaluation API specification."
+      method: VALIDATE_OPENAPI_SPEC
+      params:
+        spec: "user_evaluation_api.yml"
+    - check_id: "lint-db-schema"
+      description: "Lint the consolidated database schema."
+      method: LINT_DB_SCHEMA
+      params:
+        schema: "all_schemas.sql"
   success_condition: >-
     "All OpenAPI specs are valid. Database schema linting passes without
     errors."
