@@ -7,6 +7,9 @@ on:
     paths:
       - 'prompts/**.yml'
 
+permissions:
+  contents: read
+
 jobs:
   validate-prp:
     runs-on: ubuntu-latest
