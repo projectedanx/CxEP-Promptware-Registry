@@ -128,22 +128,42 @@ properties:
   SELF_TEST:
     type: object
     description: >-
-      A set of executable commands or checks that function as an oracle to
+      A set of structured checks that function as an oracle to
       verify the successful completion of the GOAL. This allows the AI to
       test its own work and ensure that it has met the requirements of the task.
     properties:
-      commands:
+      checks:
         type: array
         description: >-
-          A list of commands that the AI agent should execute to test its work.
+          A list of structured checks that the AI agent should execute to test its work.
         items:
-          type: string
+          type: object
+          properties:
+            check_id:
+              type: string
+            description:
+              type: string
+            method:
+              type: string
+              enum:
+                - VALIDATE_SCHEMA
+                - SCAN_ARTIFACT
+                - CALCULATE_METRIC
+                - VALIDATE_OPENAPI_SPEC
+                - LINT_DB_SCHEMA
+                - LOG_MESSAGE
+            params:
+              type: object
+          required:
+            - check_id
+            - description
+            - method
       success_condition:
         type: string
         description: >-
           The condition that must be true for the test to be considered successful.
     required:
-      - commands
+      - checks
       - success_condition
 
   REFLEXIVE_CHECK:

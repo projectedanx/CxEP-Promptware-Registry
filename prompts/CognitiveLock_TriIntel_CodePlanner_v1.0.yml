@@ -87,12 +87,26 @@ EXECUTION_PLAN:
       and generate a comprehensive verification report.
 
 SELF_TEST:
-  commands:
-    - "/validate-schema Output_Schema CxB_Schema_v1.0.json"
-    - "/scan-artifact CxB_Blueprint --check HardcodedSecrets"
-    - >-
-      "/calculate-metric SDS --concept user_data_access
-      --baseline core_ontology_v1"
+  checks:
+    - check_id: "validate_schema"
+      description: "Validate the output schema"
+      method: VALIDATE_SCHEMA
+      params:
+        schema: "Output_Schema"
+        target: "CxB_Schema_v1.0.json"
+    - check_id: "scan_secrets"
+      description: "Scan the artifact for hardcoded secrets"
+      method: SCAN_ARTIFACT
+      params:
+        artifact: "CxB_Blueprint"
+        check: "HardcodedSecrets"
+    - check_id: "calc_sds"
+      description: "Calculate SDS metric"
+      method: CALCULATE_METRIC
+      params:
+        metric: "SDS"
+        concept: "user_data_access"
+        baseline: "core_ontology_v1"
   success_condition: >-
     "Schema Validation: PASSED, Security Scan: PASSED, SDS < 0.05"
 

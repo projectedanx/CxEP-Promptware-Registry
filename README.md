@@ -35,7 +35,7 @@ The `prp_schema.yml` file defines the structure of a Product-Requirements Prompt
 - **`CONTEXT_ENGINEERING`**: All necessary background, persona definitions, and conceptual anchors required for the AI to perform its task.
 - **`CONSTRAINTS_AND_INVARIANTS`**: The non-negotiable rules, preconditions, postconditions, and invariants that govern the execution and final state.
 - **`EXECUTION_PLAN`**: A step-by-step plan for how the AI agent should complete the task.
-- **`SELF_TEST`**: A set of executable commands or checks that function as an oracle to verify the successful completion of the GOAL.
+- **`SELF_TEST`**: A set of structured checks that function as an oracle to verify the successful completion of the GOAL.
 - **`REFLEXIVE_CHECK`**: A meta-prompt for the AI to perform self-assessment and check for cognitive biases or adherence to principles.
 
 For a more detailed explanation of the schema, please see the comments in the `schemas/prp_schema.yml` file.

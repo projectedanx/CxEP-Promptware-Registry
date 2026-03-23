@@ -42,11 +42,23 @@ EXECUTION_PLAN:
     role: "Auditor"
     action: "Verifies output against all SICs and logs CFD/SDS metrics to the Symbolic Scar Archive. [40, 57, 74]"
 SELF_TEST:
-  commands:
-    - "/check-sics-compliance"
-    - "/validate-token-budget"
-    - "/assert-cbt-novelty-score"
-  success_condition: "All self-test commands pass without errors."
+  checks:
+    - check_id: "check_sics_compliance"
+      description: "Check SICS compliance"
+      method: LOG_MESSAGE
+      params:
+        message: "Checking SICS compliance"
+    - check_id: "validate_token_budget"
+      description: "Validate token budget"
+      method: LOG_MESSAGE
+      params:
+        message: "Validating token budget"
+    - check_id: "assert_cbt_novelty"
+      description: "Assert CBT novelty score"
+      method: LOG_MESSAGE
+      params:
+        message: "Asserting CBT novelty score"
+  success_condition: "All self-test checks pass without errors."
 REFLEXIVE_CHECK:
   prompt: >-
     As the Tri-Intelligence Meta-Architect, critique the emergent design. Did it

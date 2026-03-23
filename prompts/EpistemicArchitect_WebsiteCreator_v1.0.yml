@@ -90,10 +90,26 @@ EXECUTION_PLAN:
       Semantic Drift Score (SDS) for 'Mastery' against the baseline ontology and
       check compliance with the decoupling/modularity invariant [29, 30]."
 SELF_TEST:
-  commands:
-    - "/validate-schema Output_Schema CxB_Schema_v1.0.json"
-    - "/calculate-metric SDS --concept Mastery --baseline mastery_ontology.json"
-    - "/check-security-invariant PaC_RLS_UserEvaluationData"
+  checks:
+    - check_id: "validate_schema_website"
+      description: "Validate the output schema"
+      method: VALIDATE_SCHEMA
+      params:
+        schema: "Output_Schema"
+        target: "CxB_Schema_v1.0.json"
+    - check_id: "calc_sds_mastery"
+      description: "Calculate SDS metric"
+      method: CALCULATE_METRIC
+      params:
+        metric: "SDS"
+        concept: "Mastery"
+        baseline: "mastery_ontology.json"
+    - check_id: "check_security_invariant"
+      description: "Check security invariant"
+      method: SCAN_ARTIFACT
+      params:
+        artifact: "Output_Schema"
+        check: "PaC_RLS_UserEvaluationData"
   success_condition: >-
     "Schema Validation: PASSED, SDS < 0.05, Security Check: PASSED"
 REFLEXIVE_CHECK:

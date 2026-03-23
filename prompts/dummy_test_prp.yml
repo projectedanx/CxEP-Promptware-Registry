@@ -21,8 +21,12 @@ EXECUTION_PLAN:
     action: "Execute a test."
 
 SELF_TEST:
-  commands:
-    - "echo 'Self-test successful'"
+  checks:
+    - check_id: "check_dummy"
+      description: "Dummy test check"
+      method: LOG_MESSAGE
+      params:
+        message: "Self-test successful"
   success_condition: "The command returns 'Self-test successful'"
 
 REFLEXIVE_CHECK:

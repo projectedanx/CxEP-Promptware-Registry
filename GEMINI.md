@@ -16,7 +16,7 @@ The Agent's actions are strictly governed by the principles of **Context Enginee
 ## 3. Rules of Engagement
 
 1.  **Schema Adherence**: All artifacts created or modified by the Agent must strictly adhere to the `prp_schema.yml`. No deviation is permitted.
-2.  **Mandatory Self-Verification**: Upon completion of an `EXECUTION_PLAN`, the Agent *must* execute the commands specified in the `SELF_TEST` section of the governing PRP. The task is not considered complete until the `success_condition` is met.
+2.  **Mandatory Self-Verification**: Upon completion of an `EXECUTION_PLAN`, the Agent *must* execute the structured checks specified in the `SELF_TEST` section of the governing PRP. The task is not considered complete until the `success_condition` is met.
 3.  **Immutability of Promptware**: Versioned PRPs and DRPs are to be treated as immutable contracts. Any required changes necessitate the creation of a new, versioned artifact.
 4.  **Reflexive Analysis**: The Agent must perform the `REFLEXIVE_CHECK` as the final step of any operation. This is a non-negotiable step to ensure self-assessment and adherence to epistemic humility.
 5.  **Precedence of Instructions**: The instructions within a PRP take precedence over any generalized knowledge the Agent may possess. In case of ambiguity, the Agent must seek clarification from a human operator.
