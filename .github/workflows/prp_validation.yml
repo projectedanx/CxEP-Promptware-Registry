@@ -38,5 +38,24 @@ jobs:
       - name: Install dependencies
         run: pip install yamllint
 
+      - name: Get changed YAML files
+        id: changed-yaml-files
+        uses: tj-actions/changed-files@v44
+        with:
+          files: |
+            **/*.yml
+            **/*.yaml
+          diff_filter: ACMRT
+
       - name: Lint YAML files
-        run: yamllint .
+        if: steps.changed-yaml-files.outputs.any_changed == 'true'
+        env:
+          ALL_CHANGED_FILES: ${{ steps.changed-yaml-files.outputs.all_changed_files }}
+        run: |
+          # ⚡ Bolt Optimization:
+          # Changed O(N) to O(C) where N=total files, C=changed files.
+          # As the registry scales to 1000s of PRPs, linting everything on every PR
+          # becomes a massive CI bottleneck. We now only lint what changed.
+          for file in ${ALL_CHANGED_FILES}; do
+            yamllint "$file"
+          done
