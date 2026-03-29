@@ -1,0 +1,3 @@
+## 2026-03-29 - [Hidden O(N) CI Bottleneck in File Registry Repositories]
+**Learning:** Repositories functioning as content registries (like PRPs/prompts, where many individual files accumulate indefinitely) carry a unique CI scaling risk. Standard validation steps like `yamllint .` that scan the whole project on every pull request silently transform from trivial checks into massive O(N) performance bottlenecks as the repository grows. This overhead significantly increases CI execution time and compute costs.
+**Action:** When working in registry-style repositories, always verify that linting and validation CI jobs are scoped linearly to the *changed* files, O(C), using tools like `tj-actions/changed-files`, instead of the *total* files, O(N).
