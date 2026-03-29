@@ -28,15 +28,17 @@ jobs:
         with:
           files: prompts/**.yml
 
+      - name: Install dependencies
+        run: pip install yamllint check-jsonschema
+
       - name: "Validate PRP files against schema"
         if: steps.changed-files.outputs.any_changed == 'true'
-        uses: OrRosenblatt/validate-yaml-action@v1.0.1
-        with:
-          files: ${{ steps.changed-files.outputs.all_changed_files }}
-          schema: schemas/prp_schema.yml
-
-      - name: Install dependencies
-        run: pip install yamllint
+        env:
+          CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
+        run: |
+          for file in $CHANGED_FILES; do
+            check-jsonschema --schemafile schemas/prp_schema.yml "$file"
+          done
 
       - name: Get changed YAML files
         id: changed-yaml-files
