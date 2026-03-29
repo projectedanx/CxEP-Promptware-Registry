@@ -1,0 +1,4 @@
+## 2024-05-24 - [Critical Supply Chain Vulnerability & Command Injection]
+**Vulnerability:** Found a reference to a nonexistent GitHub Action (`OrRosenblatt/validate-yaml-action@v1.0.1`) which presents a severe repojacking risk. Additionally, the previous configuration utilized `${{ steps.changed-files.outputs.all_changed_files }}` directly inside a run script, exposing the CI pipeline to command injection.
+**Learning:** External actions must be verified for existence, trustworthiness, and maintenance. Directly interpolating untrusted variables within a run script poses a major security hazard.
+**Prevention:** Avoid third-party actions when standard tooling (like Python's `check-jsonschema`) suffices. When passing data into shell scripts within a workflow, always bind the context to an environment variable and use the shell's secure variable expansion mechanisms instead of direct interpolation.
