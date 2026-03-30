@@ -36,9 +36,11 @@ jobs:
         env:
           CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
-          for file in $CHANGED_FILES; do
-            check-jsonschema --schemafile schemas/prp_schema.yml "$file"
-          done
+          # ⚡ Bolt Optimization:
+          # Changed from a bash `for` loop to passing all files directly to `check-jsonschema`.
+          # This eliminates the O(C) Python interpreter startup overhead, making validation significantly faster.
+          # We use xargs to securely parse the default space-separated output from tj-actions/changed-files.
+          echo "$CHANGED_FILES" | xargs -r check-jsonschema --schemafile schemas/prp_schema.yml
 
       - name: Get changed YAML files
         id: changed-yaml-files
@@ -58,6 +60,5 @@ jobs:
           # Changed O(N) to O(C) where N=total files, C=changed files.
           # As the registry scales to 1000s of PRPs, linting everything on every PR
           # becomes a massive CI bottleneck. We now only lint what changed.
-          for file in ${ALL_CHANGED_FILES}; do
-            yamllint "$file"
-          done
+          # Replaced bash `for` loop with batch processing to avoid Python startup overhead per file.
+          echo "$ALL_CHANGED_FILES" | xargs -r yamllint
