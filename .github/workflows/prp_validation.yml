@@ -27,6 +27,7 @@ jobs:
         uses: tj-actions/changed-files@v44
         with:
           files: prompts/**.yml
+          diff_filter: ACMRT
 
       - name: Install dependencies
         run: pip install yamllint check-jsonschema
@@ -37,7 +38,7 @@ jobs:
           CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
           for file in $CHANGED_FILES; do
-            check-jsonschema --schemafile schemas/prp_schema.yml "$file"
+            check-jsonschema --schemafile schemas/prp_schema.yml -- "$file"
           done
 
       - name: Get changed YAML files
@@ -59,5 +60,5 @@ jobs:
           # As the registry scales to 1000s of PRPs, linting everything on every PR
           # becomes a massive CI bottleneck. We now only lint what changed.
           for file in ${ALL_CHANGED_FILES}; do
-            yamllint "$file"
+            yamllint -- "$file"
           done
