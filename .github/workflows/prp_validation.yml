@@ -28,6 +28,7 @@ jobs:
         with:
           files: prompts/**.yml
           diff_filter: ACMRT
+          separator: ","
 
       - name: Install dependencies
         run: pip install yamllint check-jsonschema
@@ -37,9 +38,9 @@ jobs:
         env:
           CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
-          for file in $CHANGED_FILES; do
-            check-jsonschema --schemafile schemas/prp_schema.yml -- "$file"
-          done
+          # ⚡ Bolt Optimization:
+          # Batching files via xargs to avoid Python interpreter startup overhead inside loop.
+          printf "%s" "$CHANGED_FILES" | xargs -d ',' check-jsonschema --schemafile schemas/prp_schema.yml --
 
       - name: Get changed YAML files
         id: changed-yaml-files
@@ -49,6 +50,7 @@ jobs:
             **/*.yml
             **/*.yaml
           diff_filter: ACMRT
+          separator: ","
 
       - name: Lint YAML files
         if: steps.changed-yaml-files.outputs.any_changed == 'true'
@@ -59,6 +61,5 @@ jobs:
           # Changed O(N) to O(C) where N=total files, C=changed files.
           # As the registry scales to 1000s of PRPs, linting everything on every PR
           # becomes a massive CI bottleneck. We now only lint what changed.
-          for file in ${ALL_CHANGED_FILES}; do
-            yamllint -- "$file"
-          done
+          # Further optimized by batching files via xargs to eliminate Python startup overhead per file.
+          printf "%s" "$ALL_CHANGED_FILES" | xargs -d ',' yamllint --
