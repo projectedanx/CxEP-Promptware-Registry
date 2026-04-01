@@ -40,7 +40,7 @@ jobs:
         run: |
           # ⚡ Bolt Optimization:
           # Batching files via xargs to avoid Python interpreter startup overhead inside loop.
-          printf "%s" "$CHANGED_FILES" | xargs -d ',' check-jsonschema --schemafile schemas/prp_schema.yml --
+          printf "%s" "$CHANGED_FILES" | xargs -r -d ',' check-jsonschema --schemafile schemas/prp_schema.yml --
 
       - name: Get changed YAML files
         id: changed-yaml-files
@@ -62,4 +62,4 @@ jobs:
           # As the registry scales to 1000s of PRPs, linting everything on every PR
           # becomes a massive CI bottleneck. We now only lint what changed.
           # Further optimized by batching files via xargs to eliminate Python startup overhead per file.
-          printf "%s" "$ALL_CHANGED_FILES" | xargs -d ',' yamllint --
+          printf "%s" "$ALL_CHANGED_FILES" | xargs -r -d ',' yamllint --
