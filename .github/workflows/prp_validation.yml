@@ -17,11 +17,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-
       - name: Get changed files
         id: changed-files
         uses: tj-actions/changed-files@v44
@@ -29,18 +24,6 @@ jobs:
           files: prompts/**.yml
           diff_filter: ACMRT
           separator: ","
-
-      - name: Install dependencies
-        run: pip install yamllint check-jsonschema
-
-      - name: "Validate PRP files against schema"
-        if: steps.changed-files.outputs.any_changed == 'true'
-        env:
-          CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
-        run: |
-          # ⚡ Bolt Optimization:
-          # Batching files via xargs to avoid Python interpreter startup overhead inside loop.
-          printf "%s" "$CHANGED_FILES" | xargs -d ',' check-jsonschema --schemafile schemas/prp_schema.yml --
 
       - name: Get changed YAML files
         id: changed-yaml-files
@@ -51,6 +34,25 @@ jobs:
             **/*.yaml
           diff_filter: ACMRT
           separator: ","
+
+      - name: Set up Python
+        if: steps.changed-files.outputs.any_changed == 'true' || steps.changed-yaml-files.outputs.any_changed == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        if: steps.changed-files.outputs.any_changed == 'true' || steps.changed-yaml-files.outputs.any_changed == 'true'
+        run: pip install --disable-pip-version-check yamllint check-jsonschema
+
+      - name: "Validate PRP files against schema"
+        if: steps.changed-files.outputs.any_changed == 'true'
+        env:
+          CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
+        run: |
+          # ⚡ Bolt Optimization:
+          # Batching files via xargs to avoid Python interpreter startup overhead inside loop.
+          printf "%s" "$CHANGED_FILES" | xargs -d ',' check-jsonschema --schemafile schemas/prp_schema.yml --
 
       - name: Lint YAML files
         if: steps.changed-yaml-files.outputs.any_changed == 'true'
