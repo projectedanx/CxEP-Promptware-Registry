@@ -15,6 +15,7 @@ properties:
       A unique identifier for the prompt (e.g., JULES-INIT-PROMPTWARE-V1.0).
       This ID should be globally unique within the registry and should
       include a version number.
+    pattern: "^[a-zA-Z0-9_.-]+$"
   PRP_NAME:
     type: string
     description: "A human-readable name for the prompt."
