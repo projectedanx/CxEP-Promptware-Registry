@@ -5,3 +5,7 @@
 ## 2026-03-31 - [Python CLI Startup Overhead in CI Loops]
 **Learning:** Even when validation checks are scoped to changed files (O(C)), running Python-based CLI tools (like `yamllint` or `check-jsonschema`) inside bash `for` loops introduces significant overhead. The repeated startup and teardown of the Python interpreter for each individual file can drastically slow down CI runs, especially when many files change in a single PR.
 **Action:** Always batch file paths and pass them to Python CLIs as a single list of arguments. In GitHub Actions, configure `tj-actions/changed-files` to output a comma-separated list (`separator: ","`) and use `xargs -d ','` to invoke the CLI exactly once with all files as arguments.
+
+## 2026-04-03 - [CI Conditional Execution Optimization]
+**Learning:** Even with optimized file scopes and batching, CI workflows still execute environment setup steps (like `setup-python` and `pip install`) by default, even if the subsequent validation scripts themselves will be skipped due to no relevant file changes. This adds unnecessary overhead (network I/O, download time, installation time) on PRs that only modify documentation or non-schema files.
+**Action:** When creating CI workflows for file registries, use the `any_changed` output from `tj-actions/changed-files` to apply conditional logic (`if:`) to earlier environment provisioning and dependency installation steps. This effectively creates an "early return" that skips costly setup when the core validation isn't needed.
