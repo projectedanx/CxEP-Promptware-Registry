@@ -144,6 +144,7 @@ properties:
             check_id:
               type: string
               description: "A unique identifier for the check."
+              pattern: "^[a-zA-Z0-9_.-]+$"
             description:
               type: string
               description: "A human-readable description of the check."
