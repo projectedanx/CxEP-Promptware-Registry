@@ -17,11 +17,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-
       - name: Get changed files
         id: changed-files
         uses: tj-actions/changed-files@v44
@@ -30,7 +25,14 @@ jobs:
           diff_filter: ACMRT
           separator: ","
 
+      - name: Set up Python
+        if: steps.changed-files.outputs.any_changed == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
       - name: Install dependencies
+        if: steps.changed-files.outputs.any_changed == 'true'
         run: |
           # 🛡️ Sentinel Security Enhancement:
           # Pin exact versions of CLI tools to prevent supply-chain attacks.
