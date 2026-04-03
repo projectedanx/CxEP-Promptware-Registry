@@ -6,3 +6,7 @@
 **Vulnerability:** Found a flag injection vulnerability in GitHub actions script that processes filenames provided by `tj-actions/changed-files`. When files begin with a `-`, they might be parsed as flags instead of filenames (e.g. `yamllint -h.yml`), allowing attackers to potentially execute code or leak data. Furthermore, missing `diff_filter: ACMRT` led to executing commands on deleted files, leading to errors.
 **Learning:** Any dynamic values controlled by users (like filenames) passed to bash scripts without the end-of-options marker `--` could be misconstrued as flags.
 **Prevention:** Always use `--` before dynamic arguments passed to standard unix/linux utilities (e.g., `yamllint -- "$file"`) and configure `diff_filter: ACMRT` for `tj-actions/changed-files` appropriately to handle deleted files gracefully.
+## 2024-05-26 - [Critical Security: Missing Pattern Constraint on check_id]
+**Vulnerability:** The `check_id` field in the `SELF_TEST` block of `schemas/prp_schema.yml` lacked a regex pattern constraint. This could allow malicious actors to inject path traversal sequences or command injection payloads if the `check_id` is later used in downstream shell scripts or file operations.
+**Learning:** All string identifiers in schemas that might be processed by external systems or scripts must enforce strict regex pattern constraints (e.g., `^[a-zA-Z0-9_.-]+$`) to prevent injection vulnerabilities.
+**Prevention:** Always add `pattern` constraints to string fields representing IDs, filenames, or other critical identifiers in JSON/YAML schemas.
