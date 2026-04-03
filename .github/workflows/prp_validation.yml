@@ -31,7 +31,10 @@ jobs:
           separator: ","
 
       - name: Install dependencies
-        run: pip install yamllint check-jsonschema
+        run: |
+          # 🛡️ Sentinel Security Enhancement:
+          # Pin exact versions of CLI tools to prevent supply-chain attacks.
+          pip install yamllint==1.38.0 check-jsonschema==0.37.1
 
       - name: "Validate PRP files against schema"
         if: steps.changed-files.outputs.any_changed == 'true'
