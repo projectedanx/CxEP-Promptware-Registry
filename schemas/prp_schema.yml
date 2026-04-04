@@ -49,10 +49,14 @@ properties:
           name:
             type: string
             description: "The name of the repository."
+            # 🛡️ Sentinel Security Enhancement: Prevent command/path injection in repo names
+            pattern: "^[a-zA-Z0-9_.-]+(?:/[a-zA-Z0-9_.-]+)?$"
           initial_state:
             type: string
             description: >-
               The initial state of the repository (e.g., a specific commit hash or branch).
+            # 🛡️ Sentinel Security Enhancement: Prevent injection in git refs
+            pattern: "^[a-zA-Z0-9_./-]+$"
         required:
           - name
           - initial_state
