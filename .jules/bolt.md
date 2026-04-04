@@ -9,3 +9,7 @@
 ## 2026-04-03 - [Unnecessary Environment Provisioning in CI]
 **Learning:** GitHub Actions workflows often set up environments (e.g., Python) and install dependencies blindly before checking if there's any actual work to do. If a PR deletes files or modifies files outside the scope of a validation step, doing this setup is a total waste of CI time.
 **Action:** Move file change detection steps (`tj-actions/changed-files`) to execute immediately after checkout. Then, use their `any_changed` outputs in `if` conditions to conditionally execute expensive environment setup and dependency installation steps.
+
+## 2026-04-06 - [Consolidating GitHub Actions File Detection]
+**Learning:** Having multiple sequential steps using `tj-actions/changed-files` to check for different file patterns wastes CI execution time due to redundant Git tree traversals and Node.js process starts.
+**Action:** Consolidate multiple file change checks into a single step by utilizing the `files_yaml` input of `tj-actions/changed-files`. This defines multiple keys mapped to globs, producing prefixed outputs (e.g. `prp_any_changed`, `yaml_any_changed`) efficiently.
