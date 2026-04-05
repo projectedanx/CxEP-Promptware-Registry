@@ -10,3 +10,7 @@
 **Vulnerability:** The `check_id` field in the `SELF_TEST` block of `schemas/prp_schema.yml` lacked a regex pattern constraint. This could allow malicious actors to inject path traversal sequences or command injection payloads if the `check_id` is later used in downstream shell scripts or file operations.
 **Learning:** All string identifiers in schemas that might be processed by external systems or scripts must enforce strict regex pattern constraints (e.g., `^[a-zA-Z0-9_.-]+$`) to prevent injection vulnerabilities.
 **Prevention:** Always add `pattern` constraints to string fields representing IDs, filenames, or other critical identifiers in JSON/YAML schemas.
+## 2026-04-05 - [Critical Security: Missing Pattern Constraint on REQUIRED_REPOSITORY fields]
+**Vulnerability:** The `name` and `initial_state` fields within the `REQUIRED_REPOSITORY` block of `schemas/prp_schema.yml` lacked regex pattern constraints. This could allow malicious actors to inject command injection payloads if these fields are used in downstream shell operations like `git clone` or `git checkout`.
+**Learning:** Any schema field that specifies a repository or git reference must have strict whitelist-based regex pattern constraints to neutralize injection risks when processed by git or shell commands.
+**Prevention:** Always add `pattern` constraints to string fields representing repository names or git refs in JSON/YAML schemas.
