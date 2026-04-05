@@ -1,3 +1,10 @@
+#
+# **Title:** Dummy Test PRP
+# **Version:** 1.0
+# **Purpose:** To serve as a dummy PRP for testing purposes within the repository.
+# **Usage:** This prompt is intended to be used by test suites or developers
+# verifying the validation workflows. It does not perform any real tasks.
+#
 ---
 PRP_ID: DUMMY-TEST-PRP-V1.0
 PRP_NAME: "Dummy Test PRP"
