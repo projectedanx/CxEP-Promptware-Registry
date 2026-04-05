@@ -9,3 +9,11 @@
 ## 2026-04-03 - [Unnecessary Environment Provisioning in CI]
 **Learning:** GitHub Actions workflows often set up environments (e.g., Python) and install dependencies blindly before checking if there's any actual work to do. If a PR deletes files or modifies files outside the scope of a validation step, doing this setup is a total waste of CI time.
 **Action:** Move file change detection steps (`tj-actions/changed-files`) to execute immediately after checkout. Then, use their `any_changed` outputs in `if` conditions to conditionally execute expensive environment setup and dependency installation steps.
+
+## 2026-04-06 - [Redundant Git Tree Traversals in CI]
+**Learning:** Having multiple separate `tj-actions/changed-files` steps to track different file patterns (like one for prompts, one for all yaml) forces GitHub Actions to perform redundant Git tree traversals and spawn separate processes. This adds unnecessary delay and compute overhead.
+**Action:** Consolidate multiple file pattern checks into a single `tj-actions/changed-files` step by using the `files_yaml` input. This maps different patterns to separate outputs within a single execution, saving time.
+
+## 2026-04-06 - [Disk I/O and Network Overhead from Pip Cache in CI]
+**Learning:** Running `pip install` without constraints in ephemeral CI environments downloads caching data to disk and checks pip versions over the network, neither of which provides value in a temporary, single-use container. This wastes disk I/O, network bandwidth, and time.
+**Action:** When running `pip install` in CI environments, always include the `--no-cache-dir` to skip disk writes for caching and `--disable-pip-version-check` to avoid unnecessary network calls for version updates.
