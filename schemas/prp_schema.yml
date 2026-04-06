@@ -171,6 +171,15 @@ properties:
             params:
               type: object
               description: "Optional parameters for the verification method."
+              # 🛡️ Sentinel Security Enhancement: Prevent injection in dynamic check parameters
+              patternProperties:
+                "^(?!message$)[a-zA-Z0-9_.-]+$":
+                  anyOf:
+                    - type: [number, boolean]
+                    - type: string
+                      # Enforce strict regex on string values: no path traversal (..), no flags starting with -
+                      # Blocks shell metacharacters. Allows typical words, URLs, filenames without traversal.
+                      pattern: "^(?!-)(?!.*\\.\\.)[^&|;`$><\\\\]+$"
           required:
             - check_id
             - description
