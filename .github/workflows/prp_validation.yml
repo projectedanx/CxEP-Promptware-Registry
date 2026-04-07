@@ -10,6 +10,13 @@ on:
 permissions:
   contents: read
 
+# ⚡ Bolt Optimization:
+# Cancel redundant in-progress CI runs when new commits are pushed to the same PR.
+# This prevents wasting compute resources and reduces queue wait times.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate-prp:
     runs-on: ubuntu-latest
