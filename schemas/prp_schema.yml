@@ -172,6 +172,11 @@ properties:
               type: object
               description: "Optional parameters for the verification method."
               # 🛡️ Sentinel Security Enhancement: Prevent injection in dynamic check parameters
+              properties:
+                message:
+                  type: string
+                  description: "A message string, not subject to injection constraints as it's typically just logged."
+              additionalProperties: false
               patternProperties:
                 "^(?!message$)[a-zA-Z0-9_.-]+$":
                   anyOf:
