@@ -53,7 +53,8 @@ jobs:
           # Pin exact versions of CLI tools to prevent supply-chain attacks.
           # ⚡ Bolt Optimization:
           # Add --no-cache-dir and --disable-pip-version-check to reduce disk I/O and network overhead.
-          pip install --no-cache-dir --disable-pip-version-check yamllint==1.38.0 check-jsonschema==0.37.1
+          # Add --no-compile to skip generating redundant .pyc bytecode in single-use ephemeral containers.
+          pip install --no-cache-dir --disable-pip-version-check --no-compile yamllint==1.38.0 check-jsonschema==0.37.1
 
       - name: "Validate PRP files against schema"
         if: steps.changed-files.outputs.prp_any_changed == 'true'
