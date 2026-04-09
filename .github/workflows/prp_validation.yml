@@ -66,7 +66,7 @@ jobs:
           printf "%s" "$CHANGED_FILES" | xargs -r -d ',' check-jsonschema --schemafile schemas/prp_schema.yml --
 
       - name: Lint YAML files
-        if: steps.changed-files.outputs.yaml_any_changed == 'true'
+        if: ${{ !cancelled() && steps.changed-files.outputs.yaml_any_changed == 'true' }}
         env:
           ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.yaml_all_changed_files }}
         run: |
