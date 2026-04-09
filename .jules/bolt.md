@@ -21,3 +21,7 @@
 ## 2026-04-08 - [Unnecessary Bytecode Compilation in CI]
 **Learning:** By default, `pip install` compiles Python source files into bytecode (`.pyc` files) to speed up subsequent executions. In an ephemeral CI pipeline where a tool like `yamllint` or `check-jsonschema` is run exactly once and then the container is destroyed, this compilation step is a pure waste of CPU cycles and disk I/O.
 **Action:** Always append `--no-compile` to `pip install` commands in single-use CI environments to skip bytecode generation.
+
+## 2026-04-09 - [Preventing CI "Whack-a-Mole" Bottlenecks]
+**Learning:** Running validation and linting steps strictly sequentially causes jobs to exit early on the first failure. This forces developers into multiple sequential push-wait-fix cycles to discover all errors, which is a massive bottleneck for developer velocity and wastes CI queue time.
+**Action:** When configuring multiple independent validation steps (like schema checks and linting), use `!cancelled() && ...` in `if` conditions on subsequent steps. This ensures all checks run and all feedback is provided in a single CI execution.
