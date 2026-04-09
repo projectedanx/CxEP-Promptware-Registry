@@ -57,6 +57,7 @@ properties:
               The initial state of the repository (e.g., a specific commit hash or branch).
             # 🛡️ Sentinel Security Enhancement: Prevent injection in git refs
             pattern: "^[a-zA-Z0-9_./-]+$"
+        additionalProperties: false
         required:
           - name
           - initial_state
