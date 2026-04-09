@@ -17,3 +17,7 @@
 ## 2026-04-06 - [Disk I/O and Network Overhead from Pip Cache in CI]
 **Learning:** Running `pip install` without constraints in ephemeral CI environments downloads caching data to disk and checks pip versions over the network, neither of which provides value in a temporary, single-use container. This wastes disk I/O, network bandwidth, and time.
 **Action:** When running `pip install` in CI environments, always include the `--no-cache-dir` to skip disk writes for caching and `--disable-pip-version-check` to avoid unnecessary network calls for version updates.
+
+## 2026-04-08 - [Unnecessary Bytecode Compilation in CI]
+**Learning:** By default, `pip install` compiles Python source files into bytecode (`.pyc` files) to speed up subsequent executions. In an ephemeral CI pipeline where a tool like `yamllint` or `check-jsonschema` is run exactly once and then the container is destroyed, this compilation step is a pure waste of CPU cycles and disk I/O.
+**Action:** Always append `--no-compile` to `pip install` commands in single-use CI environments to skip bytecode generation.
