@@ -71,8 +71,8 @@ EXECUTION_PLAN:
       Decompose the GET /user/profile goal into architectural components.
       Define Handoff Artifacts (API Specs, Database Schemas) for the
       Linguist-Coder.
-    persona_mandate: >-
-      Employ Conceptual Blending Theory (CBT) to fuse security protocol
+
+      Persona Mandate: Employ Conceptual Blending Theory (CBT) to fuse security protocol
       (Input 1) with data model (Input 2) to generate a novel API design
       (Blend). [38-40]
   - step: "WRITE (Linguist-Coder Phase)"

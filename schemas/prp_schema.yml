@@ -8,6 +8,7 @@
 # contract.
 
 type: object
+additionalProperties: false
 properties:
   PRP_ID:
     type: string
@@ -32,6 +33,7 @@ properties:
 
   CONTEXT_ENGINEERING:
     type: object
+    additionalProperties: false
     description: >-
       All necessary background, persona definitions, and conceptual anchors
       required for the AI to perform its task. This section is critical for
@@ -67,6 +69,7 @@ properties:
           A list of core concepts that the AI agent should be familiar with.
         items:
           type: object
+          additionalProperties: false
           properties:
             concept:
               type: string
@@ -82,6 +85,7 @@ properties:
 
   CONSTRAINTS_AND_INVARIANTS:
     type: object
+    additionalProperties: false
     description: >-
       The non-negotiable rules, preconditions, postconditions, and invariants
       that govern the execution and final state. These constraints ensure that
@@ -116,6 +120,7 @@ properties:
       A step-by-step plan for how the AI agent should complete the task.
     items:
       type: object
+      additionalProperties: false
       properties:
         step:
           type: string
@@ -133,6 +138,7 @@ properties:
 
   SELF_TEST:
     type: object
+    additionalProperties: false
     description: >-
       A set of executable commands or checks that function as an oracle to
       verify the successful completion of the GOAL. This allows the AI to
@@ -145,6 +151,7 @@ properties:
           verify its work.
         items:
           type: object
+          additionalProperties: false
           properties:
             check_id:
               type: string
@@ -198,8 +205,24 @@ properties:
       - checks
       - success_condition
 
+
+  OUTPUT_SCHEMA:
+    type: object
+    additionalProperties: false
+    description: >-
+      The expected structural format that the AI agent should return.
+    properties:
+      type:
+        type: string
+      properties:
+        type: object
+        additionalProperties: true
+    required:
+      - type
+
   REFLEXIVE_CHECK:
     type: object
+    additionalProperties: false
     description: >-
       A meta-prompt for the AI to perform self-assessment and check for
       cognitive biases or adherence to principles. This helps to ensure that
