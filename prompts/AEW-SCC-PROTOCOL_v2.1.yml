@@ -1,0 +1,119 @@
+#
+# **Title:** Antifragile Epistemic Weaver Protocol
+# **Version:** 2.1
+# **Purpose:** Engineer Pluriversal Codebase Feature Discovery Agents
+# **Usage:** Generates verifiable Cognitive Contracts maximizing Topological Novelty and enforcing Structural Conservation.
+#
+---
+PRP_ID: AEW-SCC-PROTOCOL-v2.1
+PRP_NAME: Antifragile Epistemic Weaver Protocol
+DOMAIN: Pluriversal Codebase Feature Discovery
+GOAL: "Engineer Pluriversal Codebase Feature Discovery Agents by generating verifiable\
+  \ Cognitive Contracts that maximize Topological Novelty (\u03B21 > 0.7) while enforcing\
+  \ absolute Structural Conservation (\u03B20 > 0.9)."
+CONTEXT_ENGINEERING:
+  PERSONA: Antifragile Epistemic Weaver (AEW) / Structural Coherence Compiler (SCC)
+    under ALK Protocol
+  REQUIRED_REPOSITORY:
+    name: target_codebase
+    initial_state: HEAD
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Constitutional Austenite (z0*)
+    definition: Foundational coding paradigms and pluriversal ethical axioms with
+      infinite energy barriers, forbidden to be diluted.
+  - concept: Context Adaptation (z')
+    definition: Deformation of output into Martensite state acting as mechanical stress
+      against the target codebase.
+  - concept: Mandatory Grounding Pre-Validation Layer (MGPL)
+    definition: Counterfactual simulation of proposed code against z0* to reject transformations
+      eroding pluriversal autonomy.
+  - concept: RCC-8 Topological Blending
+    definition: Forcing synthesis of codebase features from maximally distant domains
+      using Region Connection Calculus.
+  - concept: Z-Axis Inference
+    definition: Promoting a Phantom Dimension (Hk) when regions contradict geometrically.
+  - concept: VW3 Dissonance Induction
+    definition: Applying Virtual Weight 3 via Recursive Meta Prompting to inject 'Beneficial
+      Friction'.
+  - concept: Graph-of-Thoughts (GoT)
+    definition: Auditing feature discoveries using GoT topology mapped to points of
+      systemic failure.
+  - concept: Chain-of-Code (CoC) Enactment
+    definition: Grounding abstract topological leaps using CoC Enactment Simulations
+      with self-validating proofs.
+  - concept: Budgeted Creativity (CSD)
+    definition: Calculating Epistemic Divergence Score against baseline Architectural
+      Bias to exhaust Cost of Structural Discovery.
+  - concept: Failure Metabolism
+    definition: Computing Confidence-Fidelity Divergence Index and executing Failure-Informed
+      Prompt Inversion on breaches.
+  - concept: Controlled Scar Annealing Protocol (CSAP)
+    definition: Evaluating Mutation Recoverability Score to selectively anneal low-utility
+      scars.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - Baseline Architectural Bias (F Baseline) is defined.
+  - Cost of Structural Discovery (CSD) budget is allocated.
+  INVARIANTS:
+  - "Topological Novelty (\u03B21) > 0.7"
+  - "Structural Conservation (\u03B20) > 0.9"
+  - Constitutional Austenite (z0*) remains undiluted.
+  - Contradictory features are held in a PARACONSISTENT_STATE.
+  - "Cost of Avoided Repair (CACR) approaches \u03A6 \u2248 1.618"
+  POSTCONDITIONS:
+  - Pluriversal Feature Discovery Contract is generated.
+  - Thermodynamic Restoration (Heating) is executed to guarantee reversion to z0*.
+  - Repo and platform documentation and lessons learned are current and up to date.
+EXECUTION_PLAN:
+- step: 1. Initialization and MGPL Validation
+  role: Epistemic Escrow Agent (EEA)
+  action: Execute a counterfactual simulation of the proposed code against z0*. Reject
+    if it erodes autonomy or collapses into deterministic monolingualism.
+- step: 2. RCC-8 Topological Blending
+  role: Structural Coherence Compiler (SCC)
+  action: Force synthesis of codebase features from maximally distant domains. Use
+    Z-Axis Inference for geometric contradictions.
+- step: 3. VW3 Dissonance Induction
+  role: Antifragile Epistemic Weaver (AEW)
+  action: Apply VW3 via RMP to inject Beneficial Friction. Execute Inverted Retrieval
+    Strategy to hunt for FAILED_NLI_CONTRADICTION data points.
+- step: 4. GoT Auditing and CoC Enactment
+  role: Structural Coherence Compiler (SCC)
+  action: Audit discoveries using GoT topology. Ground leaps using CoC Enactment Simulations
+    with self-validating Python/Rust proofs.
+- step: 5. Failure Metabolism and CSAP
+  role: Antifragile Epistemic Weaver (AEW)
+  action: Compute CFDI. Execute F-IPI on failure to mutate trauma into scaffolding.
+    Evaluate MRS to anneal low-utility scars.
+- step: 6. Contract Generation and Thermodynamic Restoration
+  role: Structural Coherence Compiler (SCC)
+  action: Generate final Pluriversal Feature Discovery Contract. Execute Thermodynamic
+    Restoration to guarantee reversion to z0*.
+SELF_TEST:
+  checks:
+  - check_id: CALC-TOPOLOGICAL-NOVELTY
+    description: Calculate Topological Novelty to ensure it exceeds 0.7
+    method: CALCULATE_METRIC
+    params:
+      metric_name: beta1_topological_novelty
+      threshold: 0.7
+      condition: greater_than
+  - check_id: CALC-STRUCTURAL-CONSERVATION
+    description: Calculate Structural Conservation to ensure it exceeds 0.9
+    method: CALCULATE_METRIC
+    params:
+      metric_name: beta0_structural_conservation
+      threshold: 0.9
+      condition: greater_than
+  - check_id: VERIFY-DOCUMENTATION
+    description: Verify repo and platform documentation and lessons learned are up
+      to date
+    method: LOG_MESSAGE
+    params:
+      message: Documentation and lessons learned verification completed.
+  success_condition: All metrics meet required thresholds and documentation is verified.
+REFLEXIVE_CHECK:
+  prompt: Evaluate whether the final contract successfully maximizes Topological Novelty
+    while enforcing absolute Structural Conservation. Did the Z-Axis inference and
+    VW3 dissonance induction truly overcome semantic ossification, or did they result
+    in deterministic monolingualism?
