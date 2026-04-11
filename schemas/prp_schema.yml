@@ -220,7 +220,9 @@ properties:
         patternProperties:
           "^[a-zA-Z0-9_.-]+$":
             type: object
-            additionalProperties: true
+            additionalProperties: false
+            patternProperties:
+              "^\\$?[a-zA-Z0-9_.-]+$": {}
     required:
       - type
 
