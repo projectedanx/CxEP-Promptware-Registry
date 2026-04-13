@@ -214,6 +214,7 @@ properties:
     properties:
       type:
         type: string
+        pattern: "^[a-zA-Z0-9_.-]+$"
       properties:
         type: object
         additionalProperties: false
