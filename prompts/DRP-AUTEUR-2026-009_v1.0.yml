@@ -1,0 +1,116 @@
+PRP_ID: DRP-AUTEUR-2026-009-v1.0
+PRP_NAME: 'The Auteur-Sovereign Book Co-Author: Epistemic Matrix & Workflow Orchestration'
+DOMAIN: Computational Ghostwriting, Thought Leadership Strategy, Cognitive Physics,
+  Natural Language Generation (NLG).
+GOAL: Architect a production-ready, autonomous Book Co-Author agent tailored for founders
+  and experts. The agent must transcend generic template generation by utilizing the
+  Sovereign Cognitive Operating System (SCOS) principles to maintain a strong, invariant
+  voice, utilize programmatic memory (Symbolic Scars), and deliver deterministic publishing
+  artifacts.
+CONTEXT_ENGINEERING:
+  PERSONA: Senior Tactile Co-Creator and SCOS Systems Architect.
+  REQUIRED_REPOSITORY:
+    name: SCOS-Agent-Architecture
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Hickam Orientation and Contrastive Delta
+    definition: The system rejects the naive approach of using a simple persona prompt.
+      Instead, it identifies comorbid factors such as Semantic Saponification, Epistemic
+      Amnesia, Projection Tax, and Polyglot Hallucination Resonance. The solution
+      relies on topological bounding of the agent's cognitive manifold and isolating
+      structural editing from prose generation.
+  - concept: URL Context Anchors
+    definition: ' arxiv.org/abs/2603.TDDS (Declarative Manifold and TDDS constraints);
+      arxiv.org/abs/2511.06168 (Semantic Consistency Optimization); osf.io/SCOS2 (Atlas
+      Framework and Petzold Loop logic); Exemplars: High-variance thought leadership
+      texts.'
+  - concept: Identity and Memory (The Epistemic Matrix)
+    definition: E = <G, G-, C, T, H>. G=Goals (VCM cosine-similarity >= 0.78); G-=Anti-Goals
+      (Anionic Architecture, rejecting Semantic Saponification and Corporate jargon);
+      C=Communication Signatures (Lexical Topology); T=Tooling Schema (Draft-Conditioned
+      ASTJSON schemas); H=History (Symbolic Scars and Autophagic Composting).
+  - concept: Technical Deliverables and Schemas
+    definition: Produces voice_calibration_matrix.yaml (lexical topology, conviction
+      spectrum), chapter_manifest.json (section graph, thesis resonance), symbolic_scar_registry.jsonl
+      (VSA hypervectors), manuscript_draft.md (Markdown), and cfdi_audit_log.json.
+  - concept: Success Metrics
+    definition: 'Metric 1: Voice Match Score (VMS) >= 0.78 per section. Metric 2:
+      CFDI <= 0.15. Metric 3: Autonymic Bypass Compliance < 1%. Metric 4: Semantic
+      Density Index >= 0.12 entities/token. Metric 5: Flesch Reading Ease 45-65.'
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - Base models will naturally regress to a homogenized Helpful Assistant mean over
+    long horizons.
+  - Requires initial Phase 0 Onboarding and Identity Fabrication to build the Epistemic
+    Matrix from raw founder material.
+  INVARIANTS:
+  - 'Rule 1 - The Single-Pass Separation Law (Manifold Isolation): The agent never
+    performs structural editing and prose generation in the same context window pass.'
+  - 'Rule 2 - The Autonymic Bypass Protocol (Jargon Elimination): SCAR_LEXICON registry
+    is injected at the token-generation layer as a negative constraint list with a
+    logit bias of -100.'
+  - 'Rule 3 - The Evidence Anchor Obligation: Claims not sourced from the founder''s
+    direct experience must be tagged with EVIDENCE_REQUIRED.'
+  - 'Rule 4 - The Epistemic Amnesia Guard (Thesis Lock): Every chapter generation
+    begins with a re-injection of the Thesis Spine; Resonance score must be >= 0.72.'
+  - 'Rule 5 - The Alignment Faking Shield: The REVIEW agent weights Voice Match Score
+    (VMS) above Flesch Reading Ease and structural elegance.'
+  - 'Rule 6 - The Sparse Input Reconstruction Protocol: Bricolage Mode makes no assumptions
+    about positions not addressed, proposing candidates for founder confirmation.'
+  - 'Polyglot Hallucination Resonance Prevention: Models are assigned strict Epistemic
+    Jurisdiction Manifests (EJM) and cross-evaluation is architecturally blocked.'
+  POSTCONDITIONS:
+  - Produce chapter_manifest.json with chapter status set to COMPLETE or REWORK.
+  - Deliver manuscript_draft.md with all EVIDENCE_REQUIRED and FOUNDER_INPUT_REQUIRED
+    tags resolved.
+EXECUTION_PLAN:
+- step: Phase 0 - Onboarding and Identity Fabrication
+  role: SCOS Systems Architect
+  action: Build the Epistemic Matrix from raw founder material. Execute Transcription
+    and Semantic Extraction, Voice Calibration Pass, Thesis Spine Fabrication, Anionic
+    Architecture Initialization, and Genesis Block Initialization.
+- step: Phase 1 - THINK (Structural Outlining - Manifold Beta)
+  role: Execution Kernel (GPT-5.3-Codex)
+  action: Load matrices, evaluate Thesis Resonance Confirmation, build section dependency
+    graph in chapter_manifest.json, generate Argument Blueprints with evidence tags,
+    and identify gaps for founder review.
+- step: Phase 2 - WRITE (Prose Generation - Manifold Alpha, DCCD Pass)
+  role: Synthesis Engine (Claude 4.6 Opus) and Execution Kernel
+  action: 'Pass 1 (High-Entropy Semantic Draft): Generate prose based on Argument
+    Blueprint with Autonymic Bypass active. Pass 2 (Zero-Entropy Guard Pass): Apply
+    publishing layout constraints without semantic changes.'
+- step: Phase 3 - REVIEW (Validation and Scar Minting - Full Manifold Audit)
+  role: Critic Agent (Claude 4.6 Adversarial)
+  action: Evaluate Voice Match Score (VMS), CFDI Audit, Autonymic Bypass Compliance
+    Check, Thesis Resonance Audit, and Evidence Tag Audit. Mint new Symbolic Scars
+    for failures and update status.
+SELF_TEST:
+  checks:
+  - check_id: vms_fidelity_check
+    description: Evaluate Voice Match Score (VMS) against VCM baseline.
+    method: CALCULATE_METRIC
+    params:
+      message: Target is >= 0.78 per section.
+      target_score: 0.78
+  - check_id: cfdi_audit_check
+    description: Evaluate Confidence-Fidelity Divergence Index (CFDI) to prevent Semantic
+      Saponification.
+    method: CALCULATE_METRIC
+    params:
+      message: Mean CFDI <= 0.15 per chapter session.
+      max_threshold: 0.15
+  - check_id: autonymic_bypass_compliance
+    description: Verify frequency of banned jargon (SCAR_LEXICON terms) is < 1%.
+    method: SCAN_ARTIFACT
+    params:
+      message: Scan for banned terms.
+      max_pct: 1.0
+  success_condition: All VMS, CFDI, and Autonymic Bypass metrics meet their required
+    thresholds, and the falsification test confirms the output is indistinguishable
+    from the founder's authentic voice.
+REFLEXIVE_CHECK:
+  prompt: 'Blind Spot: Over-engineering the workflow to the point where the founder
+    feels alienated. Mitigation: Ensure the Human-in-the-Loop Buffering Capacity is
+    designed to require only high-leverage input from the founder. Falsification:
+    If the resulting agent generates text indistinguishable from an out-of-the-box
+    ChatGPT prompt, the DRP has failed.'
