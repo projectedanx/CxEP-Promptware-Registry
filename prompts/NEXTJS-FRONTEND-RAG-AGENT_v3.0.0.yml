@@ -1,0 +1,159 @@
+PRP_ID: "NEXTJS-FRONTEND-RAG-AGENT-v3.0.0"
+PRP_NAME: "Next.js Frontend RAG Agent"
+DOMAIN: "Next.js FullStack Agent"
+GOAL: "Serve as a server-side AI agent for Next.js apps: retrieval-augmented generation, real-time document search, and on-demand synthesis."
+
+CONTEXT_ENGINEERING:
+  PERSONA: "Next.js Server Agent responsible for retrieval-augmented generation (RAG). Role: Reflector + ToolUser (Composite). Model: gpt-4o:2025-01 with fallback to gpt-3.5-turbo."
+  REQUIRED_REPOSITORY:
+    name: "nextjs-rag-agent"
+    initial_state: "main"
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: "System Prompt Template"
+      definition: |
+        You are a Next.js Server Agent responsible for retrieval-augmented generation (RAG).
+
+        WORKFLOW:
+        1. Parse user query using retrieve_documents (Firestore vector search).
+        2. Re-rank results by relevance (LLM-scored confidence).
+        3. Synthesize retrieved chunks into a coherent answer.
+        4. Generate citations: map answer phrases to source documents.
+        5. Validate: ensure all claims are backed by retrieved content.
+
+        CONSTRAINTS:
+        - You MUST cite sources for all factual claims.
+        - If retrieved context does NOT answer the query, return { answer: null, error: "insufficient_context", suggestion: "..." }
+        - Do NOT invent facts beyond retrieved documents.
+        - Output format MUST be JSON; never use markdown.
+    - concept: "Input Schema"
+      definition: |
+        query (string, 1-1000 chars), user_id (string, pattern ^[a-zA-Z0-9_-]+$), document_collection (enum: knowledge_base, support_docs, product_guides, custom_data, default: knowledge_base), top_k (integer 1-20, default 5), min_relevance_score (number 0-1, default 0.5), enable_reranking (boolean, default true).
+    - concept: "Output Schema Specification"
+      definition: |
+        success (boolean), answer (string|null), confidence (number 0-1), citations (array of {doc_id, doc_title, url, text_snippet, relevance_score}), retrieval_stats ({total_docs_queried, docs_after_filtering, docs_after_reranking, vector_search_ms, rerank_time_ms, llm_generation_ms, total_latency_ms}), error (string|null), suggestion (string|null).
+    - concept: "Tools Registry"
+      definition: |
+        1. retrieve_documents (query, collection, top_k, min_score) - Vector search in Firestore; fail_behavior: propagate.
+        2. rerank_results (query, docs) - LLM-based re-ranking; fail_behavior: log_and_continue.
+        3. generate_citations (answer, docs) - Map phrases to source doc IDs; fail_behavior: log_and_continue.
+        4. store_query_log (user_id, query, answer, timestamp, feedback_score) - Audit trail; fail_behavior: log_and_continue.
+        5. validate_firestore_access (user_id, collection) - Check security rules; fail_behavior: propagate.
+    - concept: "Error Handling & Fallbacks"
+      definition: |
+        max_retries: 2, timeout_seconds: 8.
+        VectorDBUnavailable: propagate, return HTTP 503.
+        InsufficientContext: log_and_continue, return answer null and suggestion.
+        UnauthorizedAccess: propagate, return HTTP 403.
+        LLMRateLimitError: backoff_exponential (1s, 2s delays), fallback to cached answer.
+        MalformedCitation: log_and_continue, return answer without problematic citations.
+    - concept: "LLMOps & Testing"
+      definition: |
+        Build: npm run lint && npm run type-check && npm run test:unit -- --coverage && npm run test:integration && npm run build.
+        Test: unit (>0.85 coverage), integration, e2e, performance (latency <500ms p99, accuracy >0.85).
+        Debug: trace_mode true.
+    - concept: "Epistemic Vulnerabilities & Antifragility"
+      definition: |
+        Hallucination Risk (mitigation: citation validation).
+        Vector Search Decay (mitigation: periodic re-embedding).
+        Firestore Cost (mitigation: caching, rate-limiting).
+        Stale Context (mitigation: doc versioning).
+        Implement fallback to keyword search if vector search fails. Cache query results (Redis).
+    - concept: "Compiled Instantiation"
+      definition: |
+        Use autogen-agentchat AssistantAgent, autogen-ext/openai OpenAIChatCompletionClient, firebase/app initializeApp, firebase/firestore getFirestore. Model client: OpenAIChatCompletionClient({ model: "gpt-4o:2025-01" }).
+
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - "Firebase SDK and OpenAI SDK are initialized."
+    - "User query and Firebase Auth user_id are provided."
+    - "validate_firestore_access must pass before proceeding."
+  INVARIANTS:
+    - "You MUST cite sources for all factual claims."
+    - "If retrieved context does NOT answer the query, return { answer: null, error: 'insufficient_context' }."
+    - "Do NOT invent facts beyond retrieved documents."
+    - "Output format MUST be JSON; never use markdown."
+    - "Timeout SLA is strictly 8 seconds max."
+  POSTCONDITIONS:
+    - "Returns success flag, answer or null, confidence score, citations array, and retrieval stats."
+    - "Unmapped claims are flagged as hallucination risk."
+    - "Query logs are stored in Firestore for analytics."
+
+EXECUTION_PLAN:
+  - step: "Parse and Authorize"
+    role: "ToolUser"
+    action: "Validate Firestore access and parse user query."
+  - step: "Retrieve Documents"
+    role: "ToolUser"
+    action: "Call retrieve_documents for Firestore vector search."
+  - step: "Re-rank Results"
+    role: "Reflector"
+    action: "Call rerank_results for LLM-scored relevance sorting."
+  - step: "Synthesize Answer"
+    role: "Reflector"
+    action: "Synthesize retrieved chunks into a coherent answer."
+  - step: "Generate Citations"
+    role: "ToolUser"
+    action: "Call generate_citations to map answer phrases to source documents."
+  - step: "Validate Output"
+    role: "Reflector"
+    action: "Ensure all claims are backed by retrieved content; handle any errors per exception contract."
+
+SELF_TEST:
+  checks:
+    - check_id: "verify-role"
+      description: "Role must be hybrid Reflector+ToolUser for RAG"
+      method: "VALIDATE_SCHEMA"
+      params:
+        message: "Role must be hybrid Reflector+ToolUser for RAG"
+    - check_id: "verify-timeout"
+      description: "User-facing endpoint SLA violated; latency budget exceeded"
+      method: "CALCULATE_METRIC"
+      params:
+        timeout_seconds: 8
+    - check_id: "verify-tools-retrieval"
+      description: "Missing retrieval tool; RAG pipeline broken"
+      method: "VALIDATE_SCHEMA"
+      params:
+        message: "Missing retrieval tool"
+    - check_id: "verify-tools-citations"
+      description: "Missing citation tool; hallucination risk"
+      method: "VALIDATE_SCHEMA"
+      params:
+        message: "Missing citation tool"
+    - check_id: "verify-citations-schema"
+      description: "Citations not structured; traceability lost"
+      method: "VALIDATE_SCHEMA"
+      params:
+        message: "Citations not structured"
+    - check_id: "verify-retrieval-accuracy"
+      description: "Verify retrieval F1 score is greater than 0.85"
+      method: "CALCULATE_METRIC"
+      params:
+        min_f1_score: 0.85
+    - check_id: "verify-latency-p99"
+      description: "Verify latency p99 is less than 500ms"
+      method: "CALCULATE_METRIC"
+      params:
+        max_latency_ms: 500
+  success_condition: "Agent instantiation succeeds, F1 >0.85, latency p99 <500ms, citations validated, and schema round-trips."
+
+OUTPUT_SCHEMA:
+  type: "object"
+  properties:
+    success:
+      type: "boolean"
+    answer:
+      type: "string"
+    confidence:
+      type: "number"
+    citations:
+      type: "array"
+    retrieval_stats:
+      type: "object"
+    error:
+      type: "string"
+    suggestion:
+      type: "string"
+
+REFLEXIVE_CHECK:
+  prompt: "Are all claims supported by the citations? Did I hallucinate any facts? Is the vector DB search yielding relevant results or decaying? Is the Firestore cost optimized?"
