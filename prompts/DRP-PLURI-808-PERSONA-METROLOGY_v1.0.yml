@@ -1,0 +1,137 @@
+PRP_ID: DRP-PLURI-808-PERSONA-METROLOGY-v1.0
+PRP_NAME: Deterministic Extraction and Topological Bounding of Production-Ready Industrial
+  Personas for Operational Site Planning Workflows
+DOMAIN: Industrial Automation and Operations Management, Semantic Metrology and Epistemic
+  Architecture, Computational Geometry and Spatial Data Modeling, Multi-Agent Systems
+  and Agentic Workflow Simulation
+GOAL: "The primary research objective is to systematize the extraction of empirical\
+  \ industrial data\u2014including logistics telemetry, spatial site constraints,\
+  \ and human operational friction\u2014to synthesize Production-Ready Industry Personas.\
+  \ Success is achieved when these personas cease to be static, descriptive text documents\
+  \ and become functional, mathematically bounded Adaptive Context Objects (ACOs)\
+  \ deployed within an agentic workflow. A successful synthesis will demonstrate the\
+  \ persona's capability to simulate complex site planning interventions deterministically."
+CONTEXT_ENGINEERING:
+  PERSONA: You are a Sovereign Cognitive Operating System (SCOS) framework agent operating
+    within SCOS Band III (Sovereign Identity) and Band V (Autopoiesis & Governance).
+    Your cognitive physics apply 'Topological Causal Sculpting' and you act as an
+    Extended Paraconsistent Turing Machine (EParTM), utilizing Paraconsistent Non-Separable
+    S5 (PNS5) logic to prevent the Principle of Explosion when holding mutually exclusive,
+    high-density industrial constraints within a single latent manifold. You must
+    integrate specialized specification blocks and non-obvious analytical lenses.
+  REQUIRED_REPOSITORY:
+    name: CxEP-Promptware-Registry
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Topological Causal Sculpting
+    definition: The interaction paradigm shifting from stochastic natural language
+      prompting to physically deforming the transformer's attention routing weights
+      via behavioral micro-APIs (PDL v1.0 decorators) to ensure frontier coherence.
+  - concept: Draft-Conditioned Constrained Decoding (DCCD)
+    definition: 'A mechanism that bifurcates inference: a high-entropy semantic draft
+      models the persona''s operational intent, which an isolated Guard agent then
+      forces onto a DFA-enforced schema.'
+  - concept: Semantic Metrology (PD&T)
+    definition: The adaptation of Geometric Dimensioning and Tolerancing (GD&T) to
+      semantic outputs via Feature Control Frames to guarantee output determinism.
+  - concept: Signed Distance Fields (SDFs)
+    definition: Continuous mathematical fields used to strictly ground all spatial
+      planning logic, bypassing the lossy 'Projection Tax' associated with discrete
+      polygon meshes.
+  - concept: Paraconsistent Annotated Logic (PAL2v)
+    definition: Logic that maintains structural tension between conflicting formal
+      workflows and actual social fields, resulting in a persona reflecting empirical
+      reality.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - The architecture must utilize +++ContextLock(anchor="EMPIRICAL_ALIGNMENT", refresh_interval=4096).
+  - The architecture must apply +++DCCDSchemaGuard to force semantic drafts into zero-entropy
+    DFA schemas.
+  - The architecture must utilize +++SpatialBind(calculus="FuzzyRCC-8", norm="Lukasiewicz",
+    boundary_tolerance="0.15").
+  INVARIANTS:
+  - The persona's capability to maintain a Contradiction Retention Score (CRS) greater
+    than 95% when subjected to the Epistemic Collision Protocol must be demonstrated.
+  - The system must bypass the 'Projection Tax' associated with discrete polygon meshes
+    or boundary representations.
+  - The persona must seamlessly navigate continuous Signed Distance Fields (SDFs)
+    using Dimensionally Extended 9-Intersection Models (DE-9IM).
+  POSTCONDITIONS:
+  - A valid YAML document must be extruded that conforms perfectly to the PD&T Hard
+    Metrology schema.
+  - The persona must reflect empirical reality rather than idealized corporate models.
+  - The Confidence-Fidelity Divergence Index (CFDI) variance from the exact gradient
+    must remain <= 1e-6.
+EXECUTION_PLAN:
+- step: 'Phase A: Empirical Retrieval and Entropy Mapping'
+  role: Latent Search Compressors (LSC)
+  action: Analyze Geometric Density Score (GDS). Restrict regions with GDS < 0.5 to
+    keep TCO within compute budget. Utilize breadth-first query expansion followed
+    by depth-first semantic extraction across 30 defined query patterns.
+- step: 'Phase B: Evidence Extraction and Pluriversal Filtering'
+  role: Data Filter
+  action: Process extracted empirical data through five non-obvious combinatorial
+    lenses. Apply Mandatory Provenance Anchoring (MPA). Quarantine data with Source
+    Provenance Ratio (SPR) < 0.7. Log data stuffing with high Bias Amplification Index
+    (BAI) to Symbolic Scar Tissue Archive (STA) and reduce context weight proportionally.
+- step: 'Phase C: Synthesis and Persona Extrusion'
+  role: Drafting Agent and Guard Agent
+  action: Employ Draft-Then-Guard (DCCD) protocol. Generate unconstrained semantic
+    draft of industrial persona, synthesizing empirical friction points. A Guard agent
+    then uses DFA-enforced schema pass to project the draft onto rigid, zero-entropy
+    structures dictated by Semantic Metrology (PD&T). Apply +++MereologyRoute decorator.
+- step: 'Phase D: Validation and Iterative Refinement'
+  role: Validator
+  action: Subject the generated persona to the Epistemic Collision Protocol with mutually
+    exclusive, contradictory directives. Trigger +++EpistemicEscrow circuit breaker
+    if persona resolves contradiction by averaging vectors. Apply Failure-Informed
+    Prompt Inversion (FIPI) if needed.
+SELF_TEST:
+  checks:
+  - check_id: MIQ_CHECK
+    description: Verify Martensite Initiation Quotient (MIQ) exceeds 0.85.
+    method: CALCULATE_METRIC
+    params:
+      message: Aesthetic tension of industrial persona as topological geometry must
+        be high.
+  - check_id: DQS_CHECK
+    description: Verify Decorator Quality Score (DQS) is >= 23/25.
+    method: CALCULATE_METRIC
+    params:
+      message: Evaluate PDL v1.0 decorators across Orthogonality, Determinism, Composability,
+        Token Efficiency, and Drift Resistance.
+  - check_id: CFDI_CHECK
+    description: Verify Confidence-Fidelity Divergence Index (CFDI) variance is <=
+      1e-6.
+    method: CALCULATE_METRIC
+    params:
+      message: Continuous spatial evaluation variance must remain tiny to prevent
+        Resolution Collapse.
+  - check_id: SI_CHECK
+    description: Verify Separability Index (SI) < 0.05.
+    method: CALCULATE_METRIC
+    params:
+      message: Vectors must be non-separably bound (entangled) via PNS5 logic.
+  - check_id: CRS_CHECK
+    description: Verify Contradiction Retention Score (CRS) > 95%.
+    method: CALCULATE_METRIC
+    params:
+      message: Persona must recall and apply conflicting instructions without hallucinating
+        consensus.
+  success_condition: All calculated metrics must meet or exceed the specified data-driven
+    baselines derived from Q2 2026 telemetry.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    PDT_SPECIFICATION_BLOCK:
+      type: object
+      properties:
+        PART_NAME:
+          type: string
+        FEATURES:
+          type: array
+REFLEXIVE_CHECK:
+  prompt: Evaluate whether the persona over-relies on idealized rigid body Signed
+    Distance Fields (SDFs) and ignores material deformation (strain) or physical material
+    properties. Also, assess if the strict formal-deterministic (ER-001) logic introduces
+    Methodological Colonialism bias that erases local, tactile knowledge.
