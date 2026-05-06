@@ -18,18 +18,18 @@ This checklist ensures the rigorous application of the VULCAN DRP and the Emerge
 - [x] Ensure `OUTPUT_SCHEMA` defines the structure for the ADR, C4 Model, and Context Map.
 
 ## 3. Emergence Strategy Definition
-- [x] Create the `vulcan_emergence_plan/strategy.md` document.
+- [x] Create the `VULCAN_emergence_plan/strategy.md` document.
 - [x] Clearly articulate the isolated value of AI (constraint enforcement, DAG analysis, high-dimensional failure mapping).
 - [x] Clearly articulate the isolated value of the Human (intent, trade-off valuation, political context).
 - [x] Define the "Inversion Strategy": AI constrains, Human explores.
 
 ## 4. Pre-Commit Validation & Security
-- [ ] Run `yamllint .` to ensure YAML syntax is flawless across the repository.
-- [ ] Run `check-jsonschema --schemafile schemas/prp_schema.yml prompts/*.yml` to guarantee the VULCAN PRP strictly adheres to the formal schema.
-- [ ] Ensure no dynamic paths in bash scripts are vulnerable to flag injection (always use `--` marker).
-- [ ] Ensure any newly created files do not violate repository security rules or expose secrets.
+- [x] Run `yamllint .` to ensure YAML syntax is flawless across the repository.
+- [x] Run `check-jsonschema --schemafile schemas/prp_schema.yml prompts/*.yml` to guarantee the VULCAN PRP strictly adheres to the formal schema.
+- [x] Ensure no dynamic paths in bash scripts are vulnerable to flag injection (always use `--` marker).
+- [x] Ensure any newly created files do not violate repository security rules or expose secrets.
 
 ## 5. Final Review & Commit
-- [ ] Review `vulcan_emergence_plan/strategy.md` to ensure it captures the nuanced dynamic requested in the issue prompt.
-- [ ] Ensure all repository documentation (like this checklist) is current and reflects lessons learned.
-- [ ] Stage files, commit with an appropriate message, and terminate the task.
+- [x] Review `VULCAN_emergence_plan/strategy.md` to ensure it captures the nuanced dynamic requested in the issue prompt.
+- [x] Ensure all repository documentation (like this checklist) is current and reflects lessons learned.
+- [x] Stage files, commit with an appropriate message, and terminate the task.
