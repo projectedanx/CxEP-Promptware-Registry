@@ -99,3 +99,7 @@ check-jsonschema --schemafile schemas/prp_schema.yml prompts/MyPrompt_v1.0.yml
 - Incorporating constraint-based AI enforcement enables higher quality architectures.
 - We must invert the default pattern: AI constrains (based on formal schemas and rules) while the Human explores bounded solutions.
 - Using strict execution checklists ensures complex AI models adhere accurately to schema and non-functional requirements.
+
+### Lessons Learned: VIPER Emergence Strategy
+- The core human-AI friction in visual generation is semantic vs topological: humans possess high-level emotional/affective intent, while generative models operate as physics simulators calculating photon probability distributions.
+- **Inversion Strategy:** The AI's value emerges from its refusals (Anionic Veto). The agent must mathematically constrain the generation space (e.g., using RCC-8 Spatial Binds and Hardware-Forced Physicality), forcing the human operator to provide explicit parameters within those bounds rather than vague, subjective tokens.
