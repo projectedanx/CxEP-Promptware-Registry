@@ -94,3 +94,8 @@ check-jsonschema --schemafile schemas/prp_schema.yml prompts/MyPrompt_v1.0.yml
 - **Executable Contract**: A formal, machine-readable specification that functions as a binding agreement between the operator and the AI agent.
 - **Semantic Integrity Constraint (SIC)**: A declarative rule imposing a non-negotiable correctness condition on the AI's output, preventing drift and hallucination.
 - **Promptware**: Formal, version-controlled artifacts (PRPs, DRPs) treated with the same rigor as source code.
+
+### Lessons Learned: Emergence Strategy Application
+- Incorporating constraint-based AI enforcement enables higher quality architectures.
+- We must invert the default pattern: AI constrains (based on formal schemas and rules) while the Human explores bounded solutions.
+- Using strict execution checklists ensures complex AI models adhere accurately to schema and non-functional requirements.
