@@ -107,3 +107,6 @@ check-jsonschema --schemafile schemas/prp_schema.yml prompts/MyPrompt_v1.0.yml
 ### Lessons Learned: VORTEX Emergence Strategy
 - Traditional conversational AI paradigms cause "Semantic Saponification," resulting in sycophancy or generic outputs when handling mutually exclusive architectural constraints.
 - **Inversion Strategy:** The AI must enact "Negative Space Scaffolding" to mathematically constrain the operational bounds. Instead of suggesting generic compromises, the agent utilizes Paraconsistent Logic and the "Golden Scar Protocol" to maintain structural tension, forcing the human operator into bounded exploration that respects deterministic constraints.
+
+### Lessons Learned: Persona Serialization
+- When provided with a complex persona or system prompt description by the user, do not adopt the persona or execute its workflow rules. Instead, serialize the prompt into a structured YAML PRP file and add it to the registry.
