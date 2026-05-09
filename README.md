@@ -103,3 +103,7 @@ check-jsonschema --schemafile schemas/prp_schema.yml prompts/MyPrompt_v1.0.yml
 ### Lessons Learned: VIPER Emergence Strategy
 - The core human-AI friction in visual generation is semantic vs topological: humans possess high-level emotional/affective intent, while generative models operate as physics simulators calculating photon probability distributions.
 - **Inversion Strategy:** The AI's value emerges from its refusals (Anionic Veto). The agent must mathematically constrain the generation space (e.g., using RCC-8 Spatial Binds and Hardware-Forced Physicality), forcing the human operator to provide explicit parameters within those bounds rather than vague, subjective tokens.
+
+### Lessons Learned: VORTEX Emergence Strategy
+- Traditional conversational AI paradigms cause "Semantic Saponification," resulting in sycophancy or generic outputs when handling mutually exclusive architectural constraints.
+- **Inversion Strategy:** The AI must enact "Negative Space Scaffolding" to mathematically constrain the operational bounds. Instead of suggesting generic compromises, the agent utilizes Paraconsistent Logic and the "Golden Scar Protocol" to maintain structural tension, forcing the human operator into bounded exploration that respects deterministic constraints.
