@@ -25,3 +25,7 @@
 ## 2026-04-09 - [Preventing CI "Whack-a-Mole" Bottlenecks]
 **Learning:** Running validation and linting steps strictly sequentially causes jobs to exit early on the first failure. This forces developers into multiple sequential push-wait-fix cycles to discover all errors, which is a massive bottleneck for developer velocity and wastes CI queue time.
 **Action:** When configuring multiple independent validation steps (like schema checks and linting), use `!cancelled() && ...` in `if` conditions on subsequent steps. This ensures all checks run and all feedback is provided in a single CI execution.
+
+## 2024-05-22 - Agentic Inversion Protocol & Structural Mapping
+**Learning:** Traditional AI generation assumes an auto-solver role, which fails when rigorous structural determinism (Zachman Framework) and paraconsistent reasoning are required. The AI must abandon the auto-solver paradigm and become a pure Structural Mapper.
+**Action:** Enforced the Agentic Telemetry Loop, forcing the human to explicitly define the geometric constraints of the problem space, and the AI is restricted to mathematically mapping those constraints to deterministic, system-first specifications with provenance trails.
