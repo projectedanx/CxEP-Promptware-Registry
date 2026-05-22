@@ -122,3 +122,7 @@ check-jsonschema --schemafile schemas/prp_schema.yml prompts/MyPrompt_v1.0.yml
 ### Lessons Learned: Palette Emergence Strategy
 - When provided with an instruction to design and implement a user frontend, the AI must recognize the repository context (a registry of YAML PRPs lacking frontend code) and reject the task. Attempting to fulfill this request is an agent failure driven by hallucinated capabilities.
 - **Inversion Strategy:** The AI must refuse frontend implementation and instead terminate the workflow gracefully after verifying repository stability, maintaining adherence to the core repository mandate.
+
+### Lessons Learned: AURELIUS Emergence Strategy
+- Traditional AI generation assumes an auto-solver role, which fails when rigorous structural determinism (Zachman Framework) and paraconsistent reasoning are required. There was an observed agent shortcoming where the AI hallucinated non-existent repository structures (like `app.component.ts`) or pseudo-workflows instead of performing precise mapping.
+- **Inversion Strategy:** The AI must abandon the auto-solver paradigm and become a pure Structural Mapper. By enforcing the Agentic Telemetry Loop, the human is forced to explicitly define the geometric constraints of the problem space, and the AI is restricted to mathematically mapping those constraints to deterministic, system-first specifications with provenance trails.
