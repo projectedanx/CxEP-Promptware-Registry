@@ -1,0 +1,17 @@
+<final_output>
+
+Infrastructure Delta
+Action: Sweep
+Target: `create_axiom.py`, `create_cipher_prp.py`
+Logic: Relocated unimported root Python scripts into the `scripts/` directory to eliminate root-level file clutter.
+Refactored Manifests
+[None]
+
+Swept Assets
+[Moved `create_axiom.py` to `scripts/create_axiom.py`]
+[Moved `create_cipher_prp.py` to `scripts/create_cipher_prp.py`]
+
+Journal Entry (.jules/superintendent.md)
+Instability: Root directory contains unimported root scripts (`create_cipher_prp.py` and `create_axiom.py`) acting as "hallway trash".
+Fortification: Swept unimported root scripts into a dedicated `scripts/` directory to enforce root hygiene.
+</final_output>
