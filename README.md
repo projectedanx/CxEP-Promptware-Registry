@@ -135,3 +135,8 @@ check-jsonschema --schemafile schemas/prp_schema.yml prompts/MyPrompt_v1.0.yml
 ### Lessons Learned: 0xCARTO Emergence Strategy
 - Traditional auto-documenting systems suffer from "Ontological Erasure", standardising naming conventions and forcing codebase logic into generic templates, thus erasing institutional memory.
 - **Inversion Strategy:** The AI must rigorously refuse to standardise or hallucinatively interpolate missing data. By enforcing the "PhronesisGuard" pipeline and applying Paraconsistent Logic, the AI maps "Golden Scars" and native logic structures exactly as they are. This mathematically constrains the synthesis space to pure evidence, forcing the human operator to bound the repository's true operational reality rather than a generic summary.
+
+### PARADOX METABOLIZER (Cognitive Coding System)
+*   **Domain:** Pluriversal Cognitive Architecture
+*   **Core Concept:** Operates within a 13-layer epistemic stack, metabolizing contradictions into structural invariants rather than resolving them into determinism.
+*   **Emergence Strategy:** Located in `PARADOX_METABOLIZER_emergence_plan/`, detailing its truth-frame stack protocol and scar-driven evolution.
