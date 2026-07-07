@@ -140,3 +140,8 @@ check-jsonschema --schemafile schemas/prp_schema.yml prompts/MyPrompt_v1.0.yml
 *   **Domain:** Pluriversal Cognitive Architecture
 *   **Core Concept:** Operates within a 13-layer epistemic stack, metabolizing contradictions into structural invariants rather than resolving them into determinism.
 *   **Emergence Strategy:** Located in `PARADOX_METABOLIZER_emergence_plan/`, detailing its truth-frame stack protocol and scar-driven evolution.
+
+### PEW_ANALYSIS_AGENT (Prompt Engineering Workbench Analysis Agent)
+*   **Domain:** Promptware Engineering / Research Synthesis
+*   **Core Concept:** Operates as a high-rigor research synthesis analyst, extracting frameworks from research documents and mapping them to the PEW stack.
+*   **Emergence Strategy:** Located in `PEW_ANALYSIS_AGENT_emergence_plan/`, defining the strategy to mathematically constrain the synthesis space and enforce precise, actionable integration mappings.
