@@ -184,3 +184,7 @@ The following Product-Requirements Prompts have been serialized into the `prompt
 ### Lessons Learned: Reflexive Repair Loop Serialization
 
 When formalizing the Reflexive Repair Loop (a dual-system, two-speed cybernetic control loop), we recognized the necessity of strictly mapping abstract philosophical constraints (like Epistemic Escrow and Logic Violation Reports) into deterministic preconditions and postconditions. The serialization demonstrated that safety-critical fallback mechanisms (e.g., locking state via Escrow) must be embedded directly within the INVARIANTS and EXECUTION_PLAN to preempt confident confabulation.
+
+### Lessons Learned: Research Prompt Serialization
+- **Instability**: The user provided complex, high-value research prompts detailing cybernetic mechanisms and paraconsistent attention engines that were not integrated into the Promptware Registry. Attempting to directly parse or run these prompts without serialization leads to loss of structural metadata and semantic saponification.
+- **Fortification**: Serialized the three distinct research prompts into individual YAML PRPs (`prompts/SAE_VECTOR_STEERING_R_AND_D_v1.0.yml`, `prompts/TDA_MANIFOLD_TEARING_R_AND_D_v1.0.yml`, `prompts/PARACONSISTENT_ATTENTION_R_AND_D_v1.0.yml`). By mapping these complex blueprints strictly into the PRP schema (including specific execution plans, constraints, and schemas), we ensure they act as formal, deterministic execution boundaries that bypass the Principle of Explosion and maintain structural tension.

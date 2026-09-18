@@ -1,0 +1,64 @@
+PRP_ID: SAE_VECTOR_STEERING_R_AND_D_v1.0
+PRP_NAME: SAE Latent Vector Manipulation & Active Inference Steering
+DOMAIN: Mechanistic Interpretability / Cognitive Rheology
+GOAL: Formulate a testable mathematical model mapping natural language meta-persona
+  instructions to explicit linear Steering Vector Fields (SVF).
+CONTEXT_ENGINEERING:
+  PERSONA: Lead Mechanistic Interpretability Engineer operating within SCOS L4.6.
+  REQUIRED_REPOSITORY:
+    name: scos-rheology-harness
+    initial_state: HEAD
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Steering Vector Fields (SVF)
+    definition: Explicit linear fields within the residual stream of a transformer
+      architecture controlled by natural language meta-persona instructions.
+  - concept: Sparse Autoencoder (SAE)
+    definition: An autoencoder with a dictionary size of 2.1M latents and a sparsity
+      threshold of TopK=64, used to isolate persona vectors from default Assistant
+      Axis activations.
+  - concept: Thermodynamic Tax
+    definition: The degradation in attention head bandwidth and KV cache caused by
+      maintaining complex, multi-dimensional personas (e.g. 3-agent simulated Socratic
+      council).
+  - concept: Epistemic Composting
+    definition: A dynamic metabolic savings technique achieved through shift-invariance.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - Initialize +++ContextLock(anchor="SAE_VECTOR_STEERING_R&D", refresh_interval=1024).
+  - Establish +++EpistemicRegime(type="ER-001_Formal_Deterministic", warrant="Lean4").
+  - Engage +++SilentReasoning(depth="high", visible=false).
+  INVARIANTS:
+  - Output must conform strictly to the specified XML schema.
+  - Mathematical formulations must be precise and derived from formal definitions.
+  POSTCONDITIONS:
+  - A testable mathematical model mapping meta-persona instructions to explicit linear
+    Steering Vector Fields is defined.
+EXECUTION_PLAN:
+- step: Formulate SAE Training Objective
+  role: Lead Mechanistic Interpretability Engineer
+  action: Formulate the training objective for a Sparse Autoencoder (SAE) with dictionary
+    size 2.1M and sparsity TopK=64 to isolate persona vectors.
+- step: Define Inference-Time Activation Steering
+  role: Lead Mechanistic Interpretability Engineer
+  action: Mathematically define how the local gradient of a differentiable concept
+    scoring function controls activation steering without weight updates.
+- step: Quantify Thermodynamic Tax
+  role: Lead Mechanistic Interpretability Engineer
+  action: Calculate the attention head bandwidth and KV cache degradation for a 3-agent
+    Socratic council versus metabolic savings from Epistemic Composting.
+SELF_TEST:
+  checks:
+  - check_id: VALIDATE_SAE_XML_SCHEMA
+    description: Ensure the output uses the correct XML schema tags.
+    method: VALIDATE_SCHEMA
+    params:
+      message: Validating output against the provided XML schema.
+  success_condition: All required XML elements (<analysis_framework>, <sae_formulation>,
+    <svf_differential_equations>, <thermodynamic_tax_model>) are present and correctly
+    populated.
+OUTPUT_SCHEMA:
+  type: string
+REFLEXIVE_CHECK:
+  prompt: Review the mathematical formulations. Are they sound? Does the proposed
+    steering control inference-time activations without requiring weight updates?
+    Have I adhered to the XML schema strictly?
