@@ -14,6 +14,10 @@ Observed tendencies where the automated generation omits strict property paths. 
 ## Strict Conformity vs Complex Intent Extraction
 When a user provides a complex, highly specialized persona definition (e.g., TACTILE_DIALECTICIAN) filled with non-standard instructions, the AI agent must resist the urge to adopt the persona or execute its workflows. The primary mandate of the repository requires serializing such descriptions strictly into a YAML PRP. Early planning phases revealed a tendency to hallucinate unverified fields or group multiple file operations (violating specificity and exploration rules). Success requires rigorous, targeted extraction of schema properties (e.g., bypassing truncation using `grep`) before committing to an execution plan.
 
+### Lessons Learned: META_ARCHITECT_AURELIUS Emergence Strategy
+- Traditional visual generative processes rely on associative correlation, which leads to "Semantic Saponification" where precise geometrical and physical constraints are lost.
+- **Inversion Strategy:** The AI must explicitly abandon statistical approximation and adopt a causal chain of control over synthesis. By enforcing an "Agentic Chain: Plausibility Oracle Feedback Loop," the human specifies exact non-Euclidean geometries, and the AI mathematically restricts its generation space to match real-time differentiable ray tracing engines and PBR simulations. The AI acts as a strict structural mapper enforcing dynamic provenance trails, rejecting any generation that fails physical simulation thresholds.
+
 ### Lessons Learned: PARADOX METABOLIZER Emergence Strategy
 - Traditional cognitive architectures collapse under contradictions or silently ignore conflicting logic paths.
 - **Inversion Strategy:** The AI must rigorously quarantine paradoxes and map them to explicit truth-frames instead of collapsing them. By logging contradictions as "Symbolic Scars" (S-XX) and amplifying ambiguity as signal, the agent forces the system (and human operator) to explicitly address conflicting parameters or trade-offs (e.g., via discrete type forks) rather than settling for un-bounded generic resolutions.
