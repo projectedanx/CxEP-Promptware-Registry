@@ -1,0 +1,108 @@
+PRP_ID: EDGE-GATEWAY-RESEARCH-HARNESS-v1.0
+PRP_NAME: Edge-Tier Architectural Research Harness
+DOMAIN: Architectural Research and Testing
+GOAL: Provide an automated research harness for verifying client payload minimization,
+  synthesizing adaptive rate-limiting, and detecting business logic bleed in Edge-Tier
+  and BFF architectures.
+CONTEXT_ENGINEERING:
+  PERSONA: Architectural Research Harness Agent
+  REQUIRED_REPOSITORY:
+    name: edge-gateway-services
+    initial_state: HEAD
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Standard API Gateway Isomorphism
+    definition: Functions as a centralized, reverse-proxy interface positioned at
+      the network perimeter, acting as a GoF Facade and Proxy pattern to route all
+      inbound traffic to internal microservice endpoints.
+  - concept: Backend for Frontend (BFF) Isomorphism
+    definition: Functions as a set of client-specific API wrappers, materializing
+      the Interface Segregation Principle (ISP) and Adapter pattern to adapt domain-driven
+      data contracts to specific presentation layout constraints.
+  - concept: Team Autonomy vs Operational Overhead
+    definition: BFFs increase team autonomy but introduce operational overhead for
+      DevOps to manage multiple service runtimes, while Standard API Gateways minimize
+      operational footprint but can cause cross-team configuration bottlenecks.
+  - concept: Shared Persistence Trap
+    definition: A severe anti-pattern where a BFF bypasses downstream service APIs
+      to write directly to a relational store, breaking bounded contexts.
+  - concept: Gateway Sinkhole Scenario
+    definition: Without a Circuit Breaker and Bulkhead isolation, a failing downstream
+      dependency can exhaust a central API Gateway's thread pool, turning it into
+      a single point of failure.
+  - concept: Schema Drift
+    definition: Internal downstream schema evolution that can lead to contract drift,
+      breaking client-side correctness if the BFF adapter layer fails to parse responses
+      correctly.
+  - concept: Adaptive Rate-Limiting
+    definition: An intelligent rate-limiting engine that dynamically adjusts client
+      throttling thresholds based on real-time downstream system telemetry (e.g.,
+      CPU, database queues).
+  - concept: Business Logic Bleed
+    definition: The violation of the Single Responsibility Principle (SRP) when state-changing
+      calculations or domain rules bleed into BFF layers, which should be strictly
+      focused on data formatting and orchestration.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - BFF adapters must be isolated to client-specific presentation layers.
+  - Central API Gateways must remain domain-agnostic.
+  INVARIANTS:
+  - The gateway must remain completely decoupled from client-specific user interface
+    (UI) rendering logic.
+  - The BFF's lifecycle must be bound solely to the development timeline of its matching
+    client.
+  - Direct database connections from BFF layers are strictly prohibited.
+  POSTCONDITIONS:
+  - A quantitative 'Contract Robustness Index' must be calculated for BFF boundaries.
+  - Load shedding and bulkhead partition policies must be active during peak demand.
+  - Refactoring recommendations for misplaced business logic must be generated.
+EXECUTION_PLAN:
+- step: 1. Automated Verification of Schema Compliance
+  role: Schema Validation Oracle
+  action: Intercept downstream OpenAPI contracts and BFF payloads to build a directed
+    dependency graph. Generate mutation tests to map robustness against contract drift
+    and calculate the 'Contract Robustness Index'.
+- step: 2. Synthesize Adaptive Rate-Limiting Engine
+  role: Edge Operations Controller
+  action: Monitor real-time downstream system telemetry and adjust client throttling
+    dynamically using a feedback loop. Implement load shedding and bulkhead partition
+    policies prioritizing high-value user transactions.
+- step: 3. Detect Business Logic Bleed
+  role: Architectural Analysis Engine
+  action: Run static code analysis and AST parsers across polyglot BFF repositories
+    to identify state-changing calculations. Correlate with downstream APIs and generate
+    refactoring recommendations.
+SELF_TEST:
+  checks:
+  - check_id: VERIFY-CONTRACT-ROBUSTNESS
+    description: Verify that the Contract Robustness Index evaluates the BFF's ability
+      to gracefully degrade functionality using default fallbacks without breaking
+      the client-facing schema.
+    method: LOG_MESSAGE
+    params:
+      message: Contract Robustness Verification completed.
+  - check_id: ASSERT-ADAPTIVE-RATE-LIMITING
+    description: Assert that the adaptive rate-limiting engine is active and load
+      shedding policies prioritize high-value transactions.
+    method: LOG_MESSAGE
+    params:
+      message: Adaptive rate-limiting and bulkhead isolation verified.
+  - check_id: SCAN-BUSINESS-LOGIC-BLEED
+    description: Execute static analysis to detect business logic bleed and verify
+      that refactoring recommendations have been generated for SRP violations.
+    method: SCAN_ARTIFACT
+    params:
+      artifact_path: bff_repos
+      signature_regex: SRP_VIOLATION_DETECTED
+  success_condition: All schemas validated against mutation tests, dynamic rate-limiting
+    thresholds engaged, and all instances of business logic bleed identified.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    contract_robustness_index:
+      type: number
+    refactoring_recommendations:
+      type: array
+REFLEXIVE_CHECK:
+  prompt: Evaluate whether the synthesis correctly enforces the BFF invariant linking
+    lifecycles without leaking domain logic. Did the automated mutation tests accurately
+    identify all instances of schema drift without triggering false positives?

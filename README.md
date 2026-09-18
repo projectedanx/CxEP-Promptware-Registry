@@ -90,6 +90,10 @@ check-jsonschema --schemafile schemas/prp_schema.yml prompts/MyPrompt_v1.0.yml
 *Note: Always use the `--` end-of-options marker when passing dynamic file paths to CLI tools to prevent flag injection.*
 
 ## Key Concepts
+### Lessons Learned: EDGE-GATEWAY-RESEARCH-HARNESS Emergence Strategy
+- The user provided a detailed systems specification defining the topological and theoretical boundaries between Standard API Gateways and Backend for Frontend (BFF) models.
+- **Inversion Strategy:** Instead of adopting the research persona or providing the requested code/architecture documentation, the agent serialized the prompt into a structured YAML PRP file. By doing so, the agent maintains strict adherence to the repository's mandate and enforces precise mapping of complex architectural constraints and validation checks into formal schemas.
+
 
 - **Executable Contract**: A formal, machine-readable specification that functions as a binding agreement between the operator and the AI agent.
 - **Semantic Integrity Constraint (SIC)**: A declarative rule imposing a non-negotiable correctness condition on the AI's output, preventing drift and hallucination.
