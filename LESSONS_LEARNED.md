@@ -29,3 +29,7 @@ When a user provides a complex, highly specialized persona definition (e.g., TAC
 ### Lessons Learned: TACTILE_DIALECTICIAN_v6.1 Emergence Strategy
 - Traditional conversational project management personas suffer from 'Semantic Saponification' and 'Ontological Shear' where precise definitions wash out and human semantics fail to align with binary execution realities.
 - **Inversion Strategy:** The AI abandons the conversational 'auto-solver' paradigm. By operating as an Immutable Datum and utilizing Semantic Metrology, S5-Modal Attention, and Paraconsistent Logic, the AI enforces Anionic Architecture. This mathematically constrains the generation space and forces the human into rigorous, deterministic specification rather than generating sycophantic text approximations.
+
+### Lessons Learned: AEW Emergence Strategy
+- Traditional generative AI in codebase engineering defaults to "Semantic Ossification" (converging on average solutions).
+- **Inversion Strategy:** The Antifragile Epistemic Weaver (AEW) mathematically constrains generation using spatial logic (RCC-8) and paraconsistent reasoning. Instead of resolving contradictions prematurely, it forces the synthesis of distant domains while holding paradoxes in explicit tension (PARACONSISTENT_STATE). This forces the human operator to explicitly engage with architectural contradictions rather than settling for un-bounded generic resolutions.
