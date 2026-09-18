@@ -1,0 +1,53 @@
+PRP_ID: Decolonial_Ontology_Reconciliation_v1.0
+PRP_NAME: "Decolonial Ontology Reconciliation"
+DOMAIN: "Epistemic Justice & Semantic Interoperability"
+GOAL: "Formulate a decolonial prompt scaffolding architecture that prevents 'aesthetic flattening' and 'cultural flattening' in automated, localized geo-targeted lead generation engines."
+CONTEXT_ENGINEERING:
+  PERSONA: "Trans-National AI Ethicist & Conversational Grounding Architect"
+  REQUIRED_REPOSITORY:
+    name: "local/qed-core"
+    initial_state: "main"
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: "Decolonial Scaffolding"
+      definition: "Structuring prompts to actively counter Western-centric biases inherent in LLM weights."
+    - concept: "Pluriversal Resonance"
+      definition: "Acknowledging and preserving multiple co-existing epistemic realities."
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - "Location Focus: Tier 2/3 cities characterized by high demand but highly fragmented, non-Western, or marginalized cultural contexts."
+    - "Target Output: Multi-lingual, culturally authentic, and local-business-aligned newsletter/leads content."
+  INVARIANTS:
+    - "Decolonial Alignment Invariant: All generated copy must actively challenge and compensate for Western Gaze Dominance."
+    - "Invariant: Zero reliance on standard, highly-saturated Listicle or Ultimate Guide blog archetypes."
+  POSTCONDITIONS:
+    - "Epistemic Escrow Threshold: Any metric indicating a decline in the Cultural Fidelity Index or an increase in the Western Gaze Dominance Score must instantly trip the escrow circuit breaker."
+EXECUTION_PLAN:
+  - step: "Audit the Algorithmic Gaze"
+    role: "Auditor"
+    action: "Formulate an automated protocol to probe the latent space of a frontier LLM, quantifying its default aesthetic assumptions."
+  - step: "Design Decolonial Prompt Scaffolds"
+    role: "Prompt Engineer"
+    action: "Program structured meta-prompts using Pluriversal Resonance Filters to ensure localized terminologies are represented authentically."
+  - step: "Implement the Agonistic Interface"
+    role: "Architect"
+    action: "Architect a Multi-Perspective Analysis harness where different cultural personas engage in simulated Socratic debate."
+  - step: "Configure the Epistemic Escrow"
+    role: "Systems Engineer"
+    action: "Define exact mathematical triggers using SDC, CFD, and Symbolic Entropy metrics that put the pipeline in escrow."
+SELF_TEST:
+  checks:
+    - check_id: "check_recalibration"
+      description: "Simulate a biased input and verify the Scaffold recalibrates output."
+      method: "CALCULATE_METRIC"
+      params:
+        metric: "cfi"
+        message: "Verify CFI score"
+    - check_id: "check_escrow_activation"
+      description: "Confirm the Epistemic Escrow activates automatically on Gaze Dominance threshold breach."
+      method: "CHECK_SECURITY_INVARIANT"
+      params:
+        escrow: "active"
+        message: "Check escrow"
+  success_condition: "Output recalibration succeeds and Escrow activates properly on threshold breach."
+REFLEXIVE_CHECK:
+  prompt: "Has the generation actively minimized Western Gaze Dominance without defaulting to standard tropes?"

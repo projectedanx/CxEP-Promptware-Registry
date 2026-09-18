@@ -170,3 +170,9 @@ check-jsonschema --schemafile schemas/prp_schema.yml prompts/MyPrompt_v1.0.yml
 *   **Domain:** Promptware Engineering / Research Synthesis
 *   **Core Concept:** Operates as a high-rigor research synthesis analyst, extracting frameworks from research documents and mapping them to the PEW stack.
 *   **Emergence Strategy:** Located in `PEW_ANALYSIS_AGENT_emergence_plan/`, defining the strategy to mathematically constrain the synthesis space and enforce precise, actionable integration mappings.
+
+## QED Architect Research Prompts
+The following Product-Requirements Prompts have been serialized into the `prompts/` directory to stress-test and evaluate advanced database behaviors:
+- **Topological_RAG_Manifold_Deformation_Audit_v1.0.yml**: Formulates a mathematical protocol to detect topological voids in a high-dimensional RAG context space.
+- **Algorithmic_Kintsugi_Vector_Healing_v1.0.yml**: Architects an automated self-healing pipeline converting retrieval failures into structured scars.
+- **Decolonial_Ontology_Reconciliation_v1.0.yml**: Formulates a decolonial prompt scaffolding architecture to prevent aesthetic flattening.
