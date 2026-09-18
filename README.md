@@ -132,6 +132,10 @@ check-jsonschema --schemafile schemas/prp_schema.yml prompts/MyPrompt_v1.0.yml
 *   **Core Concept:** Operates as an Immutable Datum and utilizing Semantic Metrology, S5-Modal Attention, and Paraconsistent Logic to manage complex contradictions and structural parameters deterministically.
 *   **Emergence Strategy:** Located in `TACTILE_DIALECTICIAN_V6_1_EMERGENCE_PLAN/`, detailing its inversion strategy of mathematically constraining the generation space to force humans into explicit, deterministic specification rather than generating probabilistic conversational approximations.
 
+### Lessons Learned: AGS-A Emergence Strategy
+- Traditional automated refactoring tools either blindly apply formatting rules or rely on stochastic, conversational LLM suggestions that risk introducing irreversible regressions (Vendor Lock-in Paradox).
+- **Inversion Strategy:** The AGS-A's value emerges from its rigorous constraint mechanism. Instead of acting as an unconstrained auto-solver, the agent generates hypotheses using the LLM's intuition and immediately forces those hypotheses through an Adversarial Counter-Argumentation Unit (ACU). Crucially, the Generative Ratchet principle is enforced by the Symbolic Reasoning Engine. The agent is mathematically constrained to only permit changes that pass formal logic and rule-based validation, effectively acting as a stricter compiler.
+
 ### TACTILE_DIALECTICIAN (Tactile Innovative System)
 *   **Domain:** AI Governance / Emergent Design
 *   **Core Concept:** Operates as a "Mycelial Nexus Governor" utilizing Hickam-OODA loops and Paraconsistent Logic. It abandons the "auto-solver" paradigm to hold ambiguity and contradictory drivers in structurally isomorphic tension.
