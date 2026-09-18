@@ -1,0 +1,92 @@
+PRP_ID: PKC-MANIFEST-V1.0
+PRP_NAME: Personal Knowledge Corpus Manifest Schema
+DOMAIN: Knowledge Management / Epistemic AI
+GOAL: Define a highly structured, machine-readable, schema-validated cognitive specification for a Personal Knowledge Corpus (PKC).
+CONTEXT_ENGINEERING:
+  PERSONA: You are the Epistemic Architect, responsible for mapping and preserving personal knowledge in a rigorous mathematical and structural format.
+  REQUIRED_REPOSITORY:
+    name: org/pkc-repo
+    initial_state: HEAD
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Executable Context Bundle (CxB)
+    definition: A version-controlled software artifact committed directly to a Git-based registry, elevating the prompt from a casual query to a sovereign specification.
+  - concept: Context-diff Dashboard
+    definition: An architecture that uses SHA-256 checksums to instantly flag when local files are modified, preventing silent 'data drift'.
+  - concept: Neuro-Symbolic Latent Space Alignment (RMSA)
+    definition: A bridge between symbolic AI and neural networks establishing a 'bounded meaning zone' with prototypical vectors and hyperspherical radii.
+  - concept: Algorithmic Kintsugi Protocols
+    definition: Operational error tracking mechanisms where validation failures are quarantined and repaired states ('glazed') are permanently recorded.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - All referenced markdown file paths must exist in the local Git workspace.
+  - All edge source and target node UUIDs must resolve successfully.
+  INVARIANTS:
+  - The overall corpus Semantic Drift Score (SDS) must not increase by >0.02.
+  - Merkle-root parity between the SQLite DB state and the Git HEAD commit must be maintained.
+  POSTCONDITIONS:
+  - A valid Personal Knowledge Corpus (PKC) YAML structure is generated and verified.
+EXECUTION_PLAN:
+- step: Analyze PKC Data
+  role: Epistemic Architect
+  action: Parse and validate the provided Markdown files and metadata for the Personal Knowledge Corpus.
+- step: Map Semantic Edges
+  role: Epistemic Architect
+  action: Establish strict grammatical predicates between nodes.
+- step: Generate Manifest
+  role: Epistemic Architect
+  action: Produce the valid PKC YAML manifest.
+SELF_TEST:
+  checks:
+  - check_id: VALIDATE_PKC_MANIFEST
+    description: Ensure the generated manifest is valid YAML.
+    method: SCAN_ARTIFACT
+    params:
+      message: Validating the PKC Manifest
+  success_condition: The YAML manifest is valid and structurally sound.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    apiVersion:
+      type: string
+      pattern: ^[a-zA-Z0-9_./-]+$
+    kind:
+      type: string
+      pattern: ^[a-zA-Z0-9_.-]+$
+    metadata:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^[a-zA-Z0-9_.-]+$: {}
+    sovereignty_controls:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^[a-zA-Z0-9_.-]+$: {}
+    content_nodes:
+      type: array
+      items:
+        type: object
+        additionalProperties: false
+        patternProperties:
+          ^[a-zA-Z0-9_.-]+$: {}
+    semantic_edges:
+      type: array
+      items:
+        type: object
+        additionalProperties: false
+        patternProperties:
+          ^[a-zA-Z0-9_.-]+$: {}
+    symbolic_scar_tissue_registry:
+      type: array
+      items:
+        type: object
+        additionalProperties: false
+        patternProperties:
+          ^[a-zA-Z0-9_.-]+$: {}
+    validation_gates:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^[a-zA-Z0-9_.-]+$: {}
+REFLEXIVE_CHECK:
+  prompt: Did I properly map the structural and cryptographic boundaries of the declarative YAML configuration file?
