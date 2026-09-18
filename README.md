@@ -176,3 +176,11 @@ The following Product-Requirements Prompts have been serialized into the `prompt
 - **Topological_RAG_Manifold_Deformation_Audit_v1.0.yml**: Formulates a mathematical protocol to detect topological voids in a high-dimensional RAG context space.
 - **Algorithmic_Kintsugi_Vector_Healing_v1.0.yml**: Architects an automated self-healing pipeline converting retrieval failures into structured scars.
 - **Decolonial_Ontology_Reconciliation_v1.0.yml**: Formulates a decolonial prompt scaffolding architecture to prevent aesthetic flattening.
+- **REFLEXIVE_REPAIR_LOOP_v1.0.yml**: Formalizes the Reflexive Repair Loop, a dual-system cybernetic control loop for autonomous agentic systems.
+- **DYNAMIC_CFD_OPTIMIZER_v1.0.yml**: Formulates a dynamic control-theoretic algorithm for adjusting the Confidence-Fidelity Divergence (CFD) escrow threshold.
+- **GENERATIVE_RATCHET_COMPILER_v1.0.yml**: Specifies the API contracts and AST traversal logic for a Generative Ratchet utilizing a target compiler.
+- **EPISTEMIC_FIREWALL_AUDITOR_v1.0.yml**: Engineers a zero-trust Epistemic Integrity Audit (EIA) firewall against Recursive Epistemic Closure.
+
+### Lessons Learned: Reflexive Repair Loop Serialization
+
+When formalizing the Reflexive Repair Loop (a dual-system, two-speed cybernetic control loop), we recognized the necessity of strictly mapping abstract philosophical constraints (like Epistemic Escrow and Logic Violation Reports) into deterministic preconditions and postconditions. The serialization demonstrated that safety-critical fallback mechanisms (e.g., locking state via Escrow) must be embedded directly within the INVARIANTS and EXECUTION_PLAN to preempt confident confabulation.

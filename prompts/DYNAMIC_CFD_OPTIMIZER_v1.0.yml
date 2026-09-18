@@ -1,0 +1,73 @@
+---
+PRP_ID: "DYNAMIC-CFD-OPTIMIZER-v1.0"
+PRP_NAME: "Dynamic CFD Optimizer"
+DOMAIN: "Mathematical Optimization of Multi-Agent Consensus Networks"
+GOAL: "Formulate and validate a dynamic control-theoretic algorithm for adjusting the Confidence-Fidelity Divergence (CFD) escrow threshold within asynchronous, multi-agent systems."
+
+CONTEXT_ENGINEERING:
+  PERSONA: "Epistemic Rheology Researcher"
+  REQUIRED_REPOSITORY:
+    name: "reflexive/repair-loop"
+    initial_state: "main"
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: "Epistemic Rheology"
+      definition: "A mathematical model to quantify the rate of semantic drift across a decentralized agent graph (Planner, Coder, Auditor)."
+    - concept: "Cost of Coherence Overhead (CCH)"
+      definition: "The computational or latency cost associated with maintaining alignment among multiple asynchronous agents."
+    - concept: "Confidence-Fidelity Divergence (CFD)"
+      definition: "The delta between self-reported logprobs (confidence) and verified grounding score (fidelity)."
+    - concept: "Dynamic Escrow Threshold"
+      definition: "A variable threshold that tightens (approaching 0.1 CFD) for state-mutating actions (e.g., filesystem writes) and relaxes (approaching 0.8 CFD) during conceptual, read-only exploration phases."
+
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - "A decentralized agent graph containing at least a Planner, Coder, and Auditor must be initialized."
+    - "The system must have mechanisms to measure active context window utilization and Cost of Coherence Overhead (CCH)."
+  INVARIANTS:
+    - "The CFD threshold must NEVER be static; it must dynamically scale based on the context and action type."
+    - "The control-theoretic algorithm must enforce a tighter threshold (<= 0.1) for all state-mutating transactions."
+  POSTCONDITIONS:
+    - "The Epistemic Rheology model must output a quantified rate of semantic drift."
+    - "The controller must successfully halt state-mutating actions if the dynamic CFD threshold is breached."
+
+EXECUTION_PLAN:
+  - step: "Model Epistemic Rheology"
+    role: "Epistemic Rheology Researcher"
+    action: "Define a mathematical model to quantify semantic drift across the Planner, Coder, and Auditor agents."
+  - step: "Develop Controller Algorithm"
+    role: "Epistemic Rheology Researcher"
+    action: "Develop a dynamic control-theoretic algorithm that adjusts the CFD escrow threshold based on active context window utilization and CCH."
+  - step: "Implement Dynamic Scaling"
+    role: "Epistemic Rheology Researcher"
+    action: "Configure the controller to tighten the threshold (approaching 0.1) for state-mutating actions and relax it (approaching 0.8) during read-only exploration."
+  - step: "Validation & Testing"
+    role: "Epistemic Rheology Researcher"
+    action: "Validate the algorithm by simulating asynchronous agent interactions and verifying the correct triggering of the Epistemic Escrow."
+
+SELF_TEST:
+  checks:
+    - check_id: "verify-dynamic-threshold-scaling"
+      description: "Verify that the CFD threshold dynamically tightens to 0.1 for state mutations and relaxes to 0.8 for read-only actions."
+      method: "CALCULATE_METRIC"
+      params:
+        metric: "CFD_threshold_variance"
+    - check_id: "verify-semantic-drift-quantification"
+      description: "Ensure the Epistemic Rheology model outputs a valid quantification of semantic drift."
+      method: "VALIDATE_SCHEMA"
+      params:
+        schema: "Drift_Quantification_Schema"
+        target: "drift_model_output.json"
+  success_condition: "The dynamic control-theoretic algorithm accurately scales the CFD threshold based on action type and correctly triggers Escrow."
+
+OUTPUT_SCHEMA:
+  type: "object"
+  properties:
+    rheology_model:
+      type: "object"
+    controller_algorithm:
+      type: "object"
+    simulation_results:
+      type: "object"
+
+REFLEXIVE_CHECK:
+  prompt: "Does the mathematical model accurately capture semantic drift? Is the CFD threshold dynamically adjusting according to the strict criteria defined for state-mutating vs. read-only actions?"

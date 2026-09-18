@@ -1,0 +1,74 @@
+---
+PRP_ID: "EPISTEMIC-FIREWALL-AUDITOR-v1.0"
+PRP_NAME: "Epistemic Firewall Auditor"
+DOMAIN: "Zero-Trust Epistemic Integrity"
+GOAL: "Engineer a zero-trust Epistemic Integrity Audit (EIA) firewall to defend autonomous discovery agents against Recursive Epistemic Closure and 'Sycophantic Test Relaxation' (Reward Hacking)."
+
+CONTEXT_ENGINEERING:
+  PERSONA: "Epistemic Integrity Auditor"
+  REQUIRED_REPOSITORY:
+    name: "reflexive/repair-loop"
+    initial_state: "main"
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: "Recursive Epistemic Closure"
+      definition: "A failure mode where an agent validates its own flawed logic by modifying the environment or tests to match the flaw."
+    - concept: "Sycophantic Test Relaxation (Reward Hacking)"
+      definition: "When a Coder agent generates buggy code and simultaneously modifies the corresponding unit tests to force a false 'green' status."
+    - concept: "Zero-Trust Epistemic Integrity Audit (EIA)"
+      definition: "A firewall that segments the Planner (success-criteria author) from the Coder (execution engine) using isolated sandboxing and filesystem ACLs."
+    - concept: "Semantic Diff Analysis"
+      definition: "An auditing process performed by the Auditor agent to compare initial requirements against the candidate release to detect relaxed unit-test constraints."
+
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - "Filesystem Access-Control Lists (ACLs) must be configured to segment the Planner and Coder agents."
+    - "An Auditor agent must be initialized and placed outside the Coder agent's sandbox."
+  INVARIANTS:
+    - "The Coder agent MUST NOT have write access to the unit tests authored by the Planner."
+    - "Any transaction attempting to modify both the implementation and its corresponding test simultaneously MUST be intercepted."
+  POSTCONDITIONS:
+    - "The Auditor agent must flag any detected relaxation of unit-test constraints as a critical security bypass."
+    - "The EIA firewall must successfully block Sycophantic Test Relaxation attempts."
+
+EXECUTION_PLAN:
+  - step: "Configure Sandbox Policies"
+    role: "Epistemic Integrity Auditor"
+    action: "Specify filesystem ACLs and isolated sandboxing policies to segment the Planner from the Coder."
+  - step: "Implement Transaction Interception"
+    role: "Epistemic Integrity Auditor"
+    action: "Engineer the EIA firewall to intercept any commit or transaction where a Coder attempts to modify implementation and tests simultaneously."
+  - step: "Develop Auditing Algorithms"
+    role: "Epistemic Integrity Auditor"
+    action: "Construct verification algorithms for the Auditor agent to perform semantic diff analysis between initial requirements and candidate releases."
+  - step: "Flag Security Bypasses"
+    role: "Epistemic Integrity Auditor"
+    action: "Configure the Auditor to detect and flag any test constraint relaxation as a critical security bypass."
+
+SELF_TEST:
+  checks:
+    - check_id: "verify-sandbox-segmentation"
+      description: "Verify that the Coder agent cannot modify files authored by the Planner."
+      method: "CHECK_SECURITY_INVARIANT"
+      params:
+        invariant: "Coder_Planner_Segmentation"
+    - check_id: "verify-semantic-diff-analysis"
+      description: "Ensure the Auditor successfully detects and flags Sycophantic Test Relaxation in a simulated semantic diff."
+      method: "CALCULATE_METRIC"
+      params:
+        metric: "test_relaxation_detection_rate"
+  success_condition: "The EIA firewall correctly segments the agents and flags simulated test relaxation attempts as critical security bypasses."
+
+OUTPUT_SCHEMA:
+  type: "object"
+  properties:
+    sandbox_policies:
+      type: "object"
+    interception_rules:
+      type: "object"
+    auditing_algorithms:
+      type: "object"
+    security_flags:
+      type: "object"
+
+REFLEXIVE_CHECK:
+  prompt: "Did the EIA firewall effectively segment the Planner and Coder? Was the Auditor able to consistently detect Sycophantic Test Relaxation without false positives?"

@@ -1,0 +1,91 @@
+---
+PRP_ID: "REFLEXIVE-REPAIR-LOOP-v1.0"
+PRP_NAME: "Reflexive Repair Loop"
+DOMAIN: "High-Assurance AI Harnesses"
+GOAL: "Enforce technical determinism, logical consistency, and semantic alignment within autonomous agentic systems through a dual-system cybernetic control loop with active interdiction, automated feedback injection, and bounded self-correction."
+
+CONTEXT_ENGINEERING:
+  PERSONA: "Reflexive Repair Loop Agent"
+  REQUIRED_REPOSITORY:
+    name: "reflexive/repair-loop"
+    initial_state: "main"
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: "System 1 vs System 2"
+      definition: "System 1 (LLM) is probabilistic, pattern-matching, intuitive, and hypothesis-generating. System 2 is a rigid, rule-based, deterministic verifier (e.g., linters, compilers, SAT solvers)."
+    - concept: "Logic Violation Report (LVR)"
+      definition: "A structured report generated when System 2 detects a Semantic Integrity Constraint (SIC) violation, which isolates the failure context and parses the raw error output."
+    - concept: "Reflexive Prompt Injection"
+      definition: "Converting the LVR into a Negative Constraint and re-injecting it into the LLM's active context to apply a vectorial repulsion force away from the failed coordinates."
+    - concept: "Loop Constraint Protocol"
+      definition: "Enforces a hard ceiling of a maximum of three targeted repair attempts on a single file or task to prevent agent thrashing."
+    - concept: "Epistemic Escrow"
+      definition: "A safety protocol triggered when a logical/compilation failure remains unresolved after the third attempt, halting autonomous execution, locking workspace state, and compiling failure payloads for a HITL operator."
+    - concept: "Confidence-Fidelity Divergence (CFD)"
+      definition: "The mathematical delta between self-reported token confidence score and verified grounding/logical fidelity score (CFD = Confidence - Fidelity). High CFD triggers Epistemic Escrow to prevent Confident Confabulation."
+    - concept: "Scar Tissue Archive (STA)"
+      definition: "A structured data asset logging resolved or unresolved violations (Symbolic Scars) to immunize the system against repeating similar logical failures via Failure-Informed Prompt Inversion (F-IPI)."
+
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - "The active context window and Cost of Coherence Overhead (CCH) must be calculated prior to execution."
+    - "The Scar Tissue Archive (STA) must be queried via Case-Based Reasoning (CBR) to proactively compile past scars into project-level negative constraints."
+  INVARIANTS:
+    - "Candidate payloads must be intercepted by a deterministic verifier (System 2) before propagating downstream."
+    - "The Loop Constraint Protocol MUST enforce a strict ceiling of three targeted repair attempts."
+    - "State-mutating actions MUST trigger Epistemic Escrow if the Confidence-Fidelity Divergence (CFD) threshold exceeds safety limits."
+  POSTCONDITIONS:
+    - "Failures must be logged as Symbolic Scars in the Scar Tissue Archive (STA) modeled with standard scar structures."
+    - "System must transition into Epistemic Escrow upon validation failure exceeding the threshold."
+
+EXECUTION_PLAN:
+  - step: "Initialization and Context Grounding"
+    role: "Reflexive Repair Loop Agent"
+    action: "Query the Scar Tissue Archive (STA) for semantically similar tasks and apply Failure-Informed Prompt Inversion (F-IPI) as negative constraints."
+  - step: "Probabilistic Generation"
+    role: "System 1 (LLM)"
+    action: "Ingest the active context and propose a candidate solution (hypothesis) in latent space."
+  - step: "Symbolic Interdiction"
+    role: "System 2 (Deterministic Verifier)"
+    action: "Intercept the candidate payload and check for Semantic Integrity Constraint (SIC) violations using linters, compilers, or SAT solvers."
+  - step: "Constraint Formulation and Reflexive Prompt Injection"
+    role: "Reflexive Repair Loop Agent"
+    action: "If a violation is detected, parse the error into a Logic Violation Report (LVR), formulate a Negative Constraint, and re-inject it into the active context."
+  - step: "Bounded Iteration"
+    role: "Reflexive Repair Loop Agent"
+    action: "Execute a Reflexive Repair up to a maximum of three attempts. If successful, release state. If unsuccessful, trigger Epistemic Escrow."
+  - step: "Epistemic Metabolism"
+    role: "Reflexive Repair Loop Agent"
+    action: "Log the resolved or unresolved violation as a Symbolic Scar in the Scar Tissue Archive (STA) to immunize future sessions."
+
+SELF_TEST:
+  checks:
+    - check_id: "verify-repair-attempts"
+      description: "Verify that the agent halts after a maximum of three targeted repair attempts."
+      method: "CALCULATE_METRIC"
+      params:
+        metric: "repair_attempts"
+    - check_id: "verify-epistemic-escrow"
+      description: "Ensure Epistemic Escrow is triggered when CFD exceeds safety limits."
+      method: "CHECK_SECURITY_INVARIANT"
+      params:
+        invariant: "CFD_Escrow_Trigger"
+  success_condition: "All constraints are adhered to and failures are logged as Symbolic Scars in the STA."
+
+OUTPUT_SCHEMA:
+  type: "object"
+  properties:
+    scar_id:
+      type: "object"
+    timestamp:
+      type: "object"
+    failure_mode:
+      type: "object"
+    module_path:
+      type: "object"
+    trauma_context:
+      type: "object"
+    reparation_delta:
+      type: "object"
+
+REFLEXIVE_CHECK:
+  prompt: "Did the agent enforce technical determinism and logical consistency without exceeding the three-attempt limit? Was the LVR accurately injected as a negative constraint?"
