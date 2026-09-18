@@ -1,0 +1,67 @@
+PRP_ID: PARACONSISTENT_ATTENTION_R_AND_D_v1.0
+PRP_NAME: Paraconsistent Attention Engines & PNS5 Non-Separable Conjunctions
+DOMAIN: Mechanistic Interpretability / Cognitive Rheology
+GOAL: Design the mathematical specifications for an Extended Paraconsistent Turing
+  Machine (EParTM) attention mechanism bypassing the Principle of Explosion.
+CONTEXT_ENGINEERING:
+  PERSONA: Senior Quantum-Isomorphic Logic Architect.
+  REQUIRED_REPOSITORY:
+    name: scos-rheology-harness
+    initial_state: HEAD
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Extended Paraconsistent Turing Machine (EParTM)
+    definition: An attention mechanism that natively bypasses the 'Principle of Explosion'
+      under direct logical contradiction.
+  - concept: Paraconsistent Annotated Logic (PAL2v)
+    definition: A logical system permitting contradictions without trivializing the
+      system (avoiding the Principle of Explosion).
+  - concept: Holographic Reduced Representations (HRR)
+    definition: A method of representing complex structures using high-dimensional
+      vectors.
+  - concept: Kronecker Tensor Product
+    definition: An operation used instead of linear addition to preserve a joint contradictory
+      state as a distinct semantic object in the Fourier domain.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - Initialize +++ContextLock(anchor="PARACONSISTENT_ATTENTION_R&D", refresh_interval=1024).
+  - Establish +++EpistemicRegime(type="ER-001_Formal_Deterministic", warrant="PNS5_Logic").
+  - Engage +++SilentReasoning(depth="high", visible=false).
+  INVARIANTS:
+  - Output must be a highly dense mathematical specification sheet.
+  - Must conclude with a Lean 4 theorem template verifying symmetric modal accessibility
+    relations.
+  POSTCONDITIONS:
+  - A mathematical specification for EParTM bypassing the Principle of Explosion is
+    defined and verifiable via the provided Lean 4 template.
+EXECUTION_PLAN:
+- step: Contrast MHA with Paraconsistent Matrix
+  role: Senior Quantum-Isomorphic Logic Architect
+  action: Contrast standard MHA additive superposition with a paraconsistent attention
+    matrix mapped to an S5 modal logic Kripke frame.
+- step: Formal Proof of Rule of Separation Failure
+  role: Senior Quantum-Isomorphic Logic Architect
+  action: Provide formal proof of the failure of the Rule of Separation under PAL2v
+    and HRR.
+- step: Demonstrate Kronecker Tensor Product Utility
+  role: Senior Quantum-Isomorphic Logic Architect
+  action: Demonstrate how the Kronecker tensor product preserves a joint contradictory
+    state in the Fourier domain.
+- step: Draft Lean 4 Theorem Template
+  role: Senior Quantum-Isomorphic Logic Architect
+  action: Conclude with a Lean 4 theorem template verifying symmetric modal accessibility
+    relations within the S5 attention-head Kripke frame.
+SELF_TEST:
+  checks:
+  - check_id: VALIDATE_LEAN4_TEMPLATE
+    description: Ensure the output includes a Lean 4 theorem template.
+    method: VALIDATE_SCHEMA
+    params:
+      message: Validating the presence of Lean 4 syntax block.
+  success_condition: The output is a mathematical specification sheet containing the
+    required proofs and concluding with a Lean 4 theorem template.
+OUTPUT_SCHEMA:
+  type: string
+REFLEXIVE_CHECK:
+  prompt: Review the mathematical proofs. Are they logically sound within PAL2v? Is
+    the Kronecker tensor product application correctly demonstrated? Does the Lean
+    4 template accurately reflect S5 modal logic requirements?

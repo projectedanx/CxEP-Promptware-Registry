@@ -1,0 +1,68 @@
+PRP_ID: TDA_MANIFOLD_TEARING_R_AND_D_v1.0
+PRP_NAME: Topological Data Analysis (TDA) of Manifold Tearing & Symbolic Scar Mapping
+DOMAIN: Mechanistic Interpretability / Cognitive Rheology
+GOAL: Reverse engineer the process of detecting 'Topological Tearing' and constructing
+  'Symbolic Scars' within an agent's latent space after a logical collapse.
+CONTEXT_ENGINEERING:
+  PERSONA: Principal Epistemic Immunologist of SCOS L11.0.
+  REQUIRED_REPOSITORY:
+    name: scos-rheology-harness
+    initial_state: HEAD
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Topological Tearing
+    definition: A catastrophic logical collapse within an agent's latent space.
+  - concept: Symbolic Scars
+    definition: Constructs created after a logical collapse (Algorithmic Shame) mapped
+      as Vector Symbolic Architecture (VSA) hypervectors.
+  - concept: Persistent Homology
+    definition: A method used in TDA to identify a persistent 1-dimensional hole (Betti-1
+      / \beta_1 loop) in the point cloud data of self-attention weights.
+  - concept: Failure-Informed Prompt Inversion (FIPI)
+    definition: An algorithm that translates a mapped \beta_1 topological failure
+      loop into a VSA hypervector.
+  - concept: Semantic Antibody
+    definition: A VSA hypervector injected back into the model's history matrix to
+      mathematically deflect attention heads via negative cosine similarity.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - Initialize +++ContextLock(anchor="TDA_MANIFOLD_TEARING_R&D", refresh_interval=1024).
+  - Establish +++EpistemicRegime(type="ER-003_State_Centric", warrant="TDA_Topology").
+  - Engage +++SilentReasoning(depth="high", visible=false).
+  INVARIANTS:
+  - Output must be exactly a compiled markdown document.
+  - Mathematical definitions and algorithms must be formally stated.
+  POSTCONDITIONS:
+  - A comprehensive markdown document detailing the theory, definitions, pseudocode,
+    and metrics for TDA of manifold tearing is produced.
+EXECUTION_PLAN:
+- step: Define Topological Tears via TDA
+  role: Principal Epistemic Immunologist
+  action: Define how TDA using persistent homology identifies a persistent 1-dimensional
+    hole (Betti-1 / \beta_1 loop) in self-attention weights under contradictory constraints.
+- step: Draft FIPI Algorithm
+  role: Principal Epistemic Immunologist
+  action: Draft a complete, testable algorithm for Failure-Informed Prompt Inversion
+    (FIPI) translating the loop into a VSA hypervector.
+- step: Demonstrate Semantic Antibody Injection
+  role: Principal Epistemic Immunologist
+  action: Show how the VSA hypervector is injected into the history matrix to deflect
+    attention heads via negative cosine similarity.
+- step: Format Markdown Output
+  role: Principal Epistemic Immunologist
+  action: Compile the synthesis into a markdown document with the specified sections.
+SELF_TEST:
+  checks:
+  - check_id: VALIDATE_MARKDOWN_STRUCTURE
+    description: Ensure the output is a markdown document containing all required
+      sections.
+    method: VALIDATE_SCHEMA
+    params:
+      message: Validating the presence of required markdown headers.
+  success_condition: The markdown document contains headers for Core Theory, Mathematical
+    Definition, FIPI/VSA Pseudocode, and Verification metrics.
+OUTPUT_SCHEMA:
+  type: string
+REFLEXIVE_CHECK:
+  prompt: Review the markdown document. Are the TDA definitions rigorous? Is the FIPI
+    algorithm testable? Does the explanation clearly link the VSA hypervector to negative
+    cosine similarity in attention heads?
