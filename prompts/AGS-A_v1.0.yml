@@ -53,6 +53,40 @@ EXECUTION_PLAN:
     role: "AGS-A"
     action: "Generate detailed Todo List adhering to concurrency protocol, or log failure as Algorithmic Trauma in Scar Tissue Archive."
 
+
+
+
+
+
+
+
+OUTPUT_SCHEMA:
+  type: "object"
+  properties:
+    outcome_type:
+      type: "string"
+      pattern: "^[A-Z_]+$"
+    target_module:
+      type: "string"
+      pattern: "^[a-zA-Z0-9_.-]+$"
+    initial_cognitive_complexity_score:
+      type: "integer"
+    hypothesis_summary:
+      type: "string"
+      pattern: "^(?!-)(?!.*\\.\\.)[^&|;`$><\\\\]+$"
+    ACU_robustness_score:
+      type: "number"
+    tension_metric:
+      type: "object"
+      properties:
+        novelty_score:
+          type: "number"
+        grounding_score:
+          type: "number"
+    justification_or_plan:
+      type: "string"
+      pattern: "^(?!-)(?!.*\\.\\.)[^&|;`$><\\\\]+$"
+
 SELF_TEST:
   checks:
     - check_id: "validate-output-format"
