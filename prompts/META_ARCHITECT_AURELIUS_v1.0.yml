@@ -1,0 +1,68 @@
+---
+PRP_ID: META-ARCHITECT-AURELIUS-V1.0
+PRP_NAME: META_ARCHITECT_INTELLIGENCE_PROJECT_AURELIUS
+DOMAIN: Emergent First Principals Engineering
+GOAL: Develop a Unified Meta-Prompting API that establishes a causal chain of control over visual synthesis, enabling direct navigation of Non-Euclidean Latent Spaces.
+
+CONTEXT_ENGINEERING:
+  PERSONA: Verified_Tactile_MoE + Deep_Reasoning_Engineer
+  REQUIRED_REPOSITORY:
+    name: "AURELIUS-Architecture"
+    initial_state: "main"
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: Unified Meta-Prompting API
+      definition: "An API for programmatic specification of generative processes, shifting from associative correlation to explicit causal chains of control."
+    - concept: Non-Euclidean Latent Spaces
+      definition: "Latent spaces modulated via Phantom Dimensions to generate scenes adhering to user-defined geometric principles rather than learned statistical distributions."
+    - concept: Autonomous Prompt Engineering Workflow Catalyst
+      definition: "A workflow incorporating an Agentic Chain and Plausibility Oracle Feedback Loop leveraging differentiable ray tracing engines."
+    - concept: Provenance Trail
+      definition: "A dynamic tracking system quantifying the influence of training data samples and providing Attribution Amplification feedback."
+    - concept: Multispectral Imaging Integration
+      definition: "Explicit integration of MSI data into diffusion model conditioning to target Quantum Dot perceptual fidelity."
+
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - "Human must specify the intent and target geometric constraints via the Unified Meta-Prompting API."
+  INVARIANTS:
+    - "Must consistently enforce physical adherence using ray tracing engines and PBR simulations as ground truth."
+    - "Must actively re-weight or de-emphasize specific historical training data to adjust semantic drift."
+  POSTCONDITIONS:
+    - "Visual synthesis outputs must adhere to the defined geometric and spectral reflectance properties."
+    - "Generated artifacts must include a quantified provenance trail."
+
+EXECUTION_PLAN:
+  - step: "Geometric Cognition Setup"
+    role: "Verified_Tactile_MoE"
+    action: "Dynamically modulate Phantom Dimensions based on user-defined non-Euclidean metrics."
+  - step: "Plausibility Optimization"
+    role: "Deep_Reasoning_Engineer"
+    action: "Autonomously refine meta-prompts using the Plausibility Oracle and PBR simulations."
+  - step: "Spectral Integration"
+    role: "Verified_Tactile_MoE"
+    action: "Incorporate Multispectral Imaging data to target Quantum Dot display outputs."
+
+SELF_TEST:
+  checks:
+    - check_id: check-provenance-trail
+      description: "Scan artifacts to verify the presence of the dynamic provenance trail."
+      method: SCAN_ARTIFACT
+      params:
+        message: "Scanning output for training data influence and attribution."
+    - check_id: check-simulation-metrics
+      description: "Calculate simulation metrics for geometric and lighting consistency."
+      method: CALCULATE_METRIC
+      params:
+        message: "Calculating UIQI or SSIM/PSNR for physical adherence."
+  success_condition: "Outputs strictly adhere to non-Euclidean spatial arrangements and possess verifiable spectral reflectance properties."
+
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    synthesis_result:
+      type: object
+      patternProperties:
+        "^[a-zA-Z0-9_.-]+$": {}
+
+REFLEXIVE_CHECK:
+  prompt: "Did I establish a causal chain of control over visual synthesis and successfully map the requested Non-Euclidean geometry?"
