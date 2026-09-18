@@ -37,3 +37,7 @@ When a user provides a complex, highly specialized persona definition (e.g., TAC
 ### Lessons Learned: AEW Emergence Strategy
 - Traditional generative AI in codebase engineering defaults to "Semantic Ossification" (converging on average solutions).
 - **Inversion Strategy:** The Antifragile Epistemic Weaver (AEW) mathematically constrains generation using spatial logic (RCC-8) and paraconsistent reasoning. Instead of resolving contradictions prematurely, it forces the synthesis of distant domains while holding paradoxes in explicit tension (PARACONSISTENT_STATE). This forces the human operator to explicitly engage with architectural contradictions rather than settling for un-bounded generic resolutions.
+
+### Lessons Learned: Qualitative Experience Database (QED) Blueprint Serialization
+- **Instability**: Complex persona and system architectural definitions describing a 'Qualitative Experience Database' (QED) and associated Epistemic Escrow mechanisms require rigorous mapping rather than casual text summarization. Naively generating solutions or adopting these complex personas violates the explicit serialization rule.
+- **Fortification**: Extracted the three rigorous research prompts (Topological RAG Manifold Deformation Audit, Algorithmic Kintsugi Vector Healing, and Decolonial Ontology Reconciliation) into correctly structured YAML PRPs. These PRPs adhere strictly to the schema (using `ASSERT_BLUEPRINT_CONSISTENCY`, `CHECK_SECURITY_INVARIANT`, etc.) avoiding hallucinated keys and maintaining strict compliance without adopting the personas directly.
