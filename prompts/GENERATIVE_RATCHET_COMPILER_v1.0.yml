@@ -1,0 +1,73 @@
+---
+PRP_ID: "GENERATIVE-RATCHET-COMPILER-v1.0"
+PRP_NAME: "Generative Ratchet Compiler"
+DOMAIN: "Compiler-Guided AST Mutation"
+GOAL: "Specify the API contracts and AST traversal logic for a Generative Ratchet that utilizes a strict target compiler (e.g., TypeScript 5 or Rust) as a non-negotiable fitness function for a Coder agent."
+
+CONTEXT_ENGINEERING:
+  PERSONA: "Compiler Constraints Architect"
+  REQUIRED_REPOSITORY:
+    name: "reflexive/repair-loop"
+    initial_state: "main"
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: "Generative Ratchet"
+      definition: "An architecture where a Coder agent's output is strictly constrained by a local Language Server Protocol (LSP) or compiler, preventing regression."
+    - concept: "Logic Violation Report (LVR) via Compiler"
+      definition: "Parsing structural type-mismatch logs or compilation diagnostics into a typed Logic Violation Report for the agent."
+    - concept: "AST Mutation Operators"
+      definition: "Operators allowing surgical isolation and modification of an errant Abstract Syntax Tree (AST) node without triggering full-file rewrites."
+    - concept: "Three-Attempt Loop Constraint"
+      definition: "Enforcing a maximum of three compiler-guided repair attempts, logging failures as Symbolic Scars to prevent syntax pattern repetition."
+
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - "A strict target compiler (e.g., TypeScript 5 or Rust) must be configured and accessible via LSP."
+    - "The Coder agent must have access to AST mutation operators."
+  INVARIANTS:
+    - "The target compiler's output MUST serve as a non-negotiable fitness function."
+    - "Full-file rewrites are PROHIBITED; all modifications must occur via surgical AST mutation."
+    - "The agent MUST halt after exactly three failed compilation attempts on a given task."
+  POSTCONDITIONS:
+    - "Failed compilation trajectories must be logged as Symbolic Scars."
+    - "The final output must compile without errors or warnings from the target compiler."
+
+EXECUTION_PLAN:
+  - step: "Define LSP Integration"
+    role: "Compiler Constraints Architect"
+    action: "Specify the API contracts connecting the Coder agent to the local LSP server."
+  - step: "Develop LVR Parser"
+    role: "Compiler Constraints Architect"
+    action: "Implement a parser that translates compiler diagnostic logs into a typed Logic Violation Report (LVR)."
+  - step: "Design AST Mutation Operators"
+    role: "Compiler Constraints Architect"
+    action: "Define the AST traversal logic and mutation operators required for surgical, node-level code edits."
+  - step: "Implement Loop Constraint Protocol"
+    role: "Compiler Constraints Architect"
+    action: "Enforce the Three-Attempt Loop Constraint at the compiler level, including Symbolic Scar logging for failed trajectories."
+
+SELF_TEST:
+  checks:
+    - check_id: "verify-ast-mutation"
+      description: "Ensure that modifications apply only to specific AST nodes without full-file rewrites."
+      method: "SCAN_ARTIFACT"
+      params:
+        target: "ast_mutation_log.txt"
+    - check_id: "verify-compiler-fitness-function"
+      description: "Verify that the agent halts if the target compiler returns errors on the third attempt."
+      method: "CHECK_SECURITY_INVARIANT"
+      params:
+        invariant: "Three_Attempt_Halt"
+  success_condition: "The Generative Ratchet successfully constrains the Coder agent to surgical AST mutations guided by strict compiler feedback."
+
+OUTPUT_SCHEMA:
+  type: "object"
+  properties:
+    api_contracts:
+      type: "object"
+    ast_traversal_logic:
+      type: "object"
+    lvr_schema:
+      type: "object"
+
+REFLEXIVE_CHECK:
+  prompt: "Did the architecture strictly enforce surgical AST mutations rather than full-file rewrites? Was the compiler feedback accurately parsed into typed Logic Violation Reports?"
