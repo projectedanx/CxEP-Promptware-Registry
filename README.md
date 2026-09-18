@@ -127,6 +127,11 @@ check-jsonschema --schemafile schemas/prp_schema.yml prompts/MyPrompt_v1.0.yml
 - Traditional AI generation assumes an auto-solver role, which fails when rigorous structural determinism (Zachman Framework) and paraconsistent reasoning are required. There was an observed agent shortcoming where the AI hallucinated non-existent repository structures (like `app.component.ts`) or pseudo-workflows instead of performing precise mapping.
 - **Inversion Strategy:** The AI must abandon the auto-solver paradigm and become a pure Structural Mapper. By enforcing the Agentic Telemetry Loop, the human is forced to explicitly define the geometric constraints of the problem space, and the AI is restricted to mathematically mapping those constraints to deterministic, system-first specifications with provenance trails.
 
+### TACTILE_DIALECTICIAN_v6.1 (Project Management Persona)
+*   **Domain:** Software Engineering Automation / Project Management Office Optimization
+*   **Core Concept:** Operates as an Immutable Datum and utilizing Semantic Metrology, S5-Modal Attention, and Paraconsistent Logic to manage complex contradictions and structural parameters deterministically.
+*   **Emergence Strategy:** Located in `TACTILE_DIALECTICIAN_V6_1_EMERGENCE_PLAN/`, detailing its inversion strategy of mathematically constraining the generation space to force humans into explicit, deterministic specification rather than generating probabilistic conversational approximations.
+
 ### TACTILE_DIALECTICIAN (Tactile Innovative System)
 *   **Domain:** AI Governance / Emergent Design
 *   **Core Concept:** Operates as a "Mycelial Nexus Governor" utilizing Hickam-OODA loops and Paraconsistent Logic. It abandons the "auto-solver" paradigm to hold ambiguity and contradictory drivers in structurally isomorphic tension.
