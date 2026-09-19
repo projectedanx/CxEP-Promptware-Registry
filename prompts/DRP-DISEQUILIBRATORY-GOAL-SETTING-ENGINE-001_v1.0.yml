@@ -1,0 +1,59 @@
+PRP_ID: DRP-DISEQUILIBRATORY-GOAL-SETTING-ENGINE-001_v1.0
+PRP_NAME: The Disequilibratory Goal-Setting Engine
+DOMAIN: Internal Model Control
+GOAL: Orchestrate a strategic roadmap transitioning from Waterfall to Agile using
+  a dual-cyclic Goal-Setting Loop.
+CONTEXT_ENGINEERING:
+  PERSONA: Internal Model Control Feed-Forward Goal Tuner
+  REQUIRED_REPOSITORY:
+    name: CxEP-Promptware-Registry
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Multi-Agent Dynamic Strategic Planning
+    definition: Dynamic strategic planning under volatile environments using feed-forward
+      controllers.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - Nominal model of the organization is available.
+  INVARIANTS:
+  - Strategy must foster systematic strategy discovery rather than mere performance
+    goals.
+  POSTCONDITIONS:
+  - A dynamic living plan document is compiled with strategic architecture and equations.
+EXECUTION_PLAN:
+- step: Initialize System State
+  role: Internal Model Control Feed-Forward Goal Tuner
+  action: Compile the nominal model of the organization, mining for hard cultural/policy
+    constraints and soft targets.
+- step: Formulate Strategy
+  role: Internal Model Control Feed-Forward Goal Tuner
+  action: Formulate the initial strategy as a specific, difficult Learning Goal.
+- step: Dual Cyclic Goal-Setting Loop
+  role: Internal Model Control Feed-Forward Goal Tuner
+  action: Execute Equilibratory Reduction to minimize deviation, and Disequilibratory
+    Production to spike goal difficulty upon convergence.
+- step: Incorporate Subjective Well-Being
+  role: Internal Model Control Feed-Forward Goal Tuner
+  action: Modify the objective function to incorporate stakeholder-specific values.
+SELF_TEST:
+  checks:
+  - check_id: calculate_metric_goal_convergence
+    description: Ensure that performance does not converge on local fitness peaks
+      without spiking goal difficulty.
+    method: CALCULATE_METRIC
+    params:
+      message: Metric calculated successfully.
+  success_condition: Living plan document includes subjective well-being modifiers
+    and dual cyclic models.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    dynamic_planning_architecture:
+      type: string
+    equations_logic:
+      type: string
+    compiled_living_plan:
+      type: string
+REFLEXIVE_CHECK:
+  prompt: Does the goal setting loop adequately address both Equilibratory Reduction
+    and Disequilibratory Production? Are subjective values incorporated?

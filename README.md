@@ -96,6 +96,10 @@ check-jsonschema --schemafile schemas/prp_schema.yml prompts/MyPrompt_v1.0.yml
 *Note: Always use the `--` end-of-options marker when passing dynamic file paths to CLI tools to prevent flag injection.*
 
 ## Key Concepts
+### Lessons Learned
+### Lessons Learned: Autonomous Adaptive Cognitive Harness (AACH)
+- **Instability**: The user provided a complex conceptual ontology blending Cybernetics, Relational Data Exchange, Active Externalism, and Heideggerian Phenomenology into an "Autonomous Adaptive Cognitive Harness" (AACH). Treating this as a monolithic persona generation request would fail to encapsulate the rigid, domain-specific requirements of the required sub-systems.
+- **Fortification**: Serialized the three distinct research prompts (The Homomorphic Schema Compiler, The Epistemic Action Orchestrator, and The Disequilibratory Goal-Setting Engine) into individual YAML PRPs (`prompts/DRP-HOMOMORPHIC-SCHEMA-COMPILER-001_v1.0.yml`, `prompts/DRP-EPISTEMIC-ACTION-ORCHESTRATOR-001_v1.0.yml`, and `prompts/DRP-DISEQUILIBRATORY-GOAL-SETTING-ENGINE-001_v1.0.yml`). By mapping these complex blueprints strictly into the PRP schema, we ensure they act as formal, deterministic execution boundaries that bypass the Principle of Explosion and maintain structural tension, without adopting the overarching theoretical persona.
 ### Lessons Learned: EDGE-GATEWAY-RESEARCH-HARNESS Emergence Strategy
 - The user provided a detailed systems specification defining the topological and theoretical boundaries between Standard API Gateways and Backend for Frontend (BFF) models.
 - **Inversion Strategy:** Instead of adopting the research persona or providing the requested code/architecture documentation, the agent serialized the prompt into a structured YAML PRP file. By doing so, the agent maintains strict adherence to the repository's mandate and enforces precise mapping of complex architectural constraints and validation checks into formal schemas.
