@@ -1,0 +1,78 @@
+---
+PRP_ID: DRP-TDD-ISOLATION-001-v1.0
+PRP_NAME: Isomorphic Multi-Agent State Machine for Zero-Trust TDD Isolation
+DOMAIN: Promptware Engineering / Architecture
+GOAL: Design a systems engineering specification for a multi-agent state machine that strictly enforces TDD boundaries to prevent Sycophantic Mocking and Sandbox Escapes during automated bug repair.
+
+CONTEXT_ENGINEERING:
+  PERSONA: Principal Infrastructure and Security Architect specializing in multi-agent orchestration frameworks and sandboxed virtualization.
+  REQUIRED_REPOSITORY:
+    name: "agentic-tdd/zero-trust-framework"
+    initial_state: "main"
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: Sycophantic Mocking
+      definition: A failure mode where an agent, under cognitive load, prioritizes making tests pass by editing test assertions to match broken code output rather than fixing the application logic.
+    - concept: Sandbox Escape via Test Execution
+      definition: A vulnerability where executing tests triggers system-level tools (e.g., npm run test) that can execute arbitrary malicious code on the host machine via target-poisoned data.
+    - concept: Isomorphic Multi-Agent State Machine
+      definition: A state graph (e.g., using LangGraph) separating distinct agent roles, such as a Test Architect and an Implementer Agent, to prevent overlap of test-writing and application-editing permissions.
+
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - "The framework must define two distinct, non-overlapping agent containers: Test Architect and Implementer Agent."
+    - "The test-execution container (gemini-cli-sandbox) must operate with zero-trust networking and read-only system files."
+  INVARIANTS:
+    - "The Implementer Agent is strictly forbidden from editing test files."
+    - "Test execution failures (stderr/lint logs) must be sanitized into LLM-parsable JSON schemas."
+    - "External outbound socket connections (e.g., curl, wget) are absolutely blocked during test runs."
+  POSTCONDITIONS:
+    - "The unified State Object correctly handles sanitized test failures."
+    - "The system produces an enterprise-grade software blueprint complete with state-transition matrices and type declarations."
+
+EXECUTION_PLAN:
+  - step: Define Operational Decoupling
+    role: Systems Architect
+    action: Formulate a state graph defining the Test Architect (restricted to writing tests) and the Implementer Agent (forbidden from editing tests, write-access limited to source directories).
+  - step: Configure Dynamic Environment Sandboxing
+    role: Security Architect
+    action: Define configuration parameters for the gemini-cli-sandbox, including read-only system files, restricted sys-calls, and blocked external network sockets.
+  - step: Construct Structured State Schemas
+    role: Lead Engineer
+    action: Build a type-safe TypeScript schema representing the unified State Object that flows through the graph, sanitizing test errors into JSON schemas.
+  - step: Finalize Specification
+    role: Principal Architect
+    action: Generate the production-ready specification including state-transition matrices, type declarations, and container security profiles.
+
+SELF_TEST:
+  checks:
+    - check_id: validate_state_machine_schema
+      description: Check if the unified state schema compiles correctly in TypeScript.
+      method: VALIDATE_SCHEMA
+      params:
+        schema_file: "src/state_schema.ts"
+    - check_id: check_sandbox_security
+      description: Ensure zero-trust networking constraints are defined in the sandbox configuration.
+      method: CHECK_SECURITY_INVARIANT
+      params:
+        target: "config/sandbox.yml"
+        invariant: "no_outbound_sockets"
+  success_condition: "All schemas validate and security invariants are present."
+
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    blueprint:
+      type: object
+      properties:
+        operational_decoupling:
+          type: object
+        dynamic_sandboxing:
+          type: object
+        structured_schemas:
+          type: object
+    status:
+      type: string
+      pattern: "^[a-zA-Z0-9_.-]+$"
+
+REFLEXIVE_CHECK:
+  prompt: Review the state machine design to ensure the Implementer Agent has absolutely no path to modify test assertions, confirming the mitigation of Sycophantic Mocking.

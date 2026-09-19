@@ -181,6 +181,12 @@ check-jsonschema --schemafile schemas/prp_schema.yml prompts/MyPrompt_v1.0.yml
 *   **Core Concept:** Operates as a high-rigor research synthesis analyst, extracting frameworks from research documents and mapping them to the PEW stack.
 *   **Emergence Strategy:** Located in `PEW_ANALYSIS_AGENT_emergence_plan/`, defining the strategy to mathematically constrain the synthesis space and enforce precise, actionable integration mappings.
 
+## Agentic TDD Research Prompts
+The following Product-Requirements Prompts have been serialized into the `prompts/` directory to stress-test and evaluate advanced Agentic Test-Driven Development behaviors:
+- **DRP-TDD-ISOLATION-001_v1.0.yml**: Designs an isomorphic multi-agent state machine enforcing zero-trust TDD boundaries to prevent Sycophantic Mocking and Sandbox Escapes.
+- **DRP-PARAMETRIC-TDD-002_v1.0.yml**: Develops a mathematical optimization model mapping the parametric frontier between TDD loop convergence and token-latency overheads.
+- **DRP-UI-VERIFICATION-003_v1.0.yml**: Drafts a self-healing multimodal UI verification harness utilizing agent-driven Playwright replay loops.
+
 ## QED Architect Research Prompts
 The following Product-Requirements Prompts have been serialized into the `prompts/` directory to stress-test and evaluate advanced database behaviors:
 - **Topological_RAG_Manifold_Deformation_Audit_v1.0.yml**: Formulates a mathematical protocol to detect topological voids in a high-dimensional RAG context space.

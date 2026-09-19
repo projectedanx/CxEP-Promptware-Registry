@@ -1,0 +1,79 @@
+---
+PRP_ID: DRP-UI-VERIFICATION-003-v1.0
+PRP_NAME: Self-Healing Multimodal UI Verification Harness via Agent-Driven Playwright Replay Loops
+DOMAIN: Promptware Engineering / QA Automation
+GOAL: Draft a technical design proposal for an automated, self-healing visual testing harness using a multimodal agent to execute end-to-end UI verification loops.
+
+CONTEXT_ENGINEERING:
+  PERSONA: Principal QA Automation Engineer and Vision-ML Specialist.
+  REQUIRED_REPOSITORY:
+    name: "agentic-tdd/ui-verification-harness"
+    initial_state: "main"
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: Test-Driven Visual Spec
+      definition: Translating multimodal assets (hand-drawn sketches, PDF specs) into type-safe Playwright testing scripts to establish a baseline failure.
+    - concept: Automated Layout Grading and Code Repair
+      definition: A self-healing loop where a vision-enabled model analyzes screenshots, grades layout delta against specs, and generates CSS/HTML modifications to resolve alignment errors.
+    - concept: Verification and Checkpointing
+      definition: Taking atomic filesystem snapshots before applying visual fixes to allow rollback if style drift occurs.
+
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - "The harness must execute inside a containerized browser (e.g., Playwright MCP)."
+    - "Input design constraints must be parsed from a multimodal asset (sketch or PDF)."
+  INVARIANTS:
+    - "The agent must grade layout deltas using side-by-side screenshot comparisons."
+    - "An atomic filesystem snapshot must be taken prior to any codebase modifications."
+  POSTCONDITIONS:
+    - "The self-healing loop generates structured CSS/HTML code modifications that resolve alignment errors."
+    - "The system provides an enterprise-grade software blueprint with JSON-RPC tool definitions and architectural diagrams."
+
+EXECUTION_PLAN:
+  - step: Design Test-Driven Visual Spec Pipeline
+    role: QA Architect
+    action: Propose a pipeline to parse multimodal assets, translate design constraints into Playwright scripts, and execute them to record a baseline failure.
+  - step: Architect Automated Layout Grading
+    role: Vision-ML Specialist
+    action: Design the self-healing loop for analyzing screenshots, grading layout deltas, and generating targeted CSS/HTML code fixes.
+  - step: Implement Verification and Checkpointing
+    role: Release Engineer
+    action: Detail the process for taking atomic filesystem snapshots before fixes, enabling a rollback mechanism (/restore) for style drift.
+  - step: Finalize Blueprint
+    role: Principal QA Engineer
+    action: Compile the technical design proposal, including JSON-RPC tool definitions, architectural block diagrams, and concrete testing scenarios.
+
+SELF_TEST:
+  checks:
+    - check_id: validate_playwright_generation
+      description: Verify that the generated testing scripts are valid Playwright syntax.
+      method: SCAN_ARTIFACT
+      params:
+        target: "tests/generated_spec.ts"
+        pattern: "playwright_syntax"
+    - check_id: verify_snapshot_mechanism
+      description: Check that the checkpointing module correctly triggers atomic snapshots.
+      method: ASSERT_BLUEPRINT_CONSISTENCY
+      params:
+        target: "src/checkpointing.py"
+  success_condition: "Playwright syntax validates and snapshot mechanisms are correctly integrated."
+
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    blueprint:
+      type: object
+      properties:
+        visual_spec_pipeline:
+          type: object
+        layout_grading_loop:
+          type: object
+        checkpointing_mechanism:
+          type: object
+        json_rpc_tools:
+          type: object
+    status:
+      type: string
+      pattern: "^[a-zA-Z0-9_.-]+$"
+
+REFLEXIVE_CHECK:
+  prompt: Review the checkpointing logic to confirm that atomic filesystem snapshots guarantee complete rollback capability in the event of unintended style drift.
