@@ -57,3 +57,9 @@ When a user provides a complex, highly specialized persona definition (e.g., TAC
 - It is crucial to strictly adhere to the `schemas/prp_schema.yml` file, making sure that `PRP_ID` uses proper casing and separators.
 - Including complete reference code implementations in the `src/` directory ensures complex mathematical concepts aren't lost in translation to PRPs.
 - Use explicit search and insert mechanisms rather than generic string replacements when updating markdown documentation to avoid truncating existing content or corrupting formatting.
+
+### Lessons Learned: Agentic TDD Serialization
+
+**Instability:** We encountered complex architectural blueprints detailing Agentic Test-Driven Development (TDD) mechanisms, including Isomorphic Multi-Agent State Machines, Parametric Trade-off Models for TDD Loop Convergence, and Self-Healing Multimodal UI Verification Harnesses. Directly adopting the persona or summarizing these concepts into conversational text leads to a loss of strict verification boundaries, often resulting in "Sycophantic Mocking" where tests are modified to pass rather than fixing the underlying logic.
+
+**Fortification:** To counter this, we serialized the three specific Agentic TDD research prompts into structured YAML Product-Requirements Prompts (PRPs) (`prompts/DRP-TDD-ISOLATION-001_v1.0.yml`, `prompts/DRP-PARAMETRIC-TDD-002_v1.0.yml`, `prompts/DRP-UI-VERIFICATION-003_v1.0.yml`). By mapping these blueprints explicitly into the schema, we established formal, deterministic execution boundaries that enforce zero-trust isolation between testing and implementation roles, mathematically model convergence thresholds, and mandate atomic filesystem checkpoints. This ensures the theoretical constraints are actionable and verifiable within the repository's framework.

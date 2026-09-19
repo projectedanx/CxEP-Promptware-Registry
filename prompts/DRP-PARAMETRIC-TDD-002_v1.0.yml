@@ -1,0 +1,77 @@
+---
+PRP_ID: DRP-PARAMETRIC-TDD-002-v1.0
+PRP_NAME: Parametric Trade-off Analysis of TDD Loop Convergence vs. Multi-Model Cascade Latency
+DOMAIN: Promptware Engineering / Performance Optimization
+GOAL: Develop a mathematical optimization model and empirical study plan to map the parametric frontier between TDD Loop Convergence, Model Size, and Token-Latency Overheads.
+
+CONTEXT_ENGINEERING:
+  PERSONA: Lead AI Performance Engineer and Platform Optimizer specializing in large-context reasoning models (Gemini 3 Pro, Claude 4) and terminal-based agent tools.
+  REQUIRED_REPOSITORY:
+    name: "agentic-tdd/performance-benchmarks"
+    initial_state: "main"
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: Multi-Model Cascade Tuning
+      definition: A pipeline where initial planning is handled by a high-reasoning model (e.g., Gemini 3 Pro), and high-frequency code-writing loops are delegated to a faster, cheaper model (e.g., Gemini 2.5 Flash).
+    - concept: Doom Loop Breaking Threshold
+      definition: The mathematical threshold (max_iterations) where the probability of an agent self-correcting decays, necessitating an out-of-band human intervention gate.
+    - concept: Context Compression and State Retention
+      definition: A state-pruning algorithm that compresses conversation history to ensure critical global rules remain anchored in the context window.
+
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - "The model must account for the execution velocity ($V_{exec}$) and alignment accuracy ($A_{align}$)."
+    - "The analysis must include empirical benchmarking data from frameworks like SWE-Bench Verified."
+  INVARIANTS:
+    - "The cost-optimization frontier chart must use concrete token consumption data."
+    - "Critical global rules (like GEMINI.md instructions) must be retained during context compression."
+  POSTCONDITIONS:
+    - "The final output includes LaTeX-formatted equations for the threshold calculations."
+    - "A step-by-step benchmarking methodology is defined."
+
+EXECUTION_PLAN:
+  - step: Evaluate Multi-Model Cascade Tuning
+    role: Performance Engineer
+    action: Analyze the cost-to-accuracy ratio of a cascading agent architecture, evaluating token usage and latency between high-reasoning and fast models.
+  - step: Derive Doom Loop Breaking Threshold
+    role: Mathematician
+    action: Mathematically derive the optimal 'max_iterations' break value based on token consumption data for successful vs. failed repairs.
+  - step: Define Context Compression Algorithm
+    role: Systems Optimizer
+    action: Define a state-pruning algorithm that automatically compresses conversation history when token count crosses 300K, preserving critical rules.
+  - step: Finalize Mathematical Model
+    role: Lead Optimizer
+    action: Compile the analysis, LaTeX equations, optimization chart, and benchmarking methodology into the final empirical study plan.
+
+SELF_TEST:
+  checks:
+    - check_id: validate_latex_equations
+      description: Verify that the mathematical equations are correctly formatted in LaTeX.
+      method: SCAN_ARTIFACT
+      params:
+        target: "docs/optimization_model.tex"
+        pattern: "latex_math_mode"
+    - check_id: check_pruning_logic
+      description: Ensure the context compression algorithm correctly retains global instructions.
+      method: ASSERT_BLUEPRINT_CONSISTENCY
+      params:
+        target: "src/pruning_algorithm.py"
+  success_condition: "All equations validate and pruning logic retains required state."
+
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    analysis:
+      type: object
+      properties:
+        cascade_tuning_model:
+          type: object
+        doom_loop_threshold:
+          type: object
+        context_compression:
+          type: object
+    status:
+      type: string
+      pattern: "^[a-zA-Z0-9_.-]+$"
+
+REFLEXIVE_CHECK:
+  prompt: Review the breaking threshold derivation to ensure it accurately reflects empirical token consumption data and mitigates the Doom Loop effectively.
