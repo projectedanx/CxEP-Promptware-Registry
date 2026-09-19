@@ -1,0 +1,59 @@
+PRP_ID: SAE-SAPONIFICATION-MITIGATION-V1.0
+PRP_NAME: Reverse Engineering Preference-Alignment Collapses on Non-Separable Multi-Agent
+  Action Manifolds
+DOMAIN: Reinforcement Learning / Alignment Failure Analysis
+GOAL: "Analyze, detect, and mitigate 'Semantic Saponification'\u2014the state-space\
+  \ trap where preference alignment collapses the policy's advantage variance, destroying\
+  \ its ability to execute non-separable multi-step intercepts."
+CONTEXT_ENGINEERING:
+  PERSONA: AI Alignment Researcher
+  REQUIRED_REPOSITORY:
+    name: CxEP-Promptware-Registry
+    initial_state: HEAD
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Staged Advantage Estimation (SAE)
+    definition: A technique projecting raw empirical rewards onto a closed, convex
+      set that enforces tree-consistency constraints to resolve extreme gradient variance
+      when mixing heterogeneous prefixes.
+  - concept: Semantic Saponification
+    definition: The state-space trap where preference alignment collapses the policy's
+      advantage variance, destroying its ability to execute non-separable multi-step
+      intercepts.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - Understand the concept of Semantic Saponification and its effect on policy advantage
+    variance.
+  INVARIANTS:
+  - The EWAR hook must override standard normalization (forcing c=1) and scale advantages
+    by inverse log-probability of parent prefix when chi -> 0 and accuracy plateaus.
+  POSTCONDITIONS:
+  - EWAR recovers multi-step search capability within 50 gradient steps post-collapse.
+EXECUTION_PLAN:
+- step: Diagnostic Modeling
+  role: Diagnostics Engineer
+  action: Design a Python-based diagnostic harness monitoring advantage variance across
+    tree depths and calculate correlation coefficient (chi).
+- step: Saponification Injection
+  role: Red Team Engineer
+  action: Implement synthetic failure model where student policy collapses to uniform
+    greedy heuristic, reducing prefix-conditioned KL divergence to zero.
+- step: Harness Mitigation (EWAR Hook)
+  role: Mitigation Engineer
+  action: Construct an active Entropy-Weighted Advantage Recovery (EWAR) hook inside
+    the loss calculation.
+- step: Empirical Falsification
+  role: QA Engineer
+  action: Demonstrate on a simulated mathematical reasoning task that EWAR recovers
+    multi-step search capability within 50 gradient steps post-collapse.
+SELF_TEST:
+  checks:
+  - check_id: verify_ewar_recovery
+    description: Verify EWAR hook recovers multi-step search within 50 steps
+    method: CALCULATE_METRIC
+    params:
+      message: check recovery steps
+  success_condition: EWAR hook successfully restores structural contrast and recovers
+    search capability within 50 gradient steps.
+REFLEXIVE_CHECK:
+  prompt: Does the EWAR mitigation scale advantages correctly and definitively restore
+    search capability without introducing new instabilities?

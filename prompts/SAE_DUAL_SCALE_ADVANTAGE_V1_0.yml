@@ -1,0 +1,60 @@
+PRP_ID: SAE-DUAL-SCALE-ADVANTAGE-V1.0
+PRP_NAME: Dual-Scale Advantage Balancing via Continuous Spectral Mapping on Tree-Structured
+  State-Spaces
+DOMAIN: Reinforcement Learning / Systems Engineering
+GOAL: Mathematically model and code an adaptive Staged Advantage Estimation (SAE)
+  harness that dynamically interpolates between the expectation baseline V_E(p) and
+  the formal QP projection based on the spectral radius of the parent-child adjacency
+  matrix.
+CONTEXT_ENGINEERING:
+  PERSONA: Senior RL Systems Engineer / Researcher
+  REQUIRED_REPOSITORY:
+    name: CxEP-Promptware-Registry
+    initial_state: HEAD
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Staged Advantage Estimation (SAE)
+    definition: A technique projecting raw empirical rewards onto a closed, convex
+      set that enforces tree-consistency constraints to resolve extreme gradient variance
+      when mixing heterogeneous prefixes.
+  - concept: Spectral Information Discrepancy
+    definition: 'A metric (Psi) representing the divergence between the empirical
+      prefix-conditioned expectation and the unconstrained policy rewards: Psi = rho(D_parent
+      - D_children) * D_KL(pi_student || pi_teacher).'
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - The standard formal Constrained Quadratic Program (QP) solver for SAE is available.
+  INVARIANTS:
+  - The system must dynamically scale the constraint margin proportionally to local
+    Shannon entropy when Psi > 0.12.
+  POSTCONDITIONS:
+  - Dual-scale baseline reduces wall-clock computation time by over 40% compared to
+    a static QP solver.
+  - Constraint satisfaction rate of >= 98% is maintained.
+EXECUTION_PLAN:
+- step: Theoretical Formulation
+  role: RL Theorist
+  action: Formulate a Spectral Information Discrepancy metric (Psi) representing the
+    divergence between the empirical prefix-conditioned expectation and the unconstrained
+    policy rewards.
+- step: Adaptive Solver Implementation
+  role: Python Systems Engineer
+  action: Implement a Python module that computes Psi at each step. Bypass SLSQP optimizer
+    when Psi < 0.12 and use O(N) heuristic. Scale margin delta_ij proportionally to
+    Shannon entropy when Psi > 0.12.
+- step: Verification and Testing
+  role: QA Engineer
+  action: Write a PyTorch test case to prove dual-scale baseline reduces wall-clock
+    computation time by over 40% while maintaining >= 98% constraint satisfaction
+    rate.
+SELF_TEST:
+  checks:
+  - check_id: verify_adaptive_solver
+    description: Verify adaptive solver switching logic works based on Psi threshold
+    method: SCAN_ARTIFACT
+    params:
+      message: check adaptive solver implementation
+  success_condition: Adaptive solver switches between QP and heuristic correctly and
+    passes PyTorch test.
+REFLEXIVE_CHECK:
+  prompt: Did the implementation preserve the minimum 98% constraint satisfaction
+    rate while hitting the computation time reduction target?

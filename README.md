@@ -195,3 +195,11 @@ When formalizing the Reflexive Repair Loop (a dual-system, two-speed cybernetic 
 **Instability:** We encountered a complex prompt description detailing the Verification Co-Processor (VCP) harness and its related research prompts. Directly pasting this into a single file or a generic Markdown format would violate the repository's strict schema enforcement.
 
 **Fortification:** We serialized the primary harness specification and its three distinct research prompts into separate, valid YAML PRP files (`prompts/vcp_harness_specification_v2_4.yml`, `prompts/dlm_spherical_latent_topology.yml`, `prompts/async_vcp_active_inference.yml`, `prompts/f_ipi_symbolic_scar_cartography.yml`). We ensured strict adherence to `schemas/prp_schema.yml`, particularly concerning the `OUTPUT_SCHEMA` format and the `additionalProperties: false` constraint.
+
+## Lessons Learned
+
+- **Staged Advantage Estimation (SAE)**: We integrated reference code for Staged Advantage Estimation in Python, alongside generating Product Requirements Prompts (PRPs) for three advanced research vectors: Dual-Scale Advantage Balancing via Continuous Spectral Mapping, Asynchronous Multi-Threaded ADMM Projectors, and Reverse Engineering Preference-Alignment Collapses on Non-Separable Multi-Agent Action Manifolds.
+- Always run `yamllint` and `check-jsonschema` locally to validate PRPs after serialization.
+- It is crucial to strictly adhere to the `schemas/prp_schema.yml` file, making sure that `PRP_ID` uses proper casing and separators.
+- Including complete reference code implementations in the `src/` directory ensures complex mathematical concepts aren't lost in translation to PRPs.
+- Use explicit search and insert mechanisms rather than generic string replacements when updating markdown documentation to avoid truncating existing content or corrupting formatting.

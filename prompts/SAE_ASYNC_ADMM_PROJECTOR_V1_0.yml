@@ -1,0 +1,59 @@
+PRP_ID: SAE-ASYNC-ADMM-PROJECTOR-V1.0
+PRP_NAME: Asynchronous Multi-Threaded ADMM Projector for Hierarchical Prefixes with
+  Lock-Free Reference Swapping
+DOMAIN: Reinforcement Learning / High-Performance Computing
+GOAL: Build a lock-free, thread-safe Alternating Direction Method of Multipliers (ADMM)
+  solver in C++ or vectorized NumPy to replace the SLSQP solver, executing the SAE
+  convex projection within a 20ms inline training loop limit.
+CONTEXT_ENGINEERING:
+  PERSONA: HPC RL Systems Engineer
+  REQUIRED_REPOSITORY:
+    name: CxEP-Promptware-Registry
+    initial_state: HEAD
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Staged Advantage Estimation (SAE)
+    definition: A technique projecting raw empirical rewards onto a closed, convex
+      set that enforces tree-consistency constraints to resolve extreme gradient variance
+      when mixing heterogeneous prefixes.
+  - concept: Alternating Direction Method of Multipliers (ADMM)
+    definition: An algorithm that solves convex optimization problems by breaking
+      them into smaller pieces, each of which are then easier to handle.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - The objective is to formulate ADMM update equations decoupling quadratic loss
+    from linear inequalities representing the prefix constraint tree.
+  INVARIANTS:
+  - Advantage estimation must run in a background thread pool utilizing double-buffered
+    pointer swaps to avoid blocking active GPU passes.
+  POSTCONDITIONS:
+  - ADMM projector converges to primal-dual feasibility (epsilon <= 1e-6) in under
+    15ms.
+  - Zero deadlock exceptions during stress testing.
+EXECUTION_PLAN:
+- step: Convex Decoupling
+  role: Optimization Theorist
+  action: Formulate ADMM update equations that decouple quadratic loss from sparse
+    linear inequalities.
+- step: Vectorized Implementation
+  role: C++/NumPy Developer
+  action: Write complete vectorized NumPy implementation utilizing analytical solution
+    for L2-ball projection to enforce ||a||_2^2 <= N in O(1) time.
+- step: Asynchronous Pointers
+  role: HPC Engineer
+  action: Structure data collection pipeline such that advantage estimation runs in
+    a background thread pool with double-buffered pointer swaps.
+- step: Stress Testing
+  role: QA Engineer
+  action: Simulate training batch of 1024 concurrent completions on an 8-depth prefix
+    tree and prove convergence in under 15ms with zero deadlocks.
+SELF_TEST:
+  checks:
+  - check_id: verify_admm_convergence
+    description: Verify ADMM projector converges within time limit
+    method: CALCULATE_METRIC
+    params:
+      message: check convergence time
+  success_condition: ADMM converges in under 15ms with epsilon <= 1e-6 and zero deadlocks.
+REFLEXIVE_CHECK:
+  prompt: Does the lock-free implementation genuinely avoid blocking the main GPU
+    training thread?
