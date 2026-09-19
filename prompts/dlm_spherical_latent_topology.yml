@@ -1,0 +1,92 @@
+PRP_ID: DLM_SPHERICAL_LATENT_TOPOLOGY
+PRP_NAME: Differentiable Logic Manifolds and Spherical Latent Topology Stabilization
+DOMAIN: Frontier AI Engineering / Alignment and Safety
+GOAL: Design, implement, and mathematically validate an end-to-end training-time regularization
+  framework that projects a continuous latent thought trajectory onto a unit hypersphere
+  and uses a differentiable fuzzy logic loss.
+CONTEXT_ENGINEERING:
+  PERSONA: Frontier AI Safety Systems Engineer
+  REQUIRED_REPOSITORY:
+    name: dlm-spherical-topology
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Differentiable Logic Manifold (DLM)
+    definition: A framework that translates First-Order Logic (FOL) constraints into
+      differentiable constraints using product t-norm fuzzy operators to create potential
+      barriers in the latent space.
+  - concept: Spherical Variational Autoencoder (S-VAE)
+    definition: An architecture utilizing von Mises-Fisher (vMF) distributions to
+      represent latent variables, projecting the thought trajectory onto a unit hypersphere
+      to prevent posterior collapse.
+  - concept: Persistent Homology
+    definition: A topological data analysis method to track the evolution of the latent
+      space point cloud, quantifying Betti numbers to detect logical contradictions
+      (beta_1 >= 1).
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - The model architecture supports continuous latent variables.
+  - A dataset of sequentially introduced tasks and associated FOL constraints is available.
+  INVARIANTS:
+  - The total loss must include task loss, logic loss, and spherical regularization
+    loss.
+  - The latent representation must remain on the unit hypersphere (S^{d-1}).
+  POSTCONDITIONS:
+  - The Epistemic Elasticity Coefficient (EEC) is quantified under systematic perturbations.
+  - The Mutation Recoverability Score (MRS) verifies convergence to human-verified
+    attractor basins after adversarial falsification.
+EXECUTION_PLAN:
+- step: Mathematical Grounding
+  role: Machine Learning Engineer
+  action: Formalize the composite loss function with task, logic, and spherical regularization
+    components.
+- step: Spherical Manifold Mapping
+  role: Machine Learning Engineer
+  action: Implement the S-VAE with vMF distributions to prevent posterior collapse.
+- step: Topological Validation
+  role: Research Scientist
+  action: Track the latent point cloud evolution using Persistent Homology and calculate
+    Betti numbers and EEC.
+- step: Adversarial Falsification
+  role: Adversarial Tester
+  action: Train a Failure Generator agent to induce stable logical contradictions
+    and measure the MRS.
+SELF_TEST:
+  checks:
+  - check_id: check_loss_components
+    description: Ensure the composite loss function includes all three required components.
+    method: VALIDATE_SCHEMA
+    params:
+      component_count: 3
+  success_condition: All required loss components are actively regularizing the training
+    process.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    type:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+    loss_function_formulation:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+    s_vae_implementation_details:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+    topological_validation_results:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+    adversarial_falsification_metrics:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+REFLEXIVE_CHECK:
+  prompt: Verify that the spherical regularization effectively prevents posterior
+    collapse under the heavy constraints imposed by the logic loss.

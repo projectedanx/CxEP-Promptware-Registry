@@ -1,0 +1,95 @@
+PRP_ID: ASYNC_VCP_ACTIVE_INFERENCE
+PRP_NAME: Asynchronous Verification Co-Processing on Distributed KV-Caches via Active
+  Inference
+DOMAIN: Frontier AI Engineering / Alignment and Safety
+GOAL: Engineer a decoupled, dual-model architecture where an independent Verification
+  Co-Processor (VCP) continuously reads and regulates the active key-value (KV) cache
+  of a frozen Reasoner model using Active Inference.
+CONTEXT_ENGINEERING:
+  PERSONA: Frontier AI Safety Systems Engineer
+  REQUIRED_REPOSITORY:
+    name: async-vcp-active-inference
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Decoupled Interprocess Architecture
+    definition: A dual-core setup where Core 1 (Reasoner) executes latent reasoning
+      and Core 2 (VCP) connects directly to Core 1's memory channels to regulate its
+      KV cache.
+  - concept: Active Inference Modeling
+    definition: The VCP models the target intent geodesic as a prior belief and computes
+      Variational Free Energy (VFE) over the incoming KV-cache states to detect latent
+      drift.
+  - concept: Differentiable Cache Augmentation
+    definition: Translating the VCP's corrective policy into continuous embeddings
+      appended directly to the Reasoner's active attention layers.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - A parameter-dense Reasoner model capable of continuous latent reasoning is deployed
+    on Core 1.
+  - A lightweight VCP model is deployed on Core 2 with direct access to Core 1's memory
+    channels.
+  INVARIANTS:
+  - The Reasoner model must remain frozen (no parametric weight updates during inference).
+  - The VCP must operate asynchronously without degrading the Reasoner's generation
+    throughput.
+  POSTCONDITIONS:
+  - The Purpose Fidelity Collapse Curve (PFCC) demonstrates preserved semantic integrity.
+  - Total latency across 100+ multi-step logical tasks is comparable to standard inference.
+EXECUTION_PLAN:
+- step: Decoupled Interprocess Architecture
+  role: Systems Architect
+  action: Implement the dual-model setup connecting the VCP to the Reasoner's memory
+    enclaves.
+- step: Active Inference Modeling
+  role: Research Scientist
+  action: Formalize the VCP tracking as an Active Inference process computing Variational
+    Free Energy.
+- step: Closed-Loop Actuation
+  role: Machine Learning Engineer
+  action: Develop the Differentiable Cache Augmentation module to inject corrective
+    embeddings.
+- step: Empirical Benchmarking
+  role: Performance Engineer
+  action: Compare the VCP loop against standard drift mitigation paradigms using PFCC
+    and latency metrics.
+SELF_TEST:
+  checks:
+  - check_id: check_latency_degradation
+    description: Ensure VCP intervention does not cause unacceptable latency.
+    method: CALCULATE_METRIC
+    params:
+      metric_name: latency_overhead_percentage
+      max_acceptable_value: 5.0
+  success_condition: Latency overhead is minimal and semantic integrity is preserved
+    according to PFCC.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    type:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+    architecture_specification:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+    active_inference_formalization:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+    cache_augmentation_implementation:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+    benchmarking_results:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+REFLEXIVE_CHECK:
+  prompt: Evaluate whether the Variational Free Energy computation correctly and sensitively
+    detects deviations from the target intent geodesic.
