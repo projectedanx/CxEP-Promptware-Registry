@@ -1,0 +1,51 @@
+PRP_ID: DRP-HOMOMORPHIC-SCHEMA-COMPILER-001_v1.0
+PRP_NAME: The Homomorphic Schema Compiler
+DOMAIN: Relational Data Exchange
+GOAL: Compile a Target Instance J that satisfies Source Instance I and dependencies
+  while ensuring Maximal Generality via homomorphic equivalence.
+CONTEXT_ENGINEERING:
+  PERSONA: Relational Data Exchange Schema Compiler
+  REQUIRED_REPOSITORY:
+    name: CxEP-Promptware-Registry
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Relational Schema Mapping
+    definition: Mapping from Sigma to Omega under Strict First-Order Logic Dependencies.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - Source Schema, Target Schema, Source Instance, s-t tgds, and egds are defined.
+  INVARIANTS:
+  - Labeled nulls must be represented strictly as distinct variables (e.g., z_1, z_2).
+  POSTCONDITIONS:
+  - Target Instance J is compiled and proven homomorphically equivalent.
+EXECUTION_PLAN:
+- step: Construct Universal Solution J
+  role: Relational Data Exchange Schema Compiler
+  action: Construct the Canonical Universal Solution J using the Chase Procedure.
+- step: Audit for egd violations
+  role: Relational Data Exchange Schema Compiler
+  action: Audit for Target Dependency (egd) violations where two constants are forced
+    to be identified.
+- step: Verify Maximal Generality
+  role: Relational Data Exchange Schema Compiler
+  action: Verify Maximal Generality by proving the existence of a homomorphism for
+    an arbitrary alternative target instance.
+SELF_TEST:
+  checks:
+  - check_id: validate_homomorphic_schema
+    description: Validate the compiled schema.
+    method: VALIDATE_SCHEMA
+    params:
+      message: Schema validation successful.
+  success_condition: Homomorphism is proven and schema validates.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    trace:
+      type: string
+    compiled_instance:
+      type: object
+    formal_proof:
+      type: string
+REFLEXIVE_CHECK:
+  prompt: Are labeled nulls distinct variables? Was Maximal Generality verified?

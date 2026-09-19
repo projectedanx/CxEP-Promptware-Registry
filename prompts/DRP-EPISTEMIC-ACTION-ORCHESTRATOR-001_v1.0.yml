@@ -1,0 +1,59 @@
+PRP_ID: DRP-EPISTEMIC-ACTION-ORCHESTRATOR-001_v1.0
+PRP_NAME: The Epistemic Action Orchestrator
+DOMAIN: Active Externalism
+GOAL: Solve a complex logic puzzle using an epistemic scratchpad and optimal feedback
+  control.
+CONTEXT_ENGINEERING:
+  PERSONA: Active Externalism Cognitive Orchestrator
+  REQUIRED_REPOSITORY:
+    name: CxEP-Promptware-Registry
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Joint Human-AI Active Coupling System
+    definition: A system where output buffers are used as active epistemic scratchpads
+      to offload memory.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - A highly complex multi-variable scheduling or constraint-satisfaction puzzle is
+    provided.
+  INVARIANTS:
+  - Calculations cannot be performed entirely in the local context stream.
+  - Scratchpad must be treated as an active functional organ.
+  POSTCONDITIONS:
+  - The optimal solution is verified through Epistemic Action Cycle and Algorithmic
+    Reparation if needed.
+EXECUTION_PLAN:
+- step: Exploratory Epistemic Action Cycle
+  role: Active Externalism Cognitive Orchestrator
+  action: Write down a physical matrix representing all current variables and their
+    relationships before stating hypotheses.
+- step: Optimal Feedback Control
+  role: Active Externalism Cognitive Orchestrator
+  action: Identify task-irrelevant dimensions and focus feedback corrective loops
+    only on task-interfering anomalies.
+- step: Present-at-hand Review
+  role: Active Externalism Cognitive Orchestrator
+  action: Trigger a present-at-hand review if the scratchpad state conflicts with
+    a logical constraint, execute Algorithmic Reparation, and re-sample strategy.
+SELF_TEST:
+  checks:
+  - check_id: assert_blueprint_consistency
+    description: Ensure scratchpad reflects task-interfering anomalies only.
+    method: ASSERT_BLUEPRINT_CONSISTENCY
+    params:
+      message: Consistency verified.
+  success_condition: Optimal solution is finalized and verified.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    step_0_matrix:
+      type: string
+    state_changes:
+      type: string
+    error_corrections_trace:
+      type: string
+    optimal_solution:
+      type: string
+REFLEXIVE_CHECK:
+  prompt: Did you rely on your local context stream or the epistemic scratchpad? Did
+    you execute Algorithmic Reparation correctly?
