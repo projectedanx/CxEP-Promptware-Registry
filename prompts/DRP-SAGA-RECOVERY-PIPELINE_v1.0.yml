@@ -1,0 +1,68 @@
+PRP_ID: DRP-SAGA-RECOVERY-PIPELINE-V1.0
+PRP_NAME: UASTP Saga Recovery Pipeline
+DOMAIN: GitHub Actions CI/CD and Sovereign Cognitive Operating System (SCOS)
+GOAL: Compile a UASTP cognitive contract into a zero-entropy GitHub Actions workflow, mapping forward transactions to deterministic CI steps and compensating transactions to rollback steps with epistemic failure escrows.
+CONTEXT_ENGINEERING:
+  PERSONA: "SRE-Omen: High-Reliability Operations Architect"
+  REQUIRED_REPOSITORY:
+    name: "sovereign-uastp-repo"
+    initial_state: "main"
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: "Cognitive Contract (CxB)"
+      definition: "A distributed multi-agent transaction defining Saga Compensating Transactions."
+    - concept: "Isomorphic Formalization"
+      definition: "Mapping UASTP state machines directly to GitHub Actions runner runtime."
+    - concept: "Topological Tearing"
+      definition: "Broken deployments caused by asynchronous state mutations diverging from the Merkle root."
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - "A declarative UASTP cognitive contract exists."
+    - "GitHub Actions OIDC federation is configured."
+  INVARIANTS:
+    - "Least-Privilege Identity Rule must be enforced via OIDC JWTs; static secrets are prohibited."
+    - "All third-party GitHub Actions must be pinned to immutable 40-character commit SHAs."
+    - "Read-only (Manifold alpha) and mutating jobs (Manifold beta) must be strictly decoupled."
+  POSTCONDITIONS:
+    - "A GitHub Actions workflow (uastp-saga-recovery.yml) is generated."
+    - "Failed rollback steps trigger an Epistemic Escrow halt and emit an SRE webhook alert."
+EXECUTION_PLAN:
+  - step: "Map Forward Transactions"
+    role: "Compiler"
+    action: "Map the Forward Transaction (T_f) to a standard job execution step."
+  - step: "Implement Verification Gate"
+    role: "Validator"
+    action: "Map the Verification Gate (V_g) to an automated test execution block."
+  - step: "Design Compensating Transaction"
+    role: "Architect"
+    action: "Map the Compensating Transaction (T_c) to an idempotent rollback step gated by if: failure()."
+  - step: "Configure Epistemic Escrow"
+    role: "SRE"
+    action: "Implement a halt and alert step for failures in the rollback process."
+SELF_TEST:
+  checks:
+    - check_id: validate_workflow_schema
+      description: "Verify that the generated GitHub Actions YAML is structurally valid."
+      method: VALIDATE_SCHEMA
+      params:
+        target_file: ".github/workflows/uastp-saga-recovery.yml"
+    - check_id: check_commit_pinning
+      description: "Ensure all used actions are pinned by 40-character SHA."
+      method: CHECK_SECURITY_INVARIANT
+      params:
+        invariant_type: "SHA_PINNING"
+    - check_id: check_oidc_usage
+      description: "Ensure OIDC is used for cloud authentication instead of static keys."
+      method: CHECK_SECURITY_INVARIANT
+      params:
+        invariant_type: "OIDC_AUTH"
+  success_condition: "All static code analysis and security invariant checks pass."
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    workflow_yaml:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        "^\\$?[a-zA-Z0-9_.-]+$": {}
+REFLEXIVE_CHECK:
+  prompt: "Did I ensure that the GitHub Actions workflow strictly isolates the read-only epistemic audit jobs from the stateful infrastructure mutation jobs?"

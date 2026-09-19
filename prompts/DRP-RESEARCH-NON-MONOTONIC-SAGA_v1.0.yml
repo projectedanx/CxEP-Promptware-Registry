@@ -1,0 +1,50 @@
+PRP_ID: DRP-RESEARCH-NON-MONOTONIC-SAGA-V1.0
+PRP_NAME: Non-Monotonic Saga Compensations in Heterogeneous Multi-Model API Handshakes
+DOMAIN: SCOS Middleware Engineering
+GOAL: Implement a rust-based MCP middleware server that enforces a strict Winston's Taxonomy mereology across a multi-model code-generation pipeline.
+CONTEXT_ENGINEERING:
+  PERSONA: "SCOS Rust Systems Engineer"
+  REQUIRED_REPOSITORY:
+    name: "scos-middleware-repo"
+    initial_state: "main"
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: "Ontological Shear"
+      definition: "Partial tool execution failures in federated multi-agent systems resulting in uncompensated database mutations."
+    - concept: "Belnapian 4-valued logic"
+      definition: "Logical framework used to evaluate the multi-agent interaction and isolate loop-corruption failure modes."
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - "Multi-agent federated setup with Canary Agent and Executor Agent is accessible."
+  INVARIANTS:
+    - "Middleware server must intercept all JSON-RPC 2.0 tool calls."
+    - "Compensating transaction schema must have an Orthogonality Score of <0.4."
+  POSTCONDITIONS:
+    - "Programmatic tests confirm the isolation of 'Deus Ex Machina' loop-corruption."
+EXECUTION_PLAN:
+  - step: "Implement Rust MCP Server"
+    role: "Rust Developer"
+    action: "Develop the middleware server to intercept tool calls and enforce mereology."
+  - step: "Enforce Compensating Schema"
+    role: "Systems Engineer"
+    action: "Force the Executor Agent to pre-register a bitemporal compensating transaction schema for any database mutations."
+  - step: "Evaluate with Belnapian Logic"
+    role: "Logic Researcher"
+    action: "Programmatically test the interaction using Belnapian 4-valued logic to ensure eventual consistency."
+SELF_TEST:
+  checks:
+    - check_id: verify_json_rpc_interception
+      description: "Ensure all JSON-RPC 2.0 tool calls are successfully intercepted by the middleware."
+      method: CHECK_SECURITY_INVARIANT
+      params:
+        invariant_type: "JSON_RPC_INTERCEPT"
+  success_condition: "All tests pass successfully."
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    middleware_test_results:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        "^\\$?[a-zA-Z0-9_.-]+$": {}
+REFLEXIVE_CHECK:
+  prompt: "Did I properly enforce the Orthogonality Score constraint (<0.4) on the pre-registered compensating transaction schemas?"
