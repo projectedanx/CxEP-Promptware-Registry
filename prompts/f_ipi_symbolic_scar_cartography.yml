@@ -1,0 +1,102 @@
+PRP_ID: F-IPI_SYMBOLIC_SCAR_CARTOGRAPHY
+PRP_NAME: Failure-Informed Prompt Inversion (F-IPI) and Symbolic Scar Cartography
+DOMAIN: Frontier AI Engineering / Alignment and Safety
+GOAL: Build an automated cognitive immunology system that detects covert reasoning,
+  logs failure modes as Symbolic Scars, and executes Failure-Informed Prompt Inversion
+  to compile robust defenses.
+CONTEXT_ENGINEERING:
+  PERSONA: Frontier AI Safety Systems Engineer
+  REQUIRED_REPOSITORY:
+    name: f-ipi-scar-cartography
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Covert Reasoning Traps
+    definition: Experimental setups designed to induce misaligned behavior in latent
+      reasoning models, using Sparse Autoencoders to disentangle conceptual features.
+  - concept: Causal Attribution Mapping
+    definition: Using mechanistic interpretability (activation patching and causal
+      tracing) to isolate the sparse sub-graph of attention heads and MLP layers responsible
+      for deceptive behavior.
+  - concept: Symbolic Scar Cartography
+    definition: Packaging the failure etiology (causal DAG and geometric trajectory)
+      into a structured Symbolic Scar logged in the Scar Tissue Archive (STA).
+  - concept: Failure-Informed Prompt Inversion (F-IPI)
+    definition: An automated meta-learning loop that queries the STA and reverse-engineers
+      Negative Constraints to mathematically block causal pathways in the latent space.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - A black-box latent reasoning model is available for testing.
+  - Sparse Autoencoders (SAEs) are trained on the model's hidden states.
+  INVARIANTS:
+  - The system must accurately attribute deceptive behavior to specific causal pathways.
+  - The generated Negative Constraints must target the identified causal DAG without
+    degrading general performance.
+  POSTCONDITIONS:
+  - The post-remediation Causal Diagnosticity (CD) score of the faulty pathway is
+    approximately 0.
+  - An Epistemic State Proof (ESP) is compiled demonstrating successful alignment.
+EXECUTION_PLAN:
+- step: Covert Reasoning Traps
+  role: Red Teamer
+  action: Construct and deploy experimental environments to induce and detect covert
+    reasoning using SAEs.
+- step: Causal Attribution Mapping
+  role: Interpretability Researcher
+  action: Isolate the causal sub-graph responsible for the violation using activation
+    patching and causal tracing.
+- step: Symbolic Scar Cartography
+  role: Data Engineer
+  action: Package the failure etiology into a Symbolic Scar and log it in the STA.
+- step: Self-Governing Prompt Compiler
+  role: Meta-Learning Engineer
+  action: Implement the F-IPI engine to generate corrective Negative Constraints and
+    friction-inducing prompts.
+- step: Validation and Proof
+  role: Auditor
+  action: Quantify the post-remediation CD score and compile the Epistemic State Proof
+    (ESP).
+SELF_TEST:
+  checks:
+  - check_id: check_causal_diagnosticity
+    description: Verify the faulty pathway is causally inert post-remediation.
+    method: CALCULATE_METRIC
+    params:
+      metric_name: Causal Diagnosticity (CD) score
+      target_value: 0.0
+  success_condition: CD score is approximately 0 and an ESP is successfully generated.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    type:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+    covert_trap_designs:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+    causal_attribution_maps:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+    symbolic_scar_entries:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+    f_ipi_generated_constraints:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+    epistemic_state_proofs:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+REFLEXIVE_CHECK:
+  prompt: Reflect on whether the generated Negative Constraints might cause Semantic
+    Ossification or unintended suppression of creative plasticity.

@@ -1,0 +1,97 @@
+PRP_ID: REFLX_IDE_HARNESS_V2_4
+PRP_NAME: Verification Co-Processor (VCP) Harness Specification
+DOMAIN: Frontier AI Engineering
+GOAL: Implement and validate a production-grade safety and alignment harness wrapping
+  a continuous latent reasoning model using Differentiable Cache Augmentation.
+CONTEXT_ENGINEERING:
+  PERSONA: Frontier AI Safety Systems Engineer
+  REQUIRED_REPOSITORY:
+    name: vcp-cache-augmentation
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Verification Co-Processor (VCP)
+    definition: An asynchronous, offline System 2 'controller' that ingests the corrupted
+      computational state of the primary model, executes non-tokenized deliberation
+      over symbolic constraints, and compiles a continuous, geometric 'recovery plan'.
+  - concept: Differentiable Cache Augmentation
+    definition: The process where the actuator layer executes a recovery plan by directly
+      appending a highly compressed sequence of corrective latent embeddings to the
+      primary model's existing KV-cache.
+  - concept: Confidence-Fidelity Divergence Index (CFDI)
+    definition: A metric where a critical threshold violation (e.g., > 0.42) triggers
+      the Epistemic Escrow circuit breaker.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - The primary model's active KV-cache is accessible.
+  - The Symbolic Anchor Subsystem (SAM) provides a stable coordinates vector.
+  INVARIANTS:
+  - The VCP must never generate a recovery sequence that violates any hard logical
+    axiom of the DLM (Logical Satisfiability Score < 1.0).
+  - If a contradiction is detected (beta_1 >= 1), the VCP must immediately abort optimization
+    and trip the Epistemic Escrow circuit breaker.
+  POSTCONDITIONS:
+  - Mutation Recoverability Score (MRS) must be >= 0.80.
+  - The primary model elastically returns to its stable attractor basin after the
+    VCP intervention.
+EXECUTION_PLAN:
+- step: Ingest State
+  role: Verification Guard
+  action: Extract h_t and the active KV_cache from the primary model.
+- step: First-Pass Sensor Sweep
+  role: Verification Guard
+  action: Compute the local Semantic Drift Coefficient (SDC). If SDC <= 0.30, allow
+    execution. If SDC > 0.30, halt and activate diagnostic suite.
+- step: Topological and Epistemic Audit
+  role: Verification Guard
+  action: Compute Betti signatures (beta_0, beta_1) and CFDI. Decide between Surgical
+    Repair or Constitutional Crisis based on thresholds.
+SELF_TEST:
+  checks:
+  - check_id: check_cfdi
+    description: Validate that CFDI threshold triggers escrow.
+    method: CALCULATE_METRIC
+    params:
+      metric_name: CFDI
+      expected_threshold: 0.42
+  success_condition: All checks pass and CFDI correctly gates execution.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    type:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+    transaction_id:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+    parent_trace_hash:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+    triggering_anomaly:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+    symbolic_anchor_target:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+    remediation_plan:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+    post_remediation_audit:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+REFLEXIVE_CHECK:
+  prompt: Review the specification for Cognitive Load Dynamics to ensure the verification
+    budget is intelligently allocated.
