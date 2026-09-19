@@ -1,0 +1,43 @@
+PRP_ID: DRP-MIQ-REFLEXION-01
+PRP_NAME: Quantifying Epistemic Friction Threshold
+DOMAIN: Promptware Engineering / AI Governance
+GOAL: "Manage the calculation of the Martensite Initiation Quotient (MIQ) within a multi-agent Reflexion loop  \nto determine the precise volume of contradictory error data (Efric) required to force an agent to  \nabandon a fossilized heuristic and undergo epistemic renewal. \n \nEnsure your protocol strictly enforces the following constraints: \n1. Initialize the Target Input Space (IT) as 'Stare Decisis in Legal Precedent' (Rigid, Coherence Cformal = 0.98),  \n   where the actor agent is locked into an entrenched, repetitive reasoning path. \n2. Introduce a highly hostile Antagonistic Input Space (IA) using 'Montage Theory in Filmmaking'  \n   to maximize cognitive dissonance and trigger Doubt Induction. \n3. Configure a Rheological Controller to audit the agent\u2019s Epistemic Wave Function using a  \n   Speculative Abstract Interpretation Engine (SAIE) to detect the onset of a 'Rough Chromosome'. \n4. Run a simulated execution loop where the Concept Blender progressively increases Efric (contradictory logs).  \n   The Intent Delta Governance component must track the Behavioral Intent Continuity Model (BICM)  \n   and locate the exact inflection point (Vcrit) where the model's confidence collapses but prior to  \n   the system degenerating into semantic noise. \n5. If the Intent Divergence Score drops below Vcrit = 0.25, invoke the Firebearer agent to log the  \n   Symbolic Scar and generate a Failure-Informed Prompt Inversion (FIPI) to patch the actor's prompt. \n \nOutput the finalized MIQ formula (MIQ = f(Efric, delta_Intent)) and the complete, machine-readable JSON  \nprotocol detailing the schema and logging mechanics of the Symbolic Scar Registry."
+CONTEXT_ENGINEERING:
+  PERSONA: Principal Cognitive Systems Architect
+  REQUIRED_REPOSITORY:
+    name: CxEP-Promptware-Registry
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Reflexion
+    definition: Verbal metacognition to optimize behavioral trajectories.
+  - concept: Voyager
+    definition: A symbolic, evolutionary codebase of executable code primitives to systematically expand its capabilities.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - The agent must understand Reflexion and Voyager architectures.
+  INVARIANTS:
+  - The execution must strictly adhere to the constraints defined in the prompt.
+  POSTCONDITIONS:
+  - The output must meet all the requirements specified in the prompt.
+EXECUTION_PLAN:
+- step: Understand the requirements
+  role: Analyst
+  action: Analyze the prompt and its constraints.
+- step: Draft the solution
+  role: Architect
+  action: Design and generate the required outputs.
+SELF_TEST:
+  checks:
+  - check_id: test_output_format
+    description: Verify output format.
+    method: LOG_MESSAGE
+    params:
+      message: Output format verified
+  success_condition: All tests pass
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    finalized_miq_formula: {}
+    symbolic_scar_registry_protocol: {}
+REFLEXIVE_CHECK:
+  prompt: Did I strictly follow all the constraints in the prompt?

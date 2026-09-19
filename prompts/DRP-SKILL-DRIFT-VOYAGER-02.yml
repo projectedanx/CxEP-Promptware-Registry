@@ -1,0 +1,42 @@
+PRP_ID: DRP-SKILL-DRIFT-VOYAGER-02
+PRP_NAME: Reverse-Engineering Skill Drifting
+DOMAIN: Promptware Engineering / AI Governance
+GOAL: "Conduct a forensic deconstruction of 'Skill Drifting'\u2014the accumulation of latent logical and syntactic  \nerrors in deeply nested executable primitives\u2014within a Voyager-class lifelong learning agent.  \n \nYour objective is to design a high-fidelity stress-test pipeline that systematically probes the  \nreliability limits of a retrieved Skill Library across deep execution horizons: \n1. Define the Precedence Hierarchy: Map how a change in a base-level code primitive (Level 0) propagates  \n   through multiple layers of dependent skills (up to Level 5) stored in the vector database. \n2. Simulate a Dependency Collision: Introduce an API schema change in an external mock database MCP tool.  \n   Observe how the Sandboxed Debugger attempts to compile and self-heal nested functions. At what depth  \n   does the agent's context window saturate, causing it to default to a 'lazy implementer' state (e.g.,  \n   writing placeholder logic like '// TODO: implement')? \n3. Instrument the Pattern Ledger: Track real-time metrics during the self-healing cycle: MTLD for structural  \n   diversity, Distinct-3 for local token entropy, and Semantic Reynolds Number to monitor the  \n   turbulent transition of the agent's internal reasoning from coherent debugging to infinite looping. \n4. Establish an Epistemic Escrow: If the agent executes the same failing repair script three times consecutively  \n   without reducing compile errors, trigger an immediate halt, serialize the entire state object, and  \n   generate a detailed rollback manifest using git check-point tools. \n \nGenerate a comprehensive systems engineering report outlining your findings, including the exact mathematical  \nrelationships governing the Operator Drift Score, a schema for the dependency whitelist, and an optimized  \ncontext compaction heuristic to prevent amnesia during long-horizon repair cycles."
+CONTEXT_ENGINEERING:
+  PERSONA: Principal Cognitive Systems Architect
+  REQUIRED_REPOSITORY:
+    name: CxEP-Promptware-Registry
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Reflexion
+    definition: Verbal metacognition to optimize behavioral trajectories.
+  - concept: Voyager
+    definition: A symbolic, evolutionary codebase of executable code primitives to systematically expand its capabilities.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - The agent must understand Reflexion and Voyager architectures.
+  INVARIANTS:
+  - The execution must strictly adhere to the constraints defined in the prompt.
+  POSTCONDITIONS:
+  - The output must meet all the requirements specified in the prompt.
+EXECUTION_PLAN:
+- step: Understand the requirements
+  role: Analyst
+  action: Analyze the prompt and its constraints.
+- step: Draft the solution
+  role: Architect
+  action: Design and generate the required outputs.
+SELF_TEST:
+  checks:
+  - check_id: test_output_format
+    description: Verify output format.
+    method: LOG_MESSAGE
+    params:
+      message: Output format verified
+  success_condition: All tests pass
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    systems_engineering_report: {}
+REFLEXIVE_CHECK:
+  prompt: Did I strictly follow all the constraints in the prompt?
