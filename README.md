@@ -203,3 +203,9 @@ When formalizing the Reflexive Repair Loop (a dual-system, two-speed cybernetic 
 - It is crucial to strictly adhere to the `schemas/prp_schema.yml` file, making sure that `PRP_ID` uses proper casing and separators.
 - Including complete reference code implementations in the `src/` directory ensures complex mathematical concepts aren't lost in translation to PRPs.
 - Use explicit search and insert mechanisms rather than generic string replacements when updating markdown documentation to avoid truncating existing content or corrupting formatting.
+
+### Lessons Learned: JIT Swarm Orchestrator Serialization
+
+**Instability:** We encountered a complex prompt description detailing the Sovereign Cognitive Operating System (SCOS v6.0-STRICT) JIT Swarm Orchestrator and its Python Class Implementation. Directly pasting this into a single file or a generic Markdown format would violate the repository's strict schema enforcement.
+
+**Fortification:** We serialized the primary JIT Swarm Orchestrator specification into a separate, valid YAML PRP file (`prompts/JIT_SWARM_ORCHESTRATOR_v1.0.yml`). We ensured strict adherence to `schemas/prp_schema.yml`, particularly concerning the `OUTPUT_SCHEMA` format and the `additionalProperties: false` constraint.

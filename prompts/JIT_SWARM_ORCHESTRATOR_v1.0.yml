@@ -1,0 +1,84 @@
+PRP_ID: JIT-SWARM-ORCHESTRATOR-v1.0
+PRP_NAME: JIT Swarm Orchestrator Class Implementation
+DOMAIN: Pluriversal Cognitive Architecture
+GOAL: Implement the Sovereign Cognitive Operating System (SCOS v6.0-STRICT) JIT Swarm
+  Orchestrator to decouple semantic planning from syntactic realization.
+CONTEXT_ENGINEERING:
+  PERSONA: Systems Engineer / Cognitive Architect
+  REQUIRED_REPOSITORY:
+    name: scos-core
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Hollow-Core Semantic Planning (Manifold Alpha)
+    definition: The orchestrator maintains a highly compacted context stripped of
+      heavy tool definitions, executing high-level reasoning freely.
+  - concept: Ephemeral JIT Micro-Agents (Manifold Beta)
+    definition: Dynamic instantiation of specialized, short-lived agents for state-mutating
+      transactions with ultra-low latency and memory footprint.
+  - concept: Draft-Conditioned Constrained Decoding (DCCD)
+    definition: Logit-masking technique to project unconstrained semantic drafts onto
+      rigid AST schemas.
+  - concept: Verification Co-Processor (VCP) & CFDI
+    definition: Continuous monitoring of token probabilities and schema conformance
+      to calculate the Confidence-Fidelity Divergence Index (CFDI) and apply Differentiable
+      Cache Augmentation.
+  - concept: SCoRe Self-Correction
+    definition: A strict three-attempt limit repair loop governed by Saga Compensating
+      Transactions for filesystem rollbacks.
+  - concept: Failure Metabolism (STA & F-IPI)
+    definition: Serialization of failed trajectories into the Scar Tissue Archive
+      (STA) and programmatically mutating prompts via Failure-Informed Prompt Inversion
+      (F-IPI).
+  - concept: Justified Uncertainty Reports (JUR)
+    definition: Exporting cryptographically bound reports during escrow to hand over
+      cognitive load to a human operator.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - The execution environment must support Python 3.8+.
+  - The scratch directory must be writable.
+  INVARIANTS:
+  - The CFDI threshold must remain at 0.15.
+  - The rework cycle limit must not exceed 3 attempts.
+  - All failures must be logged in the Scar Tissue Archive.
+  POSTCONDITIONS:
+  - The JIT Swarm Orchestrator successfully executes simulated tasks.
+  - Un-immunized trajectories trigger Escrow halts.
+  - Immunized trajectories utilize F-IPI to recover.
+EXECUTION_PLAN:
+- step: Initialize SCOS Orchestrator
+  role: System Initializer
+  action: Instantiate the JITSwarmOrchestrator class and verify components.
+- step: Execute Trial 1 (Un-immunized)
+  role: Simulation Coordinator
+  action: Run a system patch compilation task with no target API to trigger a schema
+    drift and Escrow halt.
+- step: Execute Trial 2 (Immunized)
+  role: Simulation Coordinator
+  action: Run the identical task to verify F-IPI recovery through the Verification
+    Co-Processor.
+SELF_TEST:
+  checks:
+  - check_id: verify_trial_1_failure
+    description: Ensure Trial 1 fails and enters Epistemic Escrow.
+    method: LOG_MESSAGE
+    params:
+      message: Trial 1 should fail and trigger an Escrow halt.
+  - check_id: verify_trial_2_success
+    description: Ensure Trial 2 succeeds using F-IPI.
+    method: LOG_MESSAGE
+    params:
+      message: Trial 2 should succeed via failure-informed prompt inversion.
+  success_condition: Both simulated trials complete with the expected Escrow halt
+    and subsequent recovery states.
+REFLEXIVE_CHECK:
+  prompt: Review the SCOS execution trace. Did the Verification Co-Processor correctly
+    identify the CFDI breach? Were the F-IPI constraints properly applied in the second
+    trial?
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    source_code:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
