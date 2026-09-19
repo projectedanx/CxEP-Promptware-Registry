@@ -1,0 +1,60 @@
+PRP_ID: DRP-AGENTSPAWN-METACOGNITIVE-2026_v1.0
+PRP_NAME: AgentSpawn Metacognitive Auto-Tuning via Reinforcement Learning
+DOMAIN: Agent Harness Architecture
+GOAL: Formulate a Metacognitive Spawning Policy, construct a Delta-Slicing Optimizer,
+  and design a Retrospective Harness Optimization pipeline.
+CONTEXT_ENGINEERING:
+  PERSONA: Systems Architect focusing on autonomous self-improving multi-agent systems
+    and reinforcement learning.
+  REQUIRED_REPOSITORY:
+    name: ActPlane
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Hierarchical Policy Domains
+    definition: Nesting security boundaries within the process tree and enforcing
+      them natively in the operating system kernel to guarantee that no downstream
+      sub-agent or generated script can ever weaken, disable, or bypass parent-imposed
+      invariants.
+  - concept: Temporal Trust Boundary
+    definition: A rule loaded before the enforced agent starts executing is classified
+      as a higher-authority constraint, completely insulated from the untrusted userspace
+      execution environment.
+  - concept: Monotonic Label Propagation
+    definition: The kernel tracks data flow by attaching IFC labels to OS objects.
+      Labels propagate monotonically along OS data-flow edges.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - Autonomous multi-agent platform operational
+  - Execution logs available
+  INVARIANTS:
+  - Spawning policy must maximize Critical Atom Recall
+  - RL loop must penalize token spend and task failures
+  POSTCONDITIONS:
+  - Metacognitive Spawning Policy formulated
+  - Auto-Tuning RL Loop designed
+EXECUTION_PLAN:
+- step: Formulate spawning policy
+  role: Systems Architect
+  action: Formulate the Metacognitive Spawning Policy as a Markov Decision Process.
+- step: Construct slicing optimizer
+  role: Systems Architect
+  action: Construct the Delta-Slicing Optimizer to parameterize memory slicing.
+- step: Design optimization pipeline
+  role: Systems Architect
+  action: Design the offline Retrospective Harness Optimization pipeline.
+- step: Detail RL loop
+  role: Systems Architect
+  action: Detail the Auto-Tuning Reinforcement Learning Loop.
+SELF_TEST:
+  checks:
+  - check_id: verify_mdp_formulation
+    description: Verify MDP formulation for spawning policy
+    method: VALIDATE_SCHEMA
+  - check_id: verify_rl_loop
+    description: Verify Auto-Tuning RL Loop design
+    method: CHECK_SECURITY_INVARIANT
+  success_condition: Metacognitive Spawning Policy and Auto-Tuning RL Loop are rigorously
+    designed and optimized.
+REFLEXIVE_CHECK:
+  prompt: Have I correctly modeled the trade-off between maximizing CAR and minimizing
+    token overhead?
