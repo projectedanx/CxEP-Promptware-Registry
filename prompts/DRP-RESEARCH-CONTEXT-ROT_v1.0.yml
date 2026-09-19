@@ -1,0 +1,49 @@
+PRP_ID: DRP-RESEARCH-CONTEXT-ROT-V1.0
+PRP_NAME: Persistent Homology of Attention-Sink Cavities under Recursive Code Refactoring
+DOMAIN: SCOS AI Interpretability
+GOAL: Architect an interpretability suite that extracts raw key-value attention weights from Layer 8, Head 11 of GPT-5.3-Codex during the generation of a complex GitHub Actions pipeline.
+CONTEXT_ENGINEERING:
+  PERSONA: "AI Interpretability Researcher"
+  REQUIRED_REPOSITORY:
+    name: "scos-research-repo"
+    initial_state: "main"
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: "Context Rot"
+      definition: "The decay of token distribution into generic sycophancy when models evaluate code complexity and write schema-compliant YAML simultaneously."
+    - concept: "Vietoris-Rips Filtration"
+      definition: "Algorithm used to map the topological persistence diagram of the reasoning trace."
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - "Access to GPT-5.3-Codex model internals."
+  INVARIANTS:
+    - "Attention weights must be extracted specifically from Layer 8, Head 11."
+  POSTCONDITIONS:
+    - "Mathematical proof regarding the collapse of beta_1 cavities is generated."
+EXECUTION_PLAN:
+  - step: "Architect Interpretability Suite"
+    role: "Architect"
+    action: "Build the suite to extract attention weights during pipeline generation."
+  - step: "Map Topological Persistence"
+    role: "Data Scientist"
+    action: "Use the Vietoris-Rips filtration algorithm to map the persistence diagram across a 128,000-token context."
+  - step: "Mathematically Prove Cavity Collapse"
+    role: "Researcher"
+    action: "Evaluate the impact of injecting the ContextLock anchor on collapsing beta_1 cavities."
+SELF_TEST:
+  checks:
+    - check_id: verify_attention_extraction
+      description: "Ensure attention weights are correctly extracted from Layer 8, Head 11."
+      method: CALCULATE_METRIC
+      params:
+        metric_name: "ATTENTION_WEIGHTS_EXTRACTED"
+  success_condition: "All tests pass successfully."
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    proof_document:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        "^\\$?[a-zA-Z0-9_.-]+$": {}
+REFLEXIVE_CHECK:
+  prompt: "Did I isolate the correct layer and head when extracting the raw key-value attention weights?"

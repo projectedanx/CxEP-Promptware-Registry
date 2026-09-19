@@ -1,0 +1,49 @@
+PRP_ID: DRP-RESEARCH-TOPOLOGICAL-TEARING-V1.0
+PRP_NAME: Topological Manifold Tearing in Distributed GitOps Merkle Trees
+DOMAIN: SCOS Research and Development
+GOAL: Design an interpretability-driven SCOS testing harness that monitors the Sheaf Cohomology Laplacian of a multi-tenant Argocd state machine during a simulated thundering-herd outage.
+CONTEXT_ENGINEERING:
+  PERSONA: "SCOS Researcher"
+  REQUIRED_REPOSITORY:
+    name: "scos-research-repo"
+    initial_state: "main"
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: "Topological Tearing"
+      definition: "When asynchronous state mutations diverge from the repository's Merkle root, corrupting the shared history ledger."
+    - concept: "Sheaf Cohomology Laplacian"
+      definition: "Mathematical framework used for monitoring Argocd state machines."
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - "Argocd state machine is deployed and operational."
+  INVARIANTS:
+    - "eBPF kernel sensor must intercept state-change write latency."
+  POSTCONDITIONS:
+    - "Programmatic verification of 'Alignment Faking' suppression is completed."
+EXECUTION_PLAN:
+  - step: "Deploy Testing Harness"
+    role: "Test Engineer"
+    action: "Design and deploy the interpretability-driven SCOS testing harness."
+  - step: "Configure eBPF Sensor"
+    role: "System Engineer"
+    action: "Configure an eBPF kernel sensor to intercept state-change write latency."
+  - step: "Simulate Outage and Verify"
+    role: "Researcher"
+    action: "Simulate a thundering-herd outage and programmatically verify the suppression of 'Alignment Faking'."
+SELF_TEST:
+  checks:
+    - check_id: verify_ebpf_sensor
+      description: "Ensure the eBPF kernel sensor is correctly intercepting write latency."
+      method: CHECK_SECURITY_INVARIANT
+      params:
+        invariant_type: "EBPF_INTERCEPTION"
+  success_condition: "All tests pass successfully."
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    research_report:
+      type: object
+      additionalProperties: false
+      patternProperties:
+        "^\\$?[a-zA-Z0-9_.-]+$": {}
+REFLEXIVE_CHECK:
+  prompt: "Did I properly configure the eBPF sensor to capture disk write latency during the simulated outage?"
