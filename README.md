@@ -195,3 +195,10 @@ When formalizing the Reflexive Repair Loop (a dual-system, two-speed cybernetic 
 **Instability:** We encountered a complex prompt description detailing the Verification Co-Processor (VCP) harness and its related research prompts. Directly pasting this into a single file or a generic Markdown format would violate the repository's strict schema enforcement.
 
 **Fortification:** We serialized the primary harness specification and its three distinct research prompts into separate, valid YAML PRP files (`prompts/vcp_harness_specification_v2_4.yml`, `prompts/dlm_spherical_latent_topology.yml`, `prompts/async_vcp_active_inference.yml`, `prompts/f_ipi_symbolic_scar_cartography.yml`). We ensured strict adherence to `schemas/prp_schema.yml`, particularly concerning the `OUTPUT_SCHEMA` format and the `additionalProperties: false` constraint.
+
+
+### Lessons Learned: JIT Swarm Orchestrator Serialization
+
+**Instability:** We encountered a complex prompt description detailing the Sovereign Cognitive Operating System (SCOS v6.0-STRICT) JIT Swarm Orchestrator and its Python Class Implementation. Directly pasting this into a single file or a generic Markdown format would violate the repository's strict schema enforcement.
+
+**Fortification:** We serialized the primary JIT Swarm Orchestrator specification into a separate, valid YAML PRP file (`prompts/JIT_SWARM_ORCHESTRATOR_v1.0.yml`). We ensured strict adherence to `schemas/prp_schema.yml`, particularly concerning the `OUTPUT_SCHEMA` format and the `additionalProperties: false` constraint.
