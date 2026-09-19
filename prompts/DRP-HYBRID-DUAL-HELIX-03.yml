@@ -1,0 +1,42 @@
+PRP_ID: DRP-HYBRID-DUAL-HELIX-03
+PRP_NAME: Hybrid Dual-Helix Self-Improving Harness
+DOMAIN: Promptware Engineering / AI Governance
+GOAL: "Act as a Principal Cognitive Systems Architect and design a hybrid, dual-helix self-improving agentic  \nharness that combines the verbal self-correction loops of Reflexion with the executable code synthesis  \nand lifelong learning capabilities of Voyager. \n \nConfigure the architecture as a stateful LangGraph pipeline executing the following nodes: \n1. THINK (Planner Agent): Receives an open-ended, complex algorithmic refactoring request. It utilizes  \n   the 'DDx Exclusion Protocol' to systematically analyze the existing repository, identifying all worst-case  \n   vulnerabilities and constraints before drafting a step-by-step implementation plan. \n2. WRITE (Architect Agent): Translates the plan into an immutable Linguistic Scaffold (JSON schemas and  \n   strict API Contracts) which serves as the non-negotiable Cognitive Contract. \n3. CODE (Coder Agent): Autonomously synthesizes the Python code implementation, strictly adhering to the  \n   Linguistic Scaffold and local project style guides defined in the repository's GEMINI.md file. \n4. EVALUATE (Sandbox Executor + Critic): Runs the synthesized code inside an isolated Docker container.  \n   If compilation fails or unit tests are violated, the Reflexion-Helix triggers: the Self-Reflector  \n   writes a verbal critique, commits it to Episodic Memory, and passes it to the Coder for immediate patching. \n5. RE-FORGE (Skill Library Integration): Once the code passes verification with zero errors, the Voyager-Helix  \n   activates: the successful execution script is extracted, compiled into a clean, reusable function block,  \n   and committed as a signed, C2PA-compliant primitive in the project's permanent Skill Library. \n \nGenerate the complete Python implementation script for this LangGraph orchestration, including the  \nstate.py model, the JSON schemas for the tool registry, and an automated Golden Trace Validator  \ndesigned to detect behavioral drift in regression suites."
+CONTEXT_ENGINEERING:
+  PERSONA: Principal Cognitive Systems Architect
+  REQUIRED_REPOSITORY:
+    name: CxEP-Promptware-Registry
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Reflexion
+    definition: Verbal metacognition to optimize behavioral trajectories.
+  - concept: Voyager
+    definition: A symbolic, evolutionary codebase of executable code primitives to systematically expand its capabilities.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - The agent must understand Reflexion and Voyager architectures.
+  INVARIANTS:
+  - The execution must strictly adhere to the constraints defined in the prompt.
+  POSTCONDITIONS:
+  - The output must meet all the requirements specified in the prompt.
+EXECUTION_PLAN:
+- step: Understand the requirements
+  role: Analyst
+  action: Analyze the prompt and its constraints.
+- step: Draft the solution
+  role: Architect
+  action: Design and generate the required outputs.
+SELF_TEST:
+  checks:
+  - check_id: test_output_format
+    description: Verify output format.
+    method: LOG_MESSAGE
+    params:
+      message: Output format verified
+  success_condition: All tests pass
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    python_implementation_script: {}
+REFLEXIVE_CHECK:
+  prompt: Did I strictly follow all the constraints in the prompt?
