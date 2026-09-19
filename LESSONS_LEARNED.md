@@ -41,3 +41,10 @@ When a user provides a complex, highly specialized persona definition (e.g., TAC
 ### Lessons Learned: Qualitative Experience Database (QED) Blueprint Serialization
 - **Instability**: Complex persona and system architectural definitions describing a 'Qualitative Experience Database' (QED) and associated Epistemic Escrow mechanisms require rigorous mapping rather than casual text summarization. Naively generating solutions or adopting these complex personas violates the explicit serialization rule.
 - **Fortification**: Extracted the three rigorous research prompts (Topological RAG Manifold Deformation Audit, Algorithmic Kintsugi Vector Healing, and Decolonial Ontology Reconciliation) into correctly structured YAML PRPs. These PRPs adhere strictly to the schema (using `ASSERT_BLUEPRINT_CONSISTENCY`, `CHECK_SECURITY_INVARIANT`, etc.) avoiding hallucinated keys and maintaining strict compliance without adopting the personas directly.
+
+### Lessons Learned: Staged Advantage Estimation (SAE)
+- **Staged Advantage Estimation (SAE)**: We integrated reference code for Staged Advantage Estimation in Python, alongside generating Product Requirements Prompts (PRPs) for three advanced research vectors: Dual-Scale Advantage Balancing via Continuous Spectral Mapping, Asynchronous Multi-Threaded ADMM Projectors, and Reverse Engineering Preference-Alignment Collapses on Non-Separable Multi-Agent Action Manifolds.
+- Always run `yamllint` and `check-jsonschema` locally to validate PRPs after serialization.
+- It is crucial to strictly adhere to the `schemas/prp_schema.yml` file, making sure that `PRP_ID` uses proper casing and separators.
+- Including complete reference code implementations in the `src/` directory ensures complex mathematical concepts aren't lost in translation to PRPs.
+- Use explicit search and insert mechanisms rather than generic string replacements when updating markdown documentation to avoid truncating existing content or corrupting formatting.
