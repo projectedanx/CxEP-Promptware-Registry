@@ -1,0 +1,60 @@
+PRP_ID: DRP-ACTPLANE-DSL-2026_v1.0
+PRP_NAME: ActPlane eBPF IFC DSL Synthesis
+DOMAIN: Agent Harness Architecture
+GOAL: Define a formal context-free grammar for ActPlane IFC DSL, design a compilation
+  pipeline, and architect the eBPF Kernel Enforcement Engine.
+CONTEXT_ENGINEERING:
+  PERSONA: Systems Architect focusing on system-level policy engines and eBPF Kernel
+    Enforcement.
+  REQUIRED_REPOSITORY:
+    name: ActPlane
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Hierarchical Policy Domains
+    definition: Nesting security boundaries within the process tree and enforcing
+      them natively in the operating system kernel to guarantee that no downstream
+      sub-agent or generated script can ever weaken, disable, or bypass parent-imposed
+      invariants.
+  - concept: Temporal Trust Boundary
+    definition: A rule loaded before the enforced agent starts executing is classified
+      as a higher-authority constraint, completely insulated from the untrusted userspace
+      execution environment.
+  - concept: Monotonic Label Propagation
+    definition: The kernel tracks data flow by attaching IFC labels to OS objects.
+      Labels propagate monotonically along OS data-flow edges.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - Multi-agent system operational
+  - Need to block indirect prompt injections
+  INVARIANTS:
+  - DSL must map high-level invariants to deterministic kernel constraints
+  - Semantic Feedback Loop must not cause a hard crash
+  POSTCONDITIONS:
+  - ActPlane IFC DSL CFG defined
+  - eBPF Kernel Enforcement Engine architected
+EXECUTION_PLAN:
+- step: Define DSL CFG
+  role: Systems Architect
+  action: Define a context-free grammar for the ActPlane IFC DSL.
+- step: Design compilation pipeline
+  role: Systems Architect
+  action: Design a pipeline using an LLM as a Constrained Semantic Parser.
+- step: Architect enforcement engine
+  role: Systems Architect
+  action: Architect the eBPF Kernel Enforcement Engine with BPF LSM hooks.
+- step: Specify feedback loop
+  role: Systems Architect
+  action: Specify the Semantic Feedback Loop using SECCOMP_RET_USER_NOTIF.
+SELF_TEST:
+  checks:
+  - check_id: verify_dsl_cfg
+    description: Verify ActPlane IFC DSL CFG
+    method: VALIDATE_SCHEMA
+  - check_id: verify_ebpf_hooks
+    description: Verify eBPF LSM hooks architecture
+    method: CHECK_SECURITY_INVARIANT
+  success_condition: ActPlane IFC DSL CFG and eBPF Kernel Enforcement Engine architecture
+    are fully specified and secure.
+REFLEXIVE_CHECK:
+  prompt: Have I ensured that the semantic feedback loop constructs a structured error
+    payload without crashing the agent?

@@ -1,0 +1,59 @@
+PRP_ID: DRP-SEMA-MERKLE-2026_v1.0
+PRP_NAME: SEMA-Merkle Tree State Synchronization Protocol
+DOMAIN: Agent Harness Architecture
+GOAL: Design a formal systems specification for encoding agent state into a SEMA-Merkle
+  Tree and construct a Decompression Reconstruction Protocol.
+CONTEXT_ENGINEERING:
+  PERSONA: Systems Architect focusing on verifiable zero-trust cross-harness state
+    synchronization.
+  REQUIRED_REPOSITORY:
+    name: ActPlane
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Hierarchical Policy Domains
+    definition: Nesting security boundaries within the process tree and enforcing
+      them natively in the operating system kernel to guarantee that no downstream
+      sub-agent or generated script can ever weaken, disable, or bypass parent-imposed
+      invariants.
+  - concept: Temporal Trust Boundary
+    definition: A rule loaded before the enforced agent starts executing is classified
+      as a higher-authority constraint, completely insulated from the untrusted userspace
+      execution environment.
+  - concept: Monotonic Label Propagation
+    definition: The kernel tracks data flow by attaching IFC labels to OS objects.
+      Labels propagate monotonically along OS data-flow edges.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - Decentralized multi-agent system deployed
+  - Heterogeneous agent harnesses running
+  INVARIANTS:
+  - State transitions must be formally verified
+  - Parent contract constraints must be strictly conformed to
+  POSTCONDITIONS:
+  - SEMA-Merkle Tree structure formalized
+  - Decompression Reconstruction Protocol constructed
+EXECUTION_PLAN:
+- step: Design state tuple encoding
+  role: Systems Architect
+  action: Encode agent state tuple into a SEMA-Merkle Tree structure.
+- step: Define transition proofs
+  role: Systems Architect
+  action: Define mathematical rules for State-Transition Proofs without disclosing
+    verbose content.
+- step: Construct reconstruction protocol
+  role: Systems Architect
+  action: Construct a Decompression Reconstruction Protocol for state ingestion and
+    verification.
+SELF_TEST:
+  checks:
+  - check_id: verify_merkle_structure
+    description: Verify SEMA-Merkle Tree structure
+    method: VALIDATE_SCHEMA
+  - check_id: verify_transition_proofs
+    description: Verify State-Transition Proofs logic
+    method: CHECK_SECURITY_INVARIANT
+  success_condition: SEMA-Merkle Tree structure and Decompression Reconstruction Protocol
+    are mathematically sound and verifiable.
+REFLEXIVE_CHECK:
+  prompt: Have I ensured that the state transition proofs do not disclose the verbose
+    content of the working memory?

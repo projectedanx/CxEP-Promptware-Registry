@@ -1,3 +1,8 @@
+### Lessons Learned: ActPlane Unified Sovereign AI Harness
+- Complex agent constraints and system-level policies can be serialized into structural PRPs without dropping important programmatic elements (like C code).
+- **Instability**: A complex prompt contained detailed kernel-space implementations (`unified_sovereign_ai_harness.c`) alongside high-level system architectural proposals. Losing the technical implementation context during serialization would undermine the goal of creating testable invariants.
+- **Fortification**: Serialized the three discrete research domains (SEMA-Merkle Synchronization, ActPlane DSL Synthesis, and AgentSpawn Auto-Tuning) into distinct PRPs, ensuring valid `prp_schema.yml` conformance. Safely extracted the `unified_sovereign_ai_harness.c` kernel code directly into the `src/actplane/` repository hierarchy to preserve executable security boundaries.
+
 # Lessons Learned
 
 ## Agentic Inversion Protocol & Structural Mapping
