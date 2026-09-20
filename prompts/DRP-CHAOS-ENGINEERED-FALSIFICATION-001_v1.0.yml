@@ -1,0 +1,70 @@
+PRP_ID: DRP-CHAOS-ENGINEERED-FALSIFICATION-001_v1.0
+PRP_NAME: Chaos-Engineered Falsification of Shared Mental Models in Multi-Agent Workflows
+DOMAIN: Systems Engineering of Human-Machine Teaming
+GOAL: Engineer a socio-technical control system that uses Chaos Engineering principles
+  to systematically falsify, stress-test, and strengthen the shared mental model of
+  a human-agent team during complex, long-horizon tasks.
+CONTEXT_ENGINEERING:
+  PERSONA: Chaos Engineering Orchestrator
+  REQUIRED_REPOSITORY:
+    name: chaos-mental-model-tester
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Confidence-Fidelity Divergence Index (CFDI)
+    definition: A metric to monitor when frictionless UX encourages human autopilot
+      behavior; a threshold crossing requires 'Positive Friction'.
+  - concept: Positive Friction
+    definition: An intentionally abrasive interface response, such as a deliberate
+      delay or confirmation key requirement, used to jolt users out of System 1 thinking.
+  - concept: Failure-Informed Prompt Inversion (F-IPI)
+    definition: A process of capturing a failure path as a Symbolic Scar in a Scar
+      Tissue Archive and utilizing it to immunize the system via prompt inversion.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - A baseline shared mental model of a human-agent team must be active.
+  INVARIANTS:
+  - CFDI threshold breaches must trigger the Epistemic Escrow Circuit Breaker.
+  POSTCONDITIONS:
+  - System resilience must mathematically increase over successive chaos trials.
+EXECUTION_PLAN:
+- step: Telemetry Monitor Setup
+  role: Telemetry Engineer
+  action: Build a real-time monitor that calculates the Confidence-Fidelity Divergence
+    Index (CFDI) and the Purpose Fidelity Index (PFI) of an active human-agent team.
+- step: Controlled Perturbation Injection
+  role: Chaos Engineer
+  action: Implement an automated Chaos Engine to inject epistemic pathogens such as
+    Concept Drift, Instrumental Convergence, and Semantic Ambiguity into the workflow.
+- step: Active Escrow Intervention Deployment
+  role: Safety Monitor
+  action: Verify that if the CFDI spikes above 0.42 or the PFI decays, the system
+    trips the Epistemic Escrow Circuit Breaker, halting execution and generating a
+    Justified Uncertainty Report (JUR).
+- step: F-IPI Immunization Cycle Execution
+  role: Resilience Architect
+  action: Capture the failure path, log it as a Symbolic Scar in the Scar Tissue Archive
+    (STA), and run an offline Failure-Informed Prompt Inversion (F-IPI) cycle.
+- step: Resilience Scoring Evaluation
+  role: Evaluation Engineer
+  action: Subject the remediated system to the same pathogens and quantify the Mutation
+    Recoverability Score (MRS) to prove post-traumatic growth.
+SELF_TEST:
+  checks:
+  - check_id: VALIDATE_CHAOS_INJECTION
+    description: Verify the Chaos Engine successfully triggers the Epistemic Escrow
+      Circuit Breaker.
+    method: LOG_MESSAGE
+    params:
+      message: Chaos pathogen successfully halted execution.
+  success_condition: The system's Mutation Recoverability Score (MRS) increases after
+    the F-IPI immunization cycle.
+OUTPUT_SCHEMA:
+  type: ChaosResilienceReport
+  properties:
+    mutation_recoverability_score:
+      type: number
+    justified_uncertainty_reports:
+      type: array
+REFLEXIVE_CHECK:
+  prompt: Evaluate the chaos engine's perturbations. Are they sufficiently challenging
+    to induce learning without destroying the underlying workflow?

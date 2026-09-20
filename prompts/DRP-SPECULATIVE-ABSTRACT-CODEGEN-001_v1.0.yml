@@ -1,0 +1,75 @@
+PRP_ID: DRP-SPECULATIVE-ABSTRACT-CODEGEN-001_v1.0
+PRP_NAME: Speculative Abstract Interpretation for Code-Generation from Visual Schemas
+DOMAIN: Systems Engineering of Human-Machine Teaming
+GOAL: Build a compiler that translates co-created visual workflow schemas into executable,
+  typed Product-Requirements Prompts (PRPs) and utilizes Speculative Abstract Interpretation
+  to mathematically guarantee that the generated code satisfies all structural and
+  security constraints.
+CONTEXT_ENGINEERING:
+  PERSONA: Visual-to-Code Compiler Architect
+  REQUIRED_REPOSITORY:
+    name: visual-schema-compiler
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Conceptual Blending Theory
+    definition: A theoretical framework for understanding the structural paradox of
+      'off-the-shelf' individuality, reframing messy workflows into structured assembly
+      processes.
+  - concept: Isomorphic Formalization
+    definition: Translating a visual sketch on a digital canvas into an executable
+      contract through a formalized Context-to-Execution Pipeline (CxEP).
+  - concept: Executable Cognitive Contract
+    definition: A Product-Requirements Prompt (PRP) that explicitly maps every visual
+      task block to a strict, typed output schema.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - Visual storyboards (RACI maps, state-machine layouts) must be accessible to the
+    parser.
+  INVARIANTS:
+  - Generated code must pass strict structural and security constraints via Speculative
+    Abstract Interpretation Engine (SAIE).
+  POSTCONDITIONS:
+  - Co-created visual schemas are successfully compiled into compliant Executable
+    Cognitive Contracts.
+EXECUTION_PLAN:
+- step: Visual-to-DSL Compilation Engine
+  role: VLM Engineer
+  action: Develop a Vision-Language Model (VLM) parser that translates a visual storyboard
+    into a structured Domain-Specific Language (DSL).
+- step: Executable Contract Synthesis
+  role: Compiler Engineer
+  action: Compile the DSL into an Executable Cognitive Contract (PRP) that explicitly
+    maps every visual task block to a strict, typed output schema.
+- step: Speculative Code Generation Pipeline
+  role: AI Generation Specialist
+  action: Pass the PRP to a multi-agent generation pipeline using a fast 'Drafter'
+    model for candidate generation and a slow 'Verifier' model for static analysis.
+- step: Formal Verification Loop Deployment
+  role: Verification Engineer
+  action: Deploy a Speculative Abstract Interpretation Engine (SAIE) to run abstract
+    interpretation sweeps over the generated code to verify compliance with global
+    safety properties.
+- step: Comparative Evaluation Benchmarking
+  role: Performance Analyst
+  action: Benchmark the compiler against a code-first assistant by measuring the Interaction
+    Error Rate (IER), total Computational Overhead (CO), and perceived cognitive load.
+SELF_TEST:
+  checks:
+  - check_id: VALIDATE_DSL_COMPILATION
+    description: Verify the VLM parser correctly translates the visual storyboard
+      into a valid DSL.
+    method: LOG_MESSAGE
+    params:
+      message: Visual schema successfully compiled to DSL.
+  success_condition: Speculative abstract interpretation sweep completes without violating
+    safety properties.
+OUTPUT_SCHEMA:
+  type: CompilerEvaluationReport
+  properties:
+    interaction_error_rate:
+      type: number
+    computational_overhead:
+      type: number
+REFLEXIVE_CHECK:
+  prompt: Evaluate the compiler performance. Is the balance between frictionless usability
+    and necessary validation constraints maintained optimally?
