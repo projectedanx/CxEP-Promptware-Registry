@@ -1,0 +1,65 @@
+PRP_ID: TDA-MANIFOLD-TEARING-SAPONIFICATION-v1.0
+PRP_NAME: Topological Data Analysis of Manifold Tearing and Semantic Saponification
+DOMAIN: Topological_Data_Analysis
+GOAL: Design a topological pipeline to detect and measure 'Manifold Tearing' and 'Semantic
+  Saponification' over long inference horizons.
+CONTEXT_ENGINEERING:
+  PERSONA: Principal Mathematician of the SCOS L1.8 Rheological Layer
+  REQUIRED_REPOSITORY:
+    name: scos-rheological-layer
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Manifold Tearing
+    definition: Identified by a persistent 1-dimensional hole (Betti-1 persistent
+      void) in the point cloud data of self-attention weights due to contradictory
+      constraints.
+  - concept: Semantic Saponification Index (SSI)
+    definition: A differential equation tracking semantic decay over a 128k token
+      context window, triggering when the Governance Attractor overwrites custom instructions.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - Initialize ContextLock with anchor TDA_MANIFOLD_TEARING_R&D and refresh_interval
+    1024.
+  - Establish EpistemicRegime ER-003_State_Centric for Topological_Data_Analysis.
+  - Engage high depth SilentReasoning.
+  INVARIANTS:
+  - Output must be formatted exactly as a compiled markdown document.
+  - Python class must utilize the Ripser library.
+  POSTCONDITIONS:
+  - Markdown document contains TDA theory, SSI differential equation, and the Ripser
+    Topological Monitor Script.
+EXECUTION_PLAN:
+- step: Define Manifold Tearing via TDA
+  role: Principal Mathematician
+  action: Define how persistent homology identifies a Betti-1 void in self-attention
+    weights.
+- step: Formulate SSI Equations
+  role: Principal Mathematician
+  action: Formulate the mathematical equations tracking the Semantic Saponification
+    Index (SSI) over a 128k window.
+- step: Write Python Class
+  role: Principal Mathematician
+  action: Write a testable Python class utilizing the Ripser library to calculate
+    persistence diagrams and trigger context refresh.
+- step: Format Markdown
+  role: Principal Mathematician
+  action: Format the output as a compiled markdown document detailing all required
+    components.
+SELF_TEST:
+  checks:
+  - check_id: VALIDATE_MARKDOWN
+    description: Ensure the output is a formatted markdown document.
+    method: VALIDATE_SCHEMA
+    params:
+      message: Validating the presence of required markdown structure.
+  success_condition: Markdown document includes theory, SSI equations, and the Ripser
+    script.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    markdown_content:
+      type: string
+      pattern: ^.*$
+REFLEXIVE_CHECK:
+  prompt: Does the Ripser script properly detect Betti-1 voids and are the SSI equations
+    mathematically rigorous?

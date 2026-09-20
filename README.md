@@ -38,6 +38,15 @@ The repository is organized into the following directories:
 - **`/.github/workflows`**: Contains the GitHub Actions workflows for continuous integration and validation. The `prp_validation.yml` workflow automatically validates all new or modified prompts against the schema.
 - **`/.jules`**: Contains agent-specific journals for recording critical learnings (e.g., `bolt.md` for performance, `sentinel.md` for security, `palette.md` for UX).
 
+
+### Lessons Learned: Insight Gap Harness and Epistemic Research
+
+During the serialization of the Insight Gap Harness and related Epistemic Research blueprints (SAE Sycophancy Audit, TDA Manifold Tearing, Non-Separable PNS5 Attention):
+- **Structured Verification**: The Petzold verification loop (THINK, SCAFFOLD, VERIFY, COPRO) provides a robust mechanism to align the model's computation with the expected output schema, acting as an internal validation pipeline.
+- **Topological Analysis**: We applied TDA and persistent homology to detect Manifold Tearing, allowing us to mathematically monitor semantic degradation over extended inference horizons.
+- **Dynamic Scaffolding**: Kahneman's Dual-Process theory was successfully mapped onto a Variable Viscosity Prompting schema, dynamically routing tasks to System 1 or System 2 based on task entropy.
+- **Schema Alignment**: We maintained strict adherence to the registry schema, specifically refining `OUTPUT_SCHEMA` to only use allowed fields and discarding extraneous constraints, emphasizing the importance of rigorous validation across complex blueprints.
+
 ## The PRP Schema
 
 The `prp_schema.yml` file defines the formal structure of a Product-Requirements Prompt. Adherence to this schema is mandatory. The schema is divided into the following sections:
