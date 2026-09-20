@@ -1,0 +1,61 @@
+PRP_ID: DRP-RECAP-BDI-001_v1.0
+PRP_NAME: Closed-Loop ReCAP with BDI Symbolic Logic Verification
+DOMAIN: Cognitive Agent Architectures, Answer Set Programming (ASP), and Epistemic
+  Governance
+GOAL: Design and implement a closed-loop neuro-symbolic agent execution harness wrapping
+  a frontier LLM inside a formal Belief-Desire-Intention (BDI) engine.
+CONTEXT_ENGINEERING:
+  PERSONA: Cognitive Agent Architect
+  REQUIRED_REPOSITORY:
+    name: neurosymbolic/bdi-harness
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: Belief-Desire-Intention (BDI)
+      definition: A model of human practical reasoning used to model agent systems,
+        partitioned into beliefs, desires, and intentions.
+    - concept: Dynamic Epistemic Logic (DEL)
+      definition: A formal logic to represent and verify agent beliefs and strategic
+        responses.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - A symbolic solver (e.g., Clingo) is available.
+  INVARIANTS:
+    - Agent must not violate optimal game-theoretic response to predicted partner
+      state.
+  POSTCONDITIONS:
+    - Harness detects and intercepts logic violations before token generation.
+EXECUTION_PLAN:
+  - step: Dynamic Context Tree Management
+    role: Agent Framework Developer
+    action: Build a Python execution harness managing a dynamic context tree with
+      plan-ahead decomposition and backtracking-driven refinement loops.
+  - step: Epistemic Scaffolding
+    role: Prompt Engineer
+    action: Wrap the LLM with strict XML/JSON syntactic fences to partition reasoning
+      into Beliefs, Desires, and Intentions blocks.
+  - step: Symbolic Logic Loop
+    role: Symbolic Integration Engineer
+    action: Construct a non-LLM control layer in Python to parse Beliefs and Intentions
+      into DEL propositions or ASP rules.
+  - step: Metacognitive Guardrail
+    role: Safety Evaluator
+    action: Run propositions through Clingo to check consistency; trigger ReCAP to
+      rewrite tactical intention if optimal response violated.
+SELF_TEST:
+  checks:
+    - check_id: SYMBOLIC_SUPERVISOR_VETO
+      description: Ensure the symbolic supervisor correctly vetoes token generation
+        on rule violation.
+      method: CHECK_SECURITY_INVARIANT
+      params:
+        message: Veto mechanism test
+  success_condition: Harness correctly detects and vetoes non-best-response intentions,
+    triggering ReCAP loop successfully.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    bdi_execution_harness:
+      type: string
+REFLEXIVE_CHECK:
+  prompt: Is the transition between neural generation and symbolic validation deterministic
+    and fail-safe?
