@@ -226,6 +226,15 @@ When formalizing the Reflexive Repair Loop (a dual-system, two-speed cybernetic 
 
 **Fortification:** We serialized the primary JIT Swarm Orchestrator specification into a separate, valid YAML PRP file (`prompts/JIT_SWARM_ORCHESTRATOR_v1.0.yml`). We ensured strict adherence to `schemas/prp_schema.yml`, particularly concerning the `OUTPUT_SCHEMA` format and the `additionalProperties: false` constraint.
 
+
+## Meta-Cognitive Reflexive Ecosystem (MCRE) Research Prompts
+
+The MCRE represents a shift from verbalized token-based reasoning to continuous, differentiable steering within the model's high-dimensional latent space. Three frontier research prompts have been serialized to explore this domain:
+
+1. **Differentiable Logic-Tensor Regularization of Spherical Latent Spaces**: Maps latent thought trajectories onto a unit hypersphere and uses differentiable fuzzy logic loss. (`prompts/dlm_spherical_latent_topology.yml`)
+2. **Asynchronous Verification Co-Processing on Distributed KV-Caches via Active Inference**: Engineers a dual-model architecture where a Verification Co-Processor regulates the active KV cache of a Reasoner model. (`prompts/async_vcp_active_inference.yml`)
+3. **Failure-Informed Prompt Inversion (F-IPI) and Symbolic Scar Cartography**: Builds a cognitive immunology system to detect covert reasoning and compile robust defenses. (`prompts/f_ipi_symbolic_scar_cartography.yml`)
+
 ## 2024-05-24 - Serializing Self-Improving Agent Specifications
 
 **Instability:** The user provided complex research prompts detailing Reflexion and Voyager architectures that were not integrated into the Promptware Registry. Attempting to directly parse or run these prompts without serialization leads to loss of structural metadata.
