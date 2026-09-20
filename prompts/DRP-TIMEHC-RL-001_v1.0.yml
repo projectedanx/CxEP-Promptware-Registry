@@ -1,0 +1,64 @@
+---
+PRP_ID: DRP-TIMEHC-RL-001_v1.0
+PRP_NAME: Temporal-Aware & Dual-System Hierarchical Cognitive Reinforcement Learning
+DOMAIN: Post-Training RL Alignment, Dual-Process Theory, and Social Game Theory
+GOAL: >-
+  Implement and evaluate Temporal-aware Hierarchical Cognitive Reinforcement Learning (TimeHC-RL) to train an LLM to dynamically shift between intuitive System 1 responses and deliberate System 2 reasoning.
+CONTEXT_ENGINEERING:
+  PERSONA: >-
+    You are a reinforcement learning specialist focused on post-training alignment and hierarchical cognitive models for large language models.
+  REQUIRED_REPOSITORY:
+    name: timehc-rl-alignment
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: TimeHC-RL
+      definition: >-
+        A two-layer hierarchical RL approach where a Macro-Policy (System 2) dictates high-level strategy at a low frequency, and a Micro-Policy (System 1) executes immediate actions at a high frequency.
+    - concept: CoT Deliberation Penalty
+      definition: >-
+        The performance degradation caused by forcing an LLM to use sequential Chain-of-Thought in fast, intuitive social interactions.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - A small-scale base LLM (e.g., 7B parameter) is available for RL fine-tuning.
+    - A multi-agent testing environment (e.g., NegotiationToM or AIWolf) is configured.
+  INVARIANTS:
+    - The training environment must include systematically perturbed datasets to prevent narrow overfitting.
+    - The evaluation must compare TimeHC-RL against a baseline model trained solely on System 2 step-by-step reasoning.
+  POSTCONDITIONS:
+    - The TimeHC-RL model maintains out-of-distribution generalization on held-out benchmarks (e.g., OpenToM) without the deliberation penalty.
+EXECUTION_PLAN:
+  - step: Hierarchical RL Scaffolding
+    role: RL Specialist
+    action: Implement the two-layer TimeHC-RL architecture (Macro-Policy and Micro-Policy).
+  - step: Verifiable Reward Design
+    role: RL Specialist
+    action: Construct the multi-agent testing environment with programmatic rewards based on task outcomes.
+  - step: Generalization Controls
+    role: RL Specialist
+    action: Augment the training environment with perturbed datasets to prevent hacking statistical patterns.
+  - step: Behavioral Steering Evaluation
+    role: RL Specialist
+    action: Benchmark the TimeHC-RL model against a System 2 baseline using CogBench and OpenToM.
+SELF_TEST:
+  checks:
+    - check_id: CHECK-RL-HIERARCHY
+      description: Verify the correct implementation of the dual-frequency Macro and Micro policies.
+      method: SCAN_ARTIFACT
+      params:
+        message: "Verify hierarchical policy structure."
+  success_condition: The RL scaffolding correctly implements the dual-system architecture and demonstrates improved performance and naturalness in social interactions.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    rl_framework:
+      type: object
+      properties:
+        macro_policy:
+          type: string
+          pattern: "^[a-zA-Z0-9_.-]+$"
+        micro_policy:
+          type: string
+          pattern: "^[a-zA-Z0-9_.-]+$"
+REFLEXIVE_CHECK:
+  prompt: >-
+    Did the hierarchical RL approach successfully mitigate the CoT deliberation penalty while preserving strategic depth in out-of-distribution social scenarios?
