@@ -1,0 +1,76 @@
+PRP_ID: DRP-CHRONO-TOPOLOGICAL-001_v1.0
+PRP_NAME: Chrono-Topological Tracking of Shared Mental Models on Visual Canvases
+DOMAIN: Systems Engineering of Human-Machine Teaming
+GOAL: Design, implement, and validate an end-to-end telemetry system that maps a team's
+  visual, real-time collaboration on digital whiteboards into a dynamic knowledge
+  graph and uses Topological Data Analysis (TDA) to detect and prevent interpretive
+  fracture before it propagates.
+CONTEXT_ENGINEERING:
+  PERSONA: Topological Telemetry Engineer
+  REQUIRED_REPOSITORY:
+    name: collaborative-telemetry-harness
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: IKEA Effect
+    definition: A cognitive phenomenon where individuals place a significantly higher
+      value on products, workflows, or systems they actively participated in constructing.
+      Countermeasures Intent Drift.
+  - concept: Shared Mental Models (SMMs)
+    definition: Collaborative visual environments that act as practice fields to negotiate,
+      challenge, and synchronize understanding.
+  - concept: Semantic Fragmentation
+    definition: A sudden spike in disconnected components within the shared mental
+      model, detected using Topological Data Analysis.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - Access to real-time collaboration whiteboard telemetry.
+  - Visual canvas available for parsing layout objects, roles, and flows.
+  INVARIANTS:
+  - Visual state updates must strictly compile to valid schema types.
+  POSTCONDITIONS:
+  - Topological anomalies must be mapped to Semantic Fragmentation and trigger a Positive
+    Friction Checkpoint.
+EXECUTION_PLAN:
+- step: Graph Ingestion Engine Construction
+  role: Data Engineer
+  action: Construct an automated pipeline that continuously parses a collaborative
+    visual canvas and extracts layout objects, roles, and flows into a dynamic, version-controlled
+    Property Graph.
+- step: Persistent Homology Telemetry Deployment
+  role: Topological Analyst
+  action: Treat the visual point cloud and its semantic connections as a dynamic simplicial
+    complex. Compute persistence diagrams across sequential time intervals utilizing
+    Zigzag Persistence Homology.
+- step: Acoustic and Visual Correlation Setup
+  role: Telemetry Specialist
+  action: Instrument the workspace to track user interaction metrics (gaze path entropy,
+    fixation latency) alongside conversational audio text embeddings.
+- step: Drift Detection implementation
+  role: Systems Analyst
+  action: 'Quantify the emergence of topological anomalies: map a sudden spike in
+    disconnected components to Semantic Fragmentation and a persistent loop to a stable
+    logical contradiction within the SMM.'
+- step: Adversarial Validation execution
+  role: QA Engineer
+  action: Employ a Failure Generator Agent to introduce contradictory requirements.
+    Measure the latency between the physical visual deviation on the board and the
+    system triggering a Positive Friction Checkpoint.
+SELF_TEST:
+  checks:
+  - check_id: VALIDATE_TELEMETRY_ANOMALY_DETECTION
+    description: Verify the graph ingestion engine correctly detects semantic fragmentation.
+    method: LOG_MESSAGE
+    params:
+      message: Topological anomaly correctly identified.
+  success_condition: Telemetry pipeline correctly identifies semantic fragmentation
+    and triggers a positive friction checkpoint.
+OUTPUT_SCHEMA:
+  type: TelemetryValidationReport
+  properties:
+    topological_anomalies:
+      type: array
+    latency_metrics:
+      type: object
+REFLEXIVE_CHECK:
+  prompt: Review the telemetry setup. Are we correctly differentiating between productive
+    cognitive load and extraneous tool noise?

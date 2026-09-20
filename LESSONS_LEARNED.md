@@ -9,6 +9,19 @@
 
 # Lessons Learned
 
+## 2024-05-27 - Deconstructing the IKEA Effect in Collaborative Cognition
+
+**Instability:**
+The systemic engineering of human-machine teaming faces challenges with "Intent Drift" and usability gaps arising from top-down architectural abstraction. When visual workflows (process maps, storyboards) are handed down as static deliverables, teams experience lower buy-in, leading to agency laundering and cognitive debt where human operators blindly approve machine errors.
+
+**Fortification:**
+To address this, the "IKEA Effect" was formalized into a set of Research Prompts to evaluate visual co-creation's impact on Shared Mental Models (SMMs). Three new PRPs were serialized:
+1. `DRP-CHRONO-TOPOLOGICAL-001_v1.0.yml`: Telemetry system mapping visual collaboration into a dynamic knowledge graph using Topological Data Analysis to prevent interpretive fracture.
+2. `DRP-SPECULATIVE-ABSTRACT-CODEGEN-001_v1.0.yml`: Visual-to-code compiler that utilizes Speculative Abstract Interpretation to mathematically guarantee structural and security constraints.
+3. `DRP-CHAOS-ENGINEERED-FALSIFICATION-001_v1.0.yml`: Chaos engineering control system to intentionally stress-test SMMs through controlled epistemic pathogen injection (Concept Drift, Semantic Ambiguity) to improve Mutation Recoverability Score via F-IPI.
+
+This fortification transforms visual mediums from static outputs into collaborative "practice fields" that ruthlessly minimize extraneous cognitive load, thus keeping teams in the optimal "Laminar Flow Goldilocks Zone."
+
 ## Agentic Inversion Protocol & Structural Mapping
 - **Shift to Mapping rather than Solving:** Traditional AI generation assumes an auto-solver role, which fails when rigorous structural determinism (Zachman Framework) and paraconsistent reasoning are required. The AI must abandon the auto-solver paradigm and become a pure Structural Mapper. By enforcing the Agentic Telemetry Loop, the human is forced to explicitly define the geometric constraints of the problem space, and the AI is restricted to mathematically mapping those constraints to deterministic, system-first specifications with provenance trails. This provides value by preventing semantic collapse and ensuring causal chains of control.
 ### Lessons Learned: Superintendent Emergence Strategy
