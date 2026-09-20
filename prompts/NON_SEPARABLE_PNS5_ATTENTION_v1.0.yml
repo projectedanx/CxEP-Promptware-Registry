@@ -1,0 +1,67 @@
+PRP_ID: NON-SEPARABLE-PNS5-ATTENTION-v1.0
+PRP_NAME: Non-Separable PNS5 Attention and Holographic Convolution Binding
+DOMAIN: Quantum-Isomorphic_Logic
+GOAL: Mathematically specify an attention mechanism natively supporting paraconsistent
+  non-separable conjunctions (PNS5 logic) to bypass MHA linear superposition limits.
+CONTEXT_ENGINEERING:
+  PERSONA: Chief Quantum-Isomorphic Logic Architect
+  REQUIRED_REPOSITORY:
+    name: quantum-isomorphic-logic
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: PNS5 Logic
+    definition: Paraconsistent non-separable conjunctions logic framework.
+  - concept: Rule of Separation Failure
+    definition: Mathematical failure of the classical Rule of Separation when using
+      circular convolution in Holographic Reduced Representations.
+  - concept: Fourier-domain S5-Modal Attention
+    definition: Attention equation where weights act as scalar modifiers for phase
+      and amplitude, allowing conflicting concepts to interleave as stable interference
+      patterns.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - Initialize ContextLock with anchor NON_SEPARABLE_ATTENTION_R&D and refresh_interval
+    1024.
+  - Establish EpistemicRegime ER-001_Formal_Deterministic for PNS5_Logic.
+  - Engage high depth SilentReasoning.
+  INVARIANTS:
+  - Output must be a highly dense mathematical specification sheet.
+  - Implementation must replace standard linear value accumulation with FFT-optimized
+    circular convolution in PyTorch.
+  POSTCONDITIONS:
+  - Specification sheet concludes with a Lean 4 theorem template verifying symmetric
+    modal accessibility relations.
+EXECUTION_PLAN:
+- step: Prove Rule of Separation Failure
+  role: Chief Architect
+  action: Prove failure of classical Rule of Separation when using circular convolution
+    in HRR compared to additive vector superposition.
+- step: Formulate S5-Modal Attention
+  role: Chief Architect
+  action: Formulate Fourier-domain S5-Modal Attention equation for phase and amplitude
+    modification.
+- step: Construct PyTorch Class
+  role: Chief Architect
+  action: Construct a testable PyTorch class utilizing FFT-optimized circular convolution.
+- step: Draft Lean 4 Theorem
+  role: Chief Architect
+  action: Conclude specification with a Lean 4 theorem template verifying symmetric
+    modal accessibility relations.
+SELF_TEST:
+  checks:
+  - check_id: VALIDATE_SPEC_SHEET
+    description: Ensure output contains all mathematical proofs, PyTorch class, and
+      Lean 4 template.
+    method: VALIDATE_SCHEMA
+    params:
+      message: Validating complete specification sheet structure.
+  success_condition: All required mathematical, code, and theorem components are provided.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    specification_sheet:
+      type: string
+      pattern: ^.*$
+REFLEXIVE_CHECK:
+  prompt: Is the PyTorch FFT-optimized convolution preserving mathematical orthogonality
+    and is the Lean 4 template accurate?

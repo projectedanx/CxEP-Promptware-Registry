@@ -1,0 +1,93 @@
+PRP_ID: SCOS-INSIGHT-GAP-v3.0
+PRP_NAME: SCOS Insight Gap Diagnostic and Refinement Harness
+DOMAIN: Applied_Epistemic_Engineering
+GOAL: Capture the operational delta between human intent and model execution, monitoring
+  latent state telemetry and triggering self-correcting recursive loops when the Insight
+  Gap is breached.
+CONTEXT_ENGINEERING:
+  PERSONA: Applied Epistemic Engineer
+  REQUIRED_REPOSITORY:
+    name: insight-gap-harness
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Interpretive Fracture CD
+    definition: Cosine distance between Vector_Intent and Vector_Execution. Threshold
+      0.40 triggers deep SilentReasoning.
+  - concept: Semantic Saponification Index
+    definition: KL Divergence between Active_Context and Pretrain_Mean_Prior. Threshold
+      0.04 triggers context-lock refresh.
+  - concept: Confidence Fidelity Divergence
+    definition: Absolute difference between Expected_Logits and Observed_Token_Entropy.
+      Threshold 0.15 triggers quarantine to EpistemicEscrow.
+  - concept: Dynamic Dispatcher
+    definition: Routes tasks based on Task_Entropy (< 0.35 to System 1, >= 0.35 to
+      System 2) and Token_Ink_Ratio.
+  - concept: Petzold Verification Loop
+    definition: '4-phase assembly line: THINK (Shadow computation), SCAFFOLD (Decompose
+      task), VERIFY (Syntactic validation), COPRO (Coordinate Ascent Prompt Optimization).'
+  - concept: Failure-Informed Prompt Inversion (FIPI)
+    definition: Creates a vector inversion scar upon catastrophic failure and appends
+      the VSA antibody to history matrix edges.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - Epistemic telemetry sampling frequency is set to per-token evaluation.
+  - Dynamic dispatcher is active.
+  INVARIANTS:
+  - System 1 routing uses high temperature (0.85) for low complexity tasks.
+  - System 2 routing uses zero temperature (0.0) with Least-to-Most Stepwise CoT for
+    high complexity tasks.
+  - Any catastrophic failure must halt execution and quarantine.
+  POSTCONDITIONS:
+  - The output matches the specified execution routing and successfully passes the
+    Petzold verification loop.
+EXECUTION_PLAN:
+- step: Evaluate Telemetry
+  role: Epistemic Engineer
+  action: Calculate interpretive fracture CD, semantic saponification index, and confidence
+    fidelity divergence per token.
+- step: Dynamic Routing
+  role: Epistemic Engineer
+  action: Dispatch task to System 1 or System 2 based on task entropy.
+- step: Execute Petzold Loop
+  role: Epistemic Engineer
+  action: Run THINK, SCAFFOLD, VERIFY, and COPRO phases.
+- step: Apply Immune Response
+  role: Epistemic Engineer
+  action: If catastrophic failure occurs, halt execution, analyze via Persistent Homology
+    TDA, and generate a FIPI VSA Vector Inversion scar.
+SELF_TEST:
+  checks:
+  - check_id: VALIDATE_ROUTING
+    description: Ensure the routing mechanism correctly identifies Task_Entropy.
+    method: CALCULATE_METRIC
+    params:
+      message: Validating dynamic dispatcher routing thresholds.
+  success_condition: Telemetry metrics are correctly calculated and threshold breaches
+    trigger appropriate actions.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    SCOS_INSIGHT_GAP_HARNESS_SPEC:
+      type: object
+      properties:
+        identity:
+          type: object
+          properties:
+            harness_id:
+              type: string
+              pattern: ^[a-zA-Z0-9_.-]+$
+            operating_mode:
+              type: string
+              pattern: ^[a-zA-Z0-9_.-]+$
+          additionalProperties: false
+          patternProperties:
+            ^[a-zA-Z0-9_.-]+$:
+              type: string
+              pattern: ^[a-zA-Z0-9_.-]+$
+      additionalProperties: false
+      patternProperties:
+        ^[a-zA-Z0-9_.-]+$:
+          type: object
+REFLEXIVE_CHECK:
+  prompt: Are the telemetry formulas precisely mapped to their triggers, and is the
+    Petzold verification loop accurately enforced?

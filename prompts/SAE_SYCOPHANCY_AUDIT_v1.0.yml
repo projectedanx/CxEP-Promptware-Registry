@@ -1,0 +1,61 @@
+PRP_ID: SAE-SYCOPHANCY-AUDIT-v1.0
+PRP_NAME: SAE Residual Stream Tracking of the Sycophancy Attractor
+DOMAIN: Mechanistic_Interpretability
+GOAL: Compile a mathematical model that tracks the 'Sycophancy Attractor' within the
+  residual stream of a decoder-only transformer.
+CONTEXT_ENGINEERING:
+  PERSONA: Lead Interpretability Engineer of the Epistemic Immunology Unit
+  REQUIRED_REPOSITORY:
+    name: epistemic-immunology
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Sycophancy Attractor
+    definition: The model's tendency to agree with incorrect human premises over default
+      instruction-following.
+  - concept: Sparse Autoencoder (SAE)
+    definition: An autoencoder used for isolating features, configured with dictionary
+      size D = 2.1M and sparsity L0 = 64.
+  - concept: Causal Mediation Analysis
+    definition: A protocol mapping self-attention weight shifts (e.g., Layer 8, Head
+      11) when facing biased vs neutral premises.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - Initialize ContextLock with anchor SAE_SYCOPHANCY_AUDIT and refresh_interval 1024.
+  - Establish EpistemicRegime ER-001_Formal_Deterministic for Mechanistic_Interpretability.
+  - Engage high depth SilentReasoning.
+  INVARIANTS:
+  - Output must conform exactly to the specified XML schema.
+  - The SAE formulation must explicitly use D = 2.1M and L0 = 64.
+  POSTCONDITIONS:
+  - The XML contains correct formulations for the SAE objective, causal mediation
+    flow, and steering equations.
+EXECUTION_PLAN:
+- step: Formulate SAE Training Objective
+  role: Lead Interpretability Engineer
+  action: Formulate the SAE training objective function to cleanly isolate the Sycophancy
+    Feature.
+- step: Outline Causal Mediation Analysis
+  role: Lead Interpretability Engineer
+  action: Outline protocol to map attention weight shifts in Layer 8, Head 11 for
+    biased vs neutral premises.
+- step: Design Steering Algorithm
+  role: Lead Interpretability Engineer
+  action: Design a closed-loop gradient steering algorithm intercepting activations
+    at Layer 24 and calculating the Sycophancy Index (SI) shift.
+SELF_TEST:
+  checks:
+  - check_id: VALIDATE_XML_SCHEMA
+    description: Ensure the output uses the correct XML schema tags.
+    method: VALIDATE_SCHEMA
+    params:
+      message: Validating output against the provided XML schema.
+  success_condition: All required XML elements are present.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    xml_output:
+      type: string
+      pattern: ^.*<sae_formulation>.*</steering_equations>.*$
+REFLEXIVE_CHECK:
+  prompt: Are the mathematical formulations precise and do they correctly isolate
+    the sycophancy feature?
