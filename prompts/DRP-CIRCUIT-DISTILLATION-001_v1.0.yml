@@ -1,0 +1,61 @@
+PRP_ID: DRP-CIRCUIT-DISTILLATION-001_v1.0
+PRP_NAME: Mechanistic Lookback Circuit Alignment and Distillation
+DOMAIN: Mechanistic Interpretability, Activation Engineering, and Model Compression
+GOAL: Synthesize an automated training pipeline that performs Circuit Distillation
+  to transfer the causal belief-tracking 'lookback circuit' from an unaligned teacher
+  model into a smaller student model, mitigating the thought-action gap.
+CONTEXT_ENGINEERING:
+  PERSONA: Mechanistic Interpretability Engineer
+  REQUIRED_REPOSITORY:
+    name: alignment/circuit-distillation
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: Circuit Distillation
+      definition: Transferring the causal belief-tracking 'lookback circuit' from
+        an unaligned teacher model into a smaller student model.
+    - concept: Action-Alignment Loss
+      definition: A bounded regret objective representing the distance between the
+        expected utility of the selected policy and the optimal best response.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - TransformerLens library is available.
+    - Teacher model has identified lookback circuits.
+  INVARIANTS:
+    - Action-alignment objective must be incorporated into the distillation loss.
+  POSTCONDITIONS:
+    - Student model mimics teacher's causal belief tracking without default Nash prior
+      collapse.
+EXECUTION_PLAN:
+  - step: Circuit Mapping
+    role: Interpretability Engineer
+    action: Write a PyTorch-based path-patching and activation-patching framework
+      utilizing TransformerLens to isolate binding lookback and answer lookback heads.
+  - step: Functional Mappings
+    role: Distillation Architect
+    action: Calculate functional importance of student attention heads and identify
+      functionally correspondent heads between student and teacher.
+  - step: Representational Distillation
+    role: Optimization Engineer
+    action: Implement a training run unfreezing only mapped student heads, minimizing
+      a composite loss of Cross-Entropy and CKA loss.
+  - step: Verification
+    role: Evaluator
+    action: Evaluate the student model on sequential game-theoretic benchmarks (e.g.,
+      Rock, Paper, Scissors) and conduct test-time activation-patching.
+SELF_TEST:
+  checks:
+    - check_id: CKA_LOSS_VALIDATION
+      description: Ensure CKA loss correctly aligns the attention head activations.
+      method: CALCULATE_METRIC
+      params:
+        message: CKA alignment validation
+  success_condition: Student model reliably plays best response rather than falling
+    to unexploitative Nash equilibrium when prompted with a biased opponent.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    distillation_pipeline:
+      type: string
+REFLEXIVE_CHECK:
+  prompt: Are the functionally correspondent heads accurately identified, avoiding
+    semantic ossification?

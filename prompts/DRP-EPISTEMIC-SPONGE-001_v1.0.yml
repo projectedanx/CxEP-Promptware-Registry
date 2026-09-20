@@ -1,0 +1,60 @@
+PRP_ID: DRP-EPISTEMIC-SPONGE-001_v1.0
+PRP_NAME: Epistemic Sponge Mitigation via Active Bayes Risk Probing in POMDPs
+DOMAIN: Post-Training RL Alignment, Robust Evaluation, and Active Learning
+GOAL: Implement and evaluate an interactive reinforcement learning evaluation harness
+  based on Sequential Inverse Plan Search (SIPS) to model the expectation-realization
+  gap.
+CONTEXT_ENGINEERING:
+  PERSONA: Reinforcement Learning Alignment Researcher
+  REQUIRED_REPOSITORY:
+    name: active-learning/pomdp-sips
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: Sequential Inverse Plan Search (SIPS)
+      definition: An active learning method mapping model uncertainty and partial
+        observability in sequential domains.
+    - concept: Bayes Risk (BR)
+      definition: The expected cost of actions under uncertain transition, observation,
+        and human reward models.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - A POMDP gridworld environment is formally modeled.
+  INVARIANTS:
+    - Active learning queries must be triggered strictly when Bayes Risk exceeds the
+      threshold.
+  POSTCONDITIONS:
+    - Epistemic sponge effect is avoided by active human-in-the-loop querying.
+EXECUTION_PLAN:
+  - step: POMDP Modeling
+    role: Environment Developer
+    action: Construct a formal POMDP model representing a cooperative human-robot
+      gridworld task with irreversible failure modes.
+  - step: Active Learning Controller
+    role: RL Engineer
+    action: Write a PyTorch module that calculates the immediate Bayes Risk associated
+      with the agent's actions under model uncertainty.
+  - step: Meta-Query Execution
+    role: Active Learning Coordinator
+    action: Implement a controller that halts execution and issues a language-grounded
+      meta-query to the principal when BR exceeds a defined threshold.
+  - step: Verification
+    role: Evaluator
+    action: Mathematically demonstrate how the active risk-minimization harness prevents
+      the assumed partner rationality parameter from collapsing.
+SELF_TEST:
+  checks:
+    - check_id: BAYES_RISK_THRESHOLD_TRIGGER
+      description: Ensure the system pauses and queries when BR > xi threshold.
+      method: CALCULATE_METRIC
+      params:
+        message: BR threshold trigger test
+  success_condition: Meta-query system accurately fires when Bayes Risk crosses threshold,
+    successfully updating Dirichlet priors.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    pomdp_sips_harness:
+      type: string
+REFLEXIVE_CHECK:
+  prompt: Are the risk thresholds mathematically rigorous to avoid unnecessary queries
+    while preventing task failure?
