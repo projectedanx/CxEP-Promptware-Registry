@@ -1,0 +1,67 @@
+---
+PRP_ID: DRP-RECAP-BDI-002_v1.0
+PRP_NAME: Recursive Context-Aware Planning (ReCAP) with BDI and Symbolic Logic Verification
+DOMAIN: Cognitive Agent Architectures, Hybrid Intelligence, and Logical Verification
+GOAL: >-
+  Architect an autonomous, closed-loop agent execution harness implementing the ReCAP framework integrated with a BDI cognitive architecture and a symbolic verifier to eliminate "mental state decoupling" and "context drift".
+CONTEXT_ENGINEERING:
+  PERSONA: >-
+    You are a systems engineer designing a robust cognitive agent architecture that combines large language models with symbolic logic verification for long-horizon planning.
+  REQUIRED_REPOSITORY:
+    name: recap-bdi-harness
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: ReCAP (Recursive Context-Aware Planning)
+      definition: >-
+        A framework for managing dynamic context trees with downward decomposition (plan-ahead) and upward backtracking (structured injection) for long-horizon tasks.
+    - concept: BDI Architecture
+      definition: >-
+        A cognitive model representing Beliefs (world knowledge), Desires (high-level goals), and Intentions (concrete plans).
+    - concept: Symbolic Logic Verification
+      definition: >-
+        Using formal logic solvers (e.g., ASP/Clingo) to verify the consistency and safety of an agent's proposed intentions before execution.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - A Python environment with capabilities to interact with an LLM (e.g., Qwen-2.5-72B-Instruct) and a symbolic solver (e.g., Clingo).
+    - The Robotouille cooking simulator is available for evaluation.
+  INVARIANTS:
+    - The LLM output must be strictly partitioned into XML/JSON fences for #Beliefs, #Desires, and #Intentions.
+    - The symbolic solver must evaluate the proposed #Intentions against #Beliefs and safety rules before any action is executed.
+  POSTCONDITIONS:
+    - The BDI-ReCAP harness demonstrates a higher success rate and token-to-step efficiency compared to a baseline ReAct agent on tasks with the "Sussman Anomaly".
+EXECUTION_PLAN:
+  - step: Dynamic Context Tree Management
+    role: Systems Engineer
+    action: Build the Python execution harness to manage the dynamic context tree with downward decomposition and upward backtracking.
+  - step: Epistemic Scaffolding
+    role: Systems Engineer
+    action: Implement strict XML/JSON prompting to partition LLM reasoning into BDI components.
+  - step: Symbolic Verification Loop
+    role: Systems Engineer
+    action: Build the non-LLM control layer to parse BDI components into ASP/DEL rules and evaluate them using a symbolic solver.
+  - step: Failure Mode Evaluation
+    role: Systems Engineer
+    action: Evaluate the harness on the Robotouille simulator under zero-shot pass@1 protocol, specifically testing for resolution of the Sussman Anomaly.
+SELF_TEST:
+  checks:
+    - check_id: CHECK-SYMBOLIC-VERIFIER
+      description: Verify that the symbolic verification loop is correctly intercepting and validating intentions.
+      method: SCAN_ARTIFACT
+      params:
+        message: "Verify symbolic solver integration."
+  success_condition: The harness correctly manages the context tree, enforces BDI partitions, and successfully navigates blocked states in the simulator.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    agent_harness:
+      type: object
+      properties:
+        context_tree_manager:
+          type: string
+          pattern: "^[a-zA-Z0-9_.-]+$"
+        symbolic_verifier:
+          type: string
+          pattern: "^[a-zA-Z0-9_.-]+$"
+REFLEXIVE_CHECK:
+  prompt: >-
+    Does the symbolic verification step effectively prevent invalid actions, and does the backtracking mechanism successfully recover from deadlock states like the Sussman Anomaly?

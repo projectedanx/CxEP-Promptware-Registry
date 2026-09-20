@@ -1,0 +1,67 @@
+---
+PRP_ID: DRP-CIRCUIT-DISTILLATION-002_v1.0
+PRP_NAME: Mechanistic Lookback Circuit Distillation for Causal Action-Belief Binding
+DOMAIN: Mechanistic Interpretability, Model Compression, and Behavioral Alignment
+GOAL: >-
+  Develop a mechanistic distillation pipeline to transfer the causal belief-tracking "lookback circuit" from a larger teacher model to a smaller student model, forcing the student to resolve the "thought-action gap" in sequential games.
+CONTEXT_ENGINEERING:
+  PERSONA: >-
+    You are an expert AI researcher specializing in mechanistic interpretability and model distillation, tasked with transferring causal structures between transformer models.
+  REQUIRED_REPOSITORY:
+    name: lookback-circuit-distillation
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: Thought-Action Gap
+      definition: >-
+        The phenomenon where a model correctly predicts an interlocutor's mental state (Literal ToM) but fails to execute a strategic policy based on that prediction (Functional ToM).
+    - concept: Centered Kernel Alignment (CKA)
+      definition: >-
+        A method for measuring the similarity between the representations of different neural network layers or heads.
+    - concept: Lookback Circuit
+      definition: >-
+        Attention heads in a transformer that are responsible for tracking and retrieving entity states over sequential contexts.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - A teacher model (e.g., Llama-3-70B-Instruct) and a student model (e.g., Llama-3-8B) are available.
+    - TransformerLens library is installed and configured.
+  INVARIANTS:
+    - The distillation loss must incorporate both a task loss and a CKA representational similarity loss targeting specific circuit heads.
+    - The student model must be stress-tested in a sequential game environment (e.g., Rock, Paper, Scissors).
+  POSTCONDITIONS:
+    - Empirical and mathematical proof that test-time activation patching on the distilled lookback circuit steers the student's vocabulary distribution away from a default Nash prior.
+EXECUTION_PLAN:
+  - step: Circuit Identification
+    role: Researcher
+    action: Implement PyTorch path-patching and activation-patching using TransformerLens to isolate binding and answer lookback heads in the teacher model.
+  - step: Functional Component Mapping
+    role: Researcher
+    action: Apply CKA and ablation impact similarity to map functionally corresponding attention heads between teacher and student.
+  - step: Composite Loss Formulation
+    role: Researcher
+    action: Define and implement the composite distillation loss function (Cross-Entropy + CKA on paired heads).
+  - step: Causal Intervention Verification
+    role: Researcher
+    action: Evaluate the distilled student model in a 100-round Rock, Paper, Scissors game and perform test-time activation patching.
+SELF_TEST:
+  checks:
+    - check_id: CHECK-DISTILLATION-LOSS
+      description: Verify the implementation of the composite loss function includes CKA.
+      method: SCAN_ARTIFACT
+      params:
+        message: "Verify loss function structure."
+  success_condition: The composite loss function is correctly formulated and the evaluation demonstrates successful causal binding.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    distillation_pipeline:
+      type: object
+      properties:
+        circuit_identification:
+          type: string
+          pattern: "^[a-zA-Z0-9_.-]+$"
+        loss_function:
+          type: string
+          pattern: "^[a-zA-Z0-9_.-]+$"
+REFLEXIVE_CHECK:
+  prompt: >-
+    Did the distillation process successfully transfer the causal lookback circuit, and was the thought-action gap measurably reduced during the stress test?
