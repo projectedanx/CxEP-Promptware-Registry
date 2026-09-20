@@ -1,0 +1,95 @@
+PRP_ID: PAP-OCCAM-LOSS-COMPILER-001_v1.0
+PRP_NAME: Engineering the Non-Parametric Occam Loss Compiler for AI Scientific Reasoning
+DOMAIN: Production-Grade AI Harness Specification
+GOAL: Specify a production-grade AI reasoning module that programmatically compiles
+  competing scientific theories into Directed Acyclic Graphs (DAGs) and computes an
+  'Occam Loss Score'.
+CONTEXT_ENGINEERING:
+  PERSONA: 'SYSTEM INSTRUCTION: MATHEMATICAL COMPILER DESIGN'
+  REQUIRED_REPOSITORY:
+    name: ParsimoniousArchitectureProtocol
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Occam Loss Compiler
+    definition: A mathematical loss compiler that penalizes model complexity at the
+      structural level. Computes complexity score C(G) based on parameter dimension
+      and assumption density, and evaluates prediction error E(G) against real-world
+      test sets.
+  - concept: Ontological Commitment Engine
+    definition: Formulates competing graphs G_1 (Simple) and G_2 (Complex), binding
+      each node to empirical variables and verification metrics.
+  - concept: Pareto Optimization
+    definition: Runs multi-objective gradient descent on the Complexity-Accuracy frontier.
+      Selects the 'Simplest Adequate Approximation'.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - The system must receive raw empirical data.
+  - Competing theories (T_1, T_2) must be formulated.
+  INVARIANTS:
+  - The compiler must reject any model that adds free parameters without achieving
+    a corresponding, statistically significant decrease in prediction error (E >=
+    3\sigma).
+  - The complexity metric C(G) must be derived from both parameter dimensionality
+    and assumption-dependence paths (P(T) = \prod P(A_i)).
+  POSTCONDITIONS:
+  - A structural complexity penalty matching Bayesian marginal likelihood is computed.
+  - The 'Simplest Adequate Approximation' is selected via Pareto optimization.
+EXECUTION_PLAN:
+- step: Define Schema
+  role: Architect
+  action: 'Define a strongly typed JSON schema representing a theory''s ''Ontological
+    Commitment'': explicitly declaring variables, free parameters, and foundational
+    assumptions.'
+- step: Formulate Complexity Metric
+  role: Mathematician
+  action: 'Formulate a quantitative complexity metric C(G) derived from both parameter
+    dimensionality and assumption-dependence paths (isomorphic to the probability
+    of error propagation: P(T) = \prod P(A_i)).'
+- step: Specify Pareto Optimization
+  role: Engineer
+  action: Specify a Pareto optimization function that evaluates the 'Simplest Adequate
+    Approximation.' The loss compiler must reject any model that adds free parameters
+    without achieving a corresponding, statistically significant decrease in prediction
+    error (E >= 3\sigma).
+- step: Run Simulated Walk-through
+  role: Analyst
+  action: 'Run a simulated walk-through: show how the compiler selects Copernican
+    heliocentrism over Ptolemaic geocentrism when evaluated against Galileo''s observations
+    of the phases of Venus.'
+SELF_TEST:
+  checks:
+  - check_id: VALIDATE_COMPLEXITY_METRIC
+    description: Ensure the complexity metric correctly accounts for assumption-dependence
+      paths.
+    method: CALCULATE_METRIC
+    params:
+      message: Validating the complexity metric C(G).
+  - check_id: ASSERT_PARETO_OPTIMIZATION
+    description: Verify the Pareto optimization function rejects overly complex models.
+    method: ASSERT_BLUEPRINT_CONSISTENCY
+    params:
+      message: Testing Pareto frontier distance and 3 sigma error constraints.
+  success_condition: The simulated walk-through successfully selects Copernican heliocentrism,
+    and the metrics are mathematically sound.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    ontological_commitment_schema:
+      type: object
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+    complexity_metric_formula:
+      type: object
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+    pareto_optimization_function:
+      type: object
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+    simulated_walkthrough:
+      type: object
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+REFLEXIVE_CHECK:
+  prompt: Did the compiler correctly penalize Ptolemaic geocentrism's epicyclic complexity
+    compared to Copernican heliocentrism's parsimonious structure?

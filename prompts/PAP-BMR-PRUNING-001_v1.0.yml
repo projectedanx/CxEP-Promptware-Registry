@@ -1,0 +1,93 @@
+PRP_ID: PAP-BMR-PRUNING-001_v1.0
+PRP_NAME: Modeling Bayesian Model Reduction (BMR) as an Active Pruning Architecture
+  for LLM Reasoning
+DOMAIN: Production-Grade AI Harness Specification
+GOAL: Design an active inference reasoning harness for LLM agents that operationalizes
+  BMR during complex multi-agent workflows.
+CONTEXT_ENGINEERING:
+  PERSONA: 'SYSTEM INSTRUCTION: COGNITIVE HARNESS DESIGN'
+  REQUIRED_REPOSITORY:
+    name: ParsimoniousArchitectureProtocol
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Bayesian Model Reduction (BMR)
+    definition: A cognitive process to prune superfluous parameters and find simpler,
+      more generalizable explanations of possessed data (minimizing complexity while
+      maintaining accuracy).
+  - concept: Axiomatic Pruning Module
+    definition: Treats internal reasoning chains as a generative model, calculating
+      a marginal likelihood score for each branch, penalizing paths that introduce
+      unverified assumptions.
+  - concept: Self-Consolidation Loop
+    definition: Systematically compresses internal prompt context windows, replacing
+      verbose step-by-step logic with concise, elegant 'fictive principles' that preserve
+      explanatory power.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - The LLM agent must be engaged in complex multi-agent workflows.
+  INVARIANTS:
+  - The system must minimize complexity (KL divergence between posterior and prior)
+    while preserving necessary accuracy.
+  - The marginal likelihood score must penalize paths with unverified assumptions
+    or ad-hoc explanations.
+  POSTCONDITIONS:
+  - Verbose step-by-step logic is replaced with concise, elegant 'fictive principles'.
+  - Structural priors and posterior update equations are mathematically formalized.
+EXECUTION_PLAN:
+- step: Specify Theory-Building Phase
+  role: Architect
+  action: 'Specify the ''Theory-Building Phase'': where the agent uses abductive reasoning,
+    analogical mapping, and conceptual blending to generate a set of competing candidate
+    hypotheses to explain a surprising anomaly.'
+- step: Build Axiomatic Pruning Module
+  role: Engineer
+  action: 'Build the ''Axiomatic Pruning Module'': which treats the agent''s internal
+    reasoning chains as a generative model. Calculate a marginal likelihood score
+    for each reasoning branch, penalizing paths that introduce unverified assumptions.'
+- step: Establish Self-Consolidation Loop
+  role: Engineer
+  action: 'Establish a ''Self-Consolidation Loop'': systematically compress internal
+    prompt context windows, replacing verbose step-by-step logic with concise ''fictive
+    principles'' (like the Ideal Gas Law) that preserve maximum explanatory power.'
+- step: Provide Pseudo-code
+  role: Developer
+  action: Provide the complete pseudo-code for this harness, ensuring all structural
+    priors and posterior update equations are mathematically formalized.
+SELF_TEST:
+  checks:
+  - check_id: VALIDATE_MARGINAL_LIKELIHOOD
+    description: Ensure the Axiomatic Pruning Module correctly calculates marginal
+      likelihood scores and penalizes unverified assumptions.
+    method: CALCULATE_METRIC
+    params:
+      message: Validating pruning module KL divergence calculation.
+  - check_id: ASSERT_PSEUDOCODE_FORMALIZATION
+    description: Verify structural priors and posterior update equations are correctly
+      formalized in the pseudo-code.
+    method: ASSERT_BLUEPRINT_CONSISTENCY
+    params:
+      message: Checking pseudocode math formalization.
+  success_condition: The reasoning harness correctly implements BMR, and mathematical
+    equations are valid.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    theory_building_phase:
+      type: object
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+    axiomatic_pruning_module:
+      type: object
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+    self_consolidation_loop:
+      type: object
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+    pseudo_code:
+      type: object
+      patternProperties:
+        ^\$?[a-zA-Z0-9_.-]+$: {}
+REFLEXIVE_CHECK:
+  prompt: Did the consolidation loop successfully compress verbose logic without losing
+    necessary explanatory accuracy?
