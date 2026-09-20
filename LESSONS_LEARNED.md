@@ -67,3 +67,9 @@ When a user provides a complex, highly specialized persona definition (e.g., TAC
 ### Lessons Learned: UASTP Saga Recovery Serialization
 - **Instability**: The UASTP Saga Recovery protocol mapping to GitHub Actions contains complex conditional state management, topological tearing concepts, and research prompts that, if summarized, lose their actionable constraints.
 - **Fortification**: Extracted the UASTP Saga Recovery mapping and the three corresponding research prompts into strictly validated YAML PRPs. In addition, the exact GitHub Actions code blueprint for the Saga Recovery pipeline was preserved in `src/uastp-saga-recovery.yml` to maintain the precise commit pin numbers, JSON escape geometries, and circuit breaker logic without risking translation decay.
+
+
+## 2024-05-26 - The Thermodynamic Ontology of Computational Decision-Making
+
+**Instability:** A complex prompt containing three non-obvious research prompts on thermodynamic decision-making constraints was provided. A monolithic representation fails to capture the distinct systems engineering requirements of each prompt.
+**Fortification:** Serialized the three research prompts into individual PRPs (`DRP-THERMO-MCTS-001_v1.0.yml`, `DRP-THERMO-ADMM-001_v1.0.yml`, `DRP-THERMO-QWSSR-001_v1.0.yml`) to preserve their distinct physical and algorithmic constraints.

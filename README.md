@@ -231,3 +231,7 @@ When formalizing the Reflexive Repair Loop (a dual-system, two-speed cybernetic 
 **Instability:** The user provided complex research prompts detailing Reflexion and Voyager architectures that were not integrated into the Promptware Registry. Attempting to directly parse or run these prompts without serialization leads to loss of structural metadata.
 
 **Fortification:** Serialized the three distinct research prompts into individual YAML PRPs (`prompts/DRP-MIQ-REFLEXION-01.yml`, `prompts/DRP-SKILL-DRIFT-VOYAGER-02.yml`, `prompts/DRP-HYBRID-DUAL-HELIX-03.yml`). By mapping these complex blueprints strictly into the PRP schema (including specific execution plans, constraints, and schemas), we ensure they act as formal, deterministic execution boundaries that bypass the Principle of Explosion and maintain structural tension.
+
+- `DRP-THERMO-MCTS-001_v1.0.yml`: Thermodynamic modeling of persistent tree recycling.
+- `DRP-THERMO-ADMM-001_v1.0.yml`: Constrained convex ADMM projection on non-separable manifolds.
+- `DRP-THERMO-QWSSR-001_v1.0.yml`: Quantum walk-inspired state-space reduction for combinatorial asset scheduling.

@@ -1,0 +1,64 @@
+PRP_ID: DRP-THERMO-MCTS-001_v1.0
+PRP_NAME: Dual-Agent Simultaneous Tree-Recycling and the Entropy of Absolute Symmetry
+  in Competitive Self-Play
+DOMAIN: Thermodynamic Decision-Making
+GOAL: Design, implement, and analyze a parallelized MCTS training harness that utilizes
+  Persistent Tree Recycling to measure the exact information-theoretic and physical
+  energy dissipation during symmetric self-play duels.
+CONTEXT_ENGINEERING:
+  PERSONA: Chrono-Kinematic Reversible AI Architect
+  REQUIRED_REPOSITORY:
+    name: chrono-kinematic-harness
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Persistent Tree Recycling
+    definition: Instead of resetting the search tree tabula rasa at every turn, the
+      agent employs Persistent Tree Recycling. It promotes the selected child node
+      to the new root, conserving accumulated ancestral visit counts (n) and action-value
+      estimates (Q).
+  - concept: Thermodynamic Modeling
+    definition: 'Expected computational heat generated during a validation episode
+      where identical agents play a symmetric match. Mutual information gained about
+      relative skill collapses to zero, while the physical energy dissipated Q_wasted
+      scales linearly with the total number of redundant, irreversible MCTS node resets:
+      Q_wasted proportional to N_erased_nodes * k_B * T * ln 2.'
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - Maximum online execution latency <= 1.0s per turn (actTimeout).
+  INVARIANTS:
+  - 'Solar singularity exclusion zone: x_c, y_c = (50.0, 50.0), R = 10.0.'
+  - Maximum sequence generation limit <= 16,384 tokens.
+  POSTCONDITIONS:
+  - Agent executes a search depth of >= 20-ply within the strict 1.0s limit.
+  - Information-theoretic entropy converges to 0.
+EXECUTION_PLAN:
+- step: 1. Thermodynamic Modeling
+  role: Thermodynamic Modeler
+  action: Formulate the expected computational heat generated during a validation
+    episode. Prove mutual information gain approaches zero while physical energy scales
+    linearly.
+- step: 2. Harness Architecture
+  role: Harness Architect
+  action: Construct a multi-threaded Python class using a lock-free, double-buffered
+    pointer swap. The background threads must continuously run rollout simulations
+    on the conserved root node, while the main thread executes Autophagic Pruning.
+- step: 3. Verification and Falsification
+  role: Verifier
+  action: Demonstrate that the persistent-tree agent executes a search depth of >=
+    20-ply within the 1.0s limit. Falsify the symmetric freeze condition by injecting
+    Levy-flight parameter mutations to break deterministic loops.
+SELF_TEST:
+  checks:
+  - check_id: check-symmetry-entropy
+    description: Verify that mutual information under absolute symmetry converges
+      to zero.
+    method: CALCULATE_METRIC
+    params:
+      message: Entropy calculation verification
+  success_condition: All tests pass.
+OUTPUT_SCHEMA:
+  type: Thermodynamic_MCTS_Harness
+  properties: {}
+REFLEXIVE_CHECK:
+  prompt: Are the thermodynamic bounds correctly mapped to MCTS tree nodes without
+    violating Landauer's principle?

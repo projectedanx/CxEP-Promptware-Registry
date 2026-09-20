@@ -1,0 +1,61 @@
+PRP_ID: DRP-THERMO-ADMM-001_v1.0
+PRP_NAME: Constrained Convex ADMM Projection for Staged Advantage Estimation on Non-Separable
+  Multi-Agent Action Manifolds
+DOMAIN: Thermodynamic Decision-Making
+GOAL: Implement and evaluate an ultra-high-speed Alternating Direction Method of Multipliers
+  (ADMM) solver in PyTorch to compute prefix-aware, scale-preserving advantages (c
+  = 1) under strict hierarchical constraints.
+CONTEXT_ENGINEERING:
+  PERSONA: Chrono-Kinematic Reversible AI Architect
+  REQUIRED_REPOSITORY:
+    name: chrono-kinematic-harness
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Convex Formulation
+    definition: Formulate the convex projection program with L as the sparse M x N
+      constraint matrix representing the parent-child (C_pair) and sibling-triplet
+      (C_triplet) Directed Acyclic Graph (DAG).
+  - concept: Kinematic-Economic Coupling
+    definition: 'Isomorphically map the continuous mass x time x angle non-convex
+      manifold to the constraint set where velocity scales non-linearly with ship
+      mass: v(m) = 1 + 5(ln m / ln 1000)^1.5.'
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - Maximum online execution latency <= 1.0s per turn.
+  INVARIANTS:
+  - 'Solar singularity exclusion zone: x_c, y_c = (50.0, 50.0), R = 10.0.'
+  - 'Constraint DAG consistency: C_order = C_pair U C_triplet.'
+  POSTCONDITIONS:
+  - ADMM solver scales quadratically better than active-set SLSQP baseline.
+  - Convergence latency <= 10 ms at N=512 with primal-dual feasibility epsilon <=
+    10^-6.
+EXECUTION_PLAN:
+- step: 1. Convex Formulation
+  role: Optimization Engineer
+  action: Formulate the convex projection program and solve using the pre-factored
+    static constraint matrix L.
+- step: 2. Kinematic-Economic Coupling
+  role: Physics Mapper
+  action: Map the continuous mass x time x angle non-convex manifold to the constraint
+    set. Map the advantage to the boundary of the feasible set with an explicit penalty
+    margin delta_ij if trajectory intersects the central solar exclusion zone.
+- step: 3. Performance Benchmarking
+  role: Benchmarker
+  action: Benchmark ADMM solver against active-set SLSQP baseline across scaling batch
+    sizes (N=16 to N=1024). Prove ADMM achieves convergence latency of <= 10 ms at
+    N=512.
+SELF_TEST:
+  checks:
+  - check_id: check-admm-convergence
+    description: Verify ADMM convergence latency <= 10 ms at N=512.
+    method: CALCULATE_METRIC
+    params:
+      message: Check convergence latency benchmark
+  success_condition: All tests pass.
+OUTPUT_SCHEMA:
+  type: ADMM_Solver_Module
+  properties: {}
+REFLEXIVE_CHECK:
+  prompt: Did the ADMM solver accurately incorporate the Kinematic-Economic Coupling
+    constraints, explicitly penalizing trajectories intersecting the solar exclusion
+    zone?

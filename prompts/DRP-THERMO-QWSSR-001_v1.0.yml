@@ -1,0 +1,63 @@
+PRP_ID: DRP-THERMO-QWSSR-001_v1.0
+PRP_NAME: Quantum Walk-Inspired State-Space Reduction for Combinatorial Asset Scheduling
+  under Timescale-Separated Resource Constraints
+DOMAIN: Thermodynamic Decision-Making
+GOAL: Architect a state-space reduction framework utilizing the formalism of discrete
+  quantum random walks to construct a coherent initial superposition of valid, non-occluded
+  asset trajectories, bypassing classical search space complexity.
+CONTEXT_ENGINEERING:
+  PERSONA: Chrono-Kinematic Reversible AI Architect
+  REQUIRED_REPOSITORY:
+    name: chrono-kinematic-harness
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Quantum Walk Modeling
+    definition: Formulate the state transition of a walker over a directed acyclic
+      graph representing continuous-time orbital coordinates. Define the coin (C)
+      and shift (S) operators.
+  - concept: Oracle Construction
+    definition: Construct a quantum oracle circuit in Qiskit that marks states violating
+      multi-agent resource constraints, integrated into QSVT amplitude amplification
+      to avoid the souffle overshoot problem.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - Maximum online execution latency <= 1.0s per turn.
+  INVARIANTS:
+  - 'Solar singularity exclusion zone: x_c, y_c = (50.0, 50.0), R = 10.0.'
+  POSTCONDITIONS:
+  - Reduced-space search reaches >= 99% success in fewer than half the iterations
+    of full search baseline.
+EXECUTION_PLAN:
+- step: 1. Quantum Walk Modeling
+  role: Quantum Modeler
+  action: Formulate the state transition of a walker over a directed acyclic graph
+    representing continuous-time orbital coordinates. Define the coin and shift operators
+    to model possible scheduling paths while avoiding the lethal solar exclusion radius.
+- step: 2. State-Space Reduction
+  role: Complexity Analyst
+  action: Mathematically prove that the size of the constructed initial superposition
+    grows almost quadratically with the problem size.
+- step: 3. Oracle Construction
+  role: Quantum Circuit Designer
+  action: Construct a quantum oracle circuit in Qiskit that marks states violating
+    multi-agent resource constraints. Integrate this oracle into a fixed-point QSVT
+    amplitude amplification routine.
+- step: 4. Diagnostic Metrics
+  role: Diagnostic Tester
+  action: Run the simulation on a quantum emulator. Measure and plot the probability
+    of measuring a correct constraint-satisfying solution as a function of the number
+    of iterations.
+SELF_TEST:
+  checks:
+  - check_id: check-qsvt-convergence
+    description: Verify >= 99% success probability.
+    method: CALCULATE_METRIC
+    params:
+      message: Verify probability metrics
+  success_condition: All tests pass.
+OUTPUT_SCHEMA:
+  type: Quantum_Walk_SSR_Framework
+  properties: {}
+REFLEXIVE_CHECK:
+  prompt: Does the discrete quantum walk model correctly construct the initial superposition
+    avoiding the solar exclusion zone?
