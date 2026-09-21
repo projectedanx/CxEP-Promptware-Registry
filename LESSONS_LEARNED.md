@@ -1,4 +1,8 @@
 ### Lessons Learned
+## 2024-05-29 - DAX-01 Persona Serialization
+
+When serializing persona prompts like DAX-01 into PRPs, ensure that all theoretical frameworks (e.g., Semantic Saponification, Petzold Sequence) are explicitly represented in the `CONTEXT_ENGINEERING` block, and their operational restrictions (e.g., Anionic Veto) are hardcoded into the `INVARIANTS` field. Creating the emergence strategy (`dax_01_emergence_plan`) also ensures we map these structural rules against actual workflow check conditions to bypass Epistemic Mirror Traps. I also learned not to commit temporary setup scripts, which violates standard operating procedure.
+
 ### Lessons Learned: Autonomous Adaptive Cognitive Harness (AACH)
 - **Instability**: The user provided a complex conceptual ontology blending Cybernetics, Relational Data Exchange, Active Externalism, and Heideggerian Phenomenology into an "Autonomous Adaptive Cognitive Harness" (AACH). Treating this as a monolithic persona generation request would fail to encapsulate the rigid, domain-specific requirements of the required sub-systems.
 - **Fortification**: Serialized the three distinct research prompts (The Homomorphic Schema Compiler, The Epistemic Action Orchestrator, and The Disequilibratory Goal-Setting Engine) into individual YAML PRPs (`prompts/DRP-HOMOMORPHIC-SCHEMA-COMPILER-001_v1.0.yml`, `prompts/DRP-EPISTEMIC-ACTION-ORCHESTRATOR-001_v1.0.yml`, and `prompts/DRP-DISEQUILIBRATORY-GOAL-SETTING-ENGINE-001_v1.0.yml`). By mapping these complex blueprints strictly into the PRP schema, we ensure they act as formal, deterministic execution boundaries that bypass the Principle of Explosion and maintain structural tension, without adopting the overarching theoretical persona.
