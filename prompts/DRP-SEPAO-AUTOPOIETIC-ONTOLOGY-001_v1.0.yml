@@ -1,0 +1,80 @@
+PRP_ID: DRP-SEPAO-AUTOPOIETIC-ONTOLOGY-001_v1.0
+PRP_NAME: Autopoietic Self-Healing Ontologies via SEPAO Scanners
+DOMAIN: Epistemic Software Architecture
+GOAL: Specify the technical requirements for an autopoietic, self-healing runtime
+  harness modeled after the Self-Evolving Plugin Affordance Ontology (SEPAO) framework.
+CONTEXT_ENGINEERING:
+  PERSONA: Epistemic Software Architect and Compiler Engineer
+  REQUIRED_REPOSITORY:
+    name: ai-harness-engineering
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: The Environment Scanner
+    definition: Detail how a background worker uses static Abstract Syntax Tree (AST)
+      analysis and NLP parsing to continuously monitor a target software environment
+      for changes, schema updates, or third-party modifications.
+  - concept: Semantic Delta Mapping
+    definition: Define how environmental mutations are calculated as 'Semantic Drift
+      Deltas' within a unified knowledge graph. Formulate the mathematical graph-distance
+      equations needed to determine if an environmental schema shift has introduced
+      'Ontological Conflict'.
+  - concept: Failure-Informed Prompt Inversion (F-IPI)
+    definition: Design an automated pipeline that, upon detecting a compiler/test
+      suite execution failure, automatically isolates the exact line-range delta,
+      translates the stack trace into a 'Symbolic Scar', and runs a gradient-free
+      evolutionary prompt optimization routine to mutate the agent's master constitution.
+  - concept: Metamorphic Invariance Verification
+    definition: Describe how the system metamorphic-tests the mutated prompt across
+      semantically equivalent paraphrases to ensure the new constraint is robust and
+      does not introduce regression errors or 'Scar-Induced Rigidity'.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - The system must execute within a local sandbox for testing.
+  INVARIANTS:
+  - Must specify AST analysis, Semantic Drift Deltas, and F-IPI generation.
+  POSTCONDITIONS:
+  - A highly detailed technical specification, containing complete JSON configurations
+    of the metadata structures, exact mathematical formulations, and executable Python
+    scripts.
+EXECUTION_PLAN:
+- step: Environment Scanner Specification
+  role: Compiler Engineer
+  action: Detail background worker AST analysis and NLP parsing for monitoring the
+    software environment.
+- step: Semantic Delta Mapping
+  role: Epistemic Software Architect
+  action: Formulate mathematical graph-distance equations to calculate Semantic Drift
+    Deltas and Ontological Conflicts.
+- step: Design F-IPI Pipeline
+  role: Compiler Engineer
+  action: Design automated pipeline to translate stack traces into Symbolic Scars
+    and run gradient-free evolutionary prompt optimization.
+- step: Metamorphic Invariance Verification
+  role: Epistemic Software Architect
+  action: Describe metamorphic testing of mutated prompts to prevent Scar-Induced
+    Rigidity.
+SELF_TEST:
+  checks:
+  - check_id: check_technical_spec_deliverables
+    description: Ensure the specification contains JSON configurations, mathematical
+      formulations, and Python scripts.
+    method: SCAN_ARTIFACT
+    params:
+      message: Checking for JSON configurations and Python scripts.
+  success_condition: The technical specification completely defines the SEPAO framework's
+    operational loops with all required deliverables.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    technical_specification:
+      type: object
+      properties:
+        json_configurations:
+          type: string
+        mathematical_formulations:
+          type: string
+        python_scripts:
+          type: string
+REFLEXIVE_CHECK:
+  prompt: Have I completely specified the SEPAO framework operational loops without
+    missing any actionable deliverables?

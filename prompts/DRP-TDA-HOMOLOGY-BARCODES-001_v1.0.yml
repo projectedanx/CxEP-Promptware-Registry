@@ -1,0 +1,84 @@
+PRP_ID: DRP-TDA-HOMOLOGY-BARCODES-001_v1.0
+PRP_NAME: Topological Homology Barcodes for Latent Concept Verification
+DOMAIN: AI Interpretability / Topological Data Analysis
+GOAL: Develop a comprehensive technical specification for an active monitoring harness
+  that uses Persistent Homology (Topological Data Analysis - TDA) to analyze the internal
+  activation manifolds of an LLM during long-turn multi-agent interactions.
+CONTEXT_ENGINEERING:
+  PERSONA: Senior AI Interpretability Researcher and Topological Data Analyst
+  REQUIRED_REPOSITORY:
+    name: ai-harness-engineering
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Persistent Homology Computation
+    definition: Detail how to construct a Vietoris-Rips filtration over high-dimensional
+      activation vectors extracted from intermediate layers of the transformer. Show
+      how this filtration is used to compute persistent homology barcodes (Betti numbers
+      \beta_0, \beta_1, \beta_2).
+  - concept: Topological Void Mapping
+    definition: Formulate the precise mathematical conditions under which an increase
+      in \beta_1 persistence length identifies a 'Circular Reasoning Trap' or a 'Narrative
+      Loop', and how a highly persistent \beta_2 void maps 'Epistemic Hollowness'
+      (where the model has detached from semantic anchors and is generating structurally
+      valid but ungrounded syntax).
+  - concept: The Spectral Chrono-Topological Signature (SCTS)
+    definition: Define the mathematical formula for a real-time 'Drift Integrity Score'
+      derived from SCTS vector shifts, establishing the exact threshold where topological
+      deformation triggers an automatic roll-back (/restore) to a cryptographically
+      signed checkpoint.
+  - concept: Automated Anomaly Injection
+    definition: Describe a test harness that intentionally runs adversarial probe
+      queries (such as polysemantic traps or conflicting tool schemas) to force topological
+      ruptures, validating that the monitoring harness detects these deviations before
+      they cascade into user-facing failures.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - The system must have access to internal activation manifolds of the LLM.
+  INVARIANTS:
+  - The harness must use persistent homology computation and Betti number barcodes.
+  - Must formulate a Drift Integrity Score.
+  POSTCONDITIONS:
+  - A highly detailed whitepaper is produced containing LaTeX equations, Python/GUDHI
+    scaffolding, and a failure stack classification table.
+EXECUTION_PLAN:
+- step: Persistent Homology Computation
+  role: Topological Data Analyst
+  action: Construct a Vietoris-Rips filtration over high-dimensional activation vectors
+    and compute persistent homology barcodes.
+- step: Topological Void Mapping
+  role: Senior AI Interpretability Researcher
+  action: Formulate conditions mapping Betti persistence to Circular Reasoning Traps
+    or Epistemic Hollowness.
+- step: Define SCTS
+  role: Topological Data Analyst
+  action: Define the formula for the Drift Integrity Score derived from SCTS vector
+    shifts and specify roll-back thresholds.
+- step: Automated Anomaly Injection
+  role: Senior AI Interpretability Researcher
+  action: Describe a test harness to inject polysemantic traps or conflicting schemas
+    to force topological ruptures.
+SELF_TEST:
+  checks:
+  - check_id: check_whitepaper_content
+    description: Ensure the whitepaper contains LaTeX equations for homology calculations,
+      Python/GUDHI scaffolding, and a failure stack classification table.
+    method: SCAN_ARTIFACT
+    params:
+      message: Checking for LaTeX equations and Python scaffolding.
+  success_condition: The whitepaper is complete and covers all required mathematical
+    and architectural components.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    whitepaper:
+      type: object
+      properties:
+        latex_equations:
+          type: string
+        python_gudhi_scaffolding:
+          type: string
+        failure_stack_classification_table:
+          type: string
+REFLEXIVE_CHECK:
+  prompt: Have I accurately formulated the mathematical conditions for Topological
+    Void Mapping and SCTS without hallucinating unmentioned concepts?

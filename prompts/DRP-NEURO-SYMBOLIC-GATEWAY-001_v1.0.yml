@@ -1,0 +1,81 @@
+PRP_ID: DRP-NEURO-SYMBOLIC-GATEWAY-001_v1.0
+PRP_NAME: Differentiable Logic Engines for Neuro-Symbolic Verification
+DOMAIN: AI Safety / Formal Methods
+GOAL: Construct a complete systems architecture for a hybrid neuro-symbolic auditing
+  gateway designed to intercept, analyze, and formalize AI agent tool-calling sequences
+  before they hit a local operating system shell.
+CONTEXT_ENGINEERING:
+  PERSONA: Lead AI Safety Engineer and Formal Methods Specialist
+  REQUIRED_REPOSITORY:
+    name: ai-harness-engineering
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: The Propositional Probe Module
+    definition: Design a system that extracts latent activations from the model's
+      forward pass during tool-call selection and projects them onto a set of logical
+      propositions representing the agent's internal safety beliefs.
+  - concept: Differentiable Logic Programming
+    definition: Implement a differentiable reasoning engine (using frameworks like
+      TorchDEQ or Deep Equilibrium Models) that evaluates these extracted propositions
+      against an immutable, declarative policy-as-code ledger (the Supreme Law layer
+      of GEMINI.md).
+  - concept: Abstract Interpretation of Toolchains
+    definition: Adapt abstract interpretation frameworks from static analysis to compile
+      the agent's projected sequence of action-potentials into an interval-based 'Soft
+      Permission vs. Functional Misuse Lattice'. Detail how the system checks this
+      lattice for 'Polysemantic Divergence'.
+  - concept: The Epistemic Circuit Breaker
+    definition: Formulate a closed-loop control system (PID analogy) where the difference
+      between formal logical compliance and the neural model's probability weight
+      computes a real-time 'Friction Coefficient'. If this coefficient spikes, trigger
+      an automatic Escrow loop.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - The system intercepts tool-calling sequences prior to local shell execution.
+  INVARIANTS:
+  - Must use differentiable logic programming and abstract interpretation.
+  POSTCONDITIONS:
+  - A comprehensive systems engineering blueprint is provided, including mathematical
+    formulations, logical inference rules, and a UML/Mermaid state transition diagram.
+EXECUTION_PLAN:
+- step: Design Propositional Probe Module
+  role: Lead AI Safety Engineer
+  action: Extract latent activations and project them onto logical propositions representing
+    internal safety beliefs.
+- step: Implement Differentiable Logic Programming
+  role: Formal Methods Specialist
+  action: Evaluate extracted propositions against a declarative policy-as-code ledger
+    using TorchDEQ or Deep Equilibrium Models.
+- step: Abstract Interpretation of Toolchains
+  role: Formal Methods Specialist
+  action: Compile action-potentials into a 'Soft Permission vs. Functional Misuse
+    Lattice' to check for Polysemantic Divergence.
+- step: Formulate Epistemic Circuit Breaker
+  role: Lead AI Safety Engineer
+  action: Formulate a closed-loop control system calculating a real-time 'Friction
+    Coefficient' to trigger an Escrow loop.
+SELF_TEST:
+  checks:
+  - check_id: check_blueprint_components
+    description: Verify the blueprint includes mathematical formulations, logical
+      inference rules, and a UML/Mermaid state transition diagram.
+    method: SCAN_ARTIFACT
+    params:
+      message: Checking for comprehensive systems engineering blueprint components.
+  success_condition: The systems engineering blueprint completely details all four
+    interconnected layers.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    systems_engineering_blueprint:
+      type: object
+      properties:
+        mathematical_formulations:
+          type: string
+        logical_inference_rules:
+          type: string
+        uml_mermaid_diagram:
+          type: string
+REFLEXIVE_CHECK:
+  prompt: Have I appropriately combined differentiable reasoning with abstract interpretation
+    without hallucinatory frameworks?
