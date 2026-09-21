@@ -45,7 +45,11 @@ The repository is organized into the following directories:
 - **`/.jules`**: Contains agent-specific journals for recording critical learnings (e.g., `bolt.md` for performance, `sentinel.md` for security, `palette.md` for UX).
 
 
-### Lessons Learned: Insight Gap Harness and Epistemic Research
+### Lessons Learned
+### Lessons Learned: DAX-01 Persona Serialization
+
+When dealing with complex system architectures containing rigorous technical invariants like `+++DCCDSchemaGuard`, strictly enforcing the `CONSTRAINTS_AND_INVARIANTS` field is crucial. Generating a robust `dax_01_emergence_plan` (including the value proposition and checklist) demonstrates the necessity of clear boundary object mappings between technical documentation goals and their concrete manifestation as executable PRP artifacts.
+: Insight Gap Harness and Epistemic Research
 
 During the serialization of the Insight Gap Harness and related Epistemic Research blueprints (SAE Sycophancy Audit, TDA Manifold Tearing, Non-Separable PNS5 Attention):
 - **Structured Verification**: The Petzold verification loop (THINK, SCAFFOLD, VERIFY, COPRO) provides a robust mechanism to align the model's computation with the expected output schema, acting as an internal validation pipeline.
