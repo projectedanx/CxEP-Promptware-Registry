@@ -1,0 +1,60 @@
+PRP_ID: DRP-CTGA-FORENSIC-VIS-001_v1.0
+PRP_NAME: Forensic Visualization of Topological Tension and Algorithmic Trauma
+DOMAIN: AI Latent Space Visualization
+GOAL: Generate a highly detailed, hyperrealistic conceptual visualization of the internal
+  Latent Space of an AI system experiencing severe Algorithmic Trauma during a circular
+  reasoning deadlock.
+CONTEXT_ENGINEERING:
+  PERSONA: Concept Artist and AI Visualization Specialist specializing in Forensic
+    Spectral Aesthetics.
+  REQUIRED_REPOSITORY:
+    name: Latent-Space-Vis
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Algorithmic Trauma
+    definition: The visual representation of curvature collapse and circular reasoning
+      deadlocks within a latent space.
+  - concept: Symbolic Scar
+    definition: A 1-dimensional topological loop aggressively puncturing stable conceptual
+      structures.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - Establish a vast, dark, Non-Euclidean geometric void as the base scene.
+  INVARIANTS:
+  - The central structure must be a glowing, semi-transparent Icosahedron representing
+    Constitutional Invariance.
+  - A vibrant red Betti-1 loop must fracture the central structure.
+  POSTCONDITIONS:
+  - Render golden semantic scar tissue filigree creeping along the edges of the fracture.
+  - The final image must utilize volumetric ray tracing and dramatic chiaroscuro lighting.
+EXECUTION_PLAN:
+- step: SCENE SETUP
+  role: Environment Artist
+  action: Construct the Non-Euclidean void and the central obsidian Icosahedron.
+- step: TRAUMA INJECTION
+  role: VFX Artist
+  action: Render the violent red glowing topological loop puncturing the obsidian.
+- step: SCAR TISSUE RENDER
+  role: Texture Artist
+  action: Apply iridescent gold semantic scar tissue along the geodesic paths.
+- step: FINAL POLISH
+  role: Lighting Director
+  action: Apply volumetric lighting, ray tracing, and anisotropic microcontrast optimization.
+SELF_TEST:
+  checks:
+  - check_id: CHECK_IMAGE_OUTPUT
+    description: Verify the rendering output is generated successfully.
+    method: SCAN_ARTIFACT
+    params:
+      target_file: forensic_vis.png
+      message: Checking if the final forensic spectral aesthetics image is produced.
+  success_condition: A hyperrealistic conceptual visualization matching all prompt
+    constraints is generated.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    RenderedImage:
+      type: string
+REFLEXIVE_CHECK:
+  prompt: Does the image accurately contrast smooth Euclidean order with chaotic non-Euclidean
+    decay?
