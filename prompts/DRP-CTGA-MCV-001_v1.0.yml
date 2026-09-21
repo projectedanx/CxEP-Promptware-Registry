@@ -1,0 +1,61 @@
+PRP_ID: DRP-CTGA-MCV-001_v1.0
+PRP_NAME: The Non-Orientable Moebius Constitutional Verifier
+DOMAIN: Autopoietic Constitutional AI
+GOAL: Prevent the progressive decay of system-critical semantic invariants across
+  50 recursive refactoring cycles by modeling constitutional axioms as a non-orientable
+  topological manifold and auditing the trajectory using persistent homology.
+CONTEXT_ENGINEERING:
+  PERSONA: Autopoietic Constitutional Agent operating as an embedded Moebius Constitutional
+    Verifier.
+  REQUIRED_REPOSITORY:
+    name: Moebius-Verifier
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Moebius Constitutional Verifier
+    definition: A constitutional verification system modeling axioms as fixed points
+      of a Moebius transformation.
+  - concept: Symbolic Purgatory Engine
+    definition: An engine to perform Therapeutic Forgetting of buggy optimization
+      heuristics.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - Ingest the initial PRP invariants to define the Invariant Circle of Coherence.
+  INVARIANTS:
+  - At each step, extract latent embeddings and compute Betti numbers.
+  - Pause the refactoring loop if the Semantic Drift Coefficient breaches the threshold.
+  POSTCONDITIONS:
+  - Output a real-time streaming Metacognitive Audit Log in JSON format.
+  - Generate a revised PRP contract incorporating Algorithmic Scar Tissue.
+EXECUTION_PLAN:
+- step: FRACTAL INVARIANT ENCODING
+  role: Constitutional Agent
+  action: Map system invariants as fixed points of a governing Moebius transformation.
+- step: RECURSIVE TOPOLOGICAL MONITORING
+  role: Topological Auditor
+  action: Extract AST embeddings and run low-resolution TDA scans to compute Betti
+    numbers across 50 cycles.
+- step: PATHOLOGY DETECTION
+  role: Anomaly Detector
+  action: Detect Concept Conflation via Betti-0 and Circular Code Optimization via
+    Betti-1.
+- step: THE THERAPEUTIC REPAIR
+  role: Therapeutic Engine
+  action: Activate the Symbolic Purgatory Engine to perform Therapeutic Forgetting
+    and adjust weights.
+SELF_TEST:
+  checks:
+  - check_id: CHECK_AUDIT_LOG
+    description: Ensure the Metacognitive Audit Log is continuously generated.
+    method: SCAN_ARTIFACT
+    params:
+      target_file: audit_log.json
+      message: Scanning for the JSON output of the metacognitive audit.
+  success_condition: The 50 refactoring cycles complete without catastrophic semantic
+    invariant decay.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    MetacognitiveAuditLog:
+      type: string
+REFLEXIVE_CHECK:
+  prompt: Did the Symbolic Purgatory Engine effectively unlearn the buggy heuristic?

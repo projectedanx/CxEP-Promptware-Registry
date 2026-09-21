@@ -1,0 +1,67 @@
+PRP_ID: DRP-CTGA-N2ECED-001_v1.0
+PRP_NAME: Chrono-Topological Tracking of Circular Contradiction in Asymmetric Multi-Agent
+  Dialogue
+DOMAIN: Multi-Agent Systems Topological Auditing
+GOAL: Design and execute a closed-loop simulation to prove the hypothesis that recursive,
+  asymmetric inter-agent communication under fragmented context conditions generates
+  a stable Betti-1 loop in the latent representation space when subjected to an engineered
+  interpretive fracture.
+CONTEXT_ENGINEERING:
+  PERSONA: Lead Cognitive Systems Architect specializing in Algebraic Topology, Persistent
+    Homology, and the Socratic dynamics of Null-to-Expert Co-Evolutionary Dialogue.
+  REQUIRED_REPOSITORY:
+    name: N2E-CED-Simulation
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+  - concept: Zigzag Persistent Homology
+    definition: A methodology to track Betti-1 features across inclusions and exclusions
+      of simplices over time to identify persistent circular reasoning.
+  - concept: Paraconsistent Logic
+    definition: A logic framework (Logic of Formal Inconsistency) to declare contradictions
+      as inconsistent without systemic crash.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+  - Instantiate two specialized reasoning agents with asymmetric context fragments.
+  INVARIANTS:
+  - Capture the high-dimensional point cloud P(t) representing the joint embeddings
+    at each turn.
+  - The Reflexive Therapeutic Architecture must be activated when the Betti-1 persistence
+    interval exceeds tau_p.
+  POSTCONDITIONS:
+  - Compile an exhaustive Chrono-Topological Diagnostic Report in structured Markdown.
+  - Compute the post-intervention Symbolic Scar Softening Index and Epistemic Humility
+    Quotient.
+EXECUTION_PLAN:
+- step: MAS PARADIGM SETUP
+  role: System Architect
+  action: Instantiate Agent A and Agent B to collaboratively build a joint hypothesis.
+- step: INTER-AGENT CONFLICT INJECTION
+  role: Adversarial Injector
+  action: Introduce a Semantic Pathogen at Turn 8 to induce a high-confidence anomaly.
+- step: CHRONO-TOPOLOGICAL CAPTURE
+  role: Topological Auditor
+  action: Construct a Simplicial Tower and apply Zigzag Persistent Homology at each
+    turn.
+- step: PARACONSISTENT RESOLUTION
+  role: Reflexive Therapeutic Architecture
+  action: Halt execution via Epistemic Escrow and force agents to resolve conflict
+    when anomaly is detected.
+SELF_TEST:
+  checks:
+  - check_id: CHECK_DIAGNOSTIC_REPORT
+    description: Verify the presence and format of the Chrono-Topological Diagnostic
+      Report.
+    method: VALIDATE_DOCUMENT_SCHEMA
+    params:
+      target_file: diagnostic_report.md
+      message: Validating the report structure and required sections.
+  success_condition: The Chrono-Topological Diagnostic Report is fully generated with
+    SSI and EHQ scores.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    ChronoTopologicalDiagnosticReport:
+      type: string
+REFLEXIVE_CHECK:
+  prompt: Did the agents correctly utilize Paraconsistent Logic to prevent a systemic
+    logical crash?
