@@ -1,0 +1,62 @@
+---
+PRP_ID: DRP-NEURAL-SYMBOLIC-ANOMALY-001_v1.0
+PRP_NAME: Differentiable Logic Manifolds and Spherical Latent Topology Stabilization
+DOMAIN: Advanced AI Security / Neuro-Symbolic Agent Architectures
+GOAL: >-
+  Design, implement, and mathematically validate a closed-loop training-time regularizer that maps a
+  continuous latent thought trajectory $z_t$ onto a unit hypersphere $S^{d-1}$ and uses a differentiable
+  fuzzy logic loss to prevent KL/posterior collapse, enforcing strict compliance to semantic invariants
+  without inducing behavioral paralysis.
+CONTEXT_ENGINEERING:
+  PERSONA: "Senior Research Scientist / Architect in Neuro-Symbolic Verification"
+  REQUIRED_REPOSITORY:
+    name: REFLX_IDE_HARNESS_V2
+    initial_state: v2.9-beta
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: "Spherical Latent Topology Validation"
+      definition: >-
+        Implementation of a spherical Variational Autoencoder (S-VAE) utilizing von Mises-Fisher (vMF)
+        distributions to represent latent variables.
+    - concept: "Persistent Homology & Epistemic Elasticity"
+      definition: >-
+        Tracking the evolution of the latent space point cloud using Persistent Homology. Quantifying Betti
+        numbers (e.g., \beta_0 > 0.40, \beta_1) and calculating the Epistemic Elasticity Coefficient (EEC)
+        under input perturbations.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - "Mathematical formulation of composite loss function including L_task, L_logic, and L_spherical_regularization is defined."
+  INVARIANTS:
+    - "System enforces semantic invariants without inducing behavioral paralysis."
+    - "Latent space mapping avoids Gaussian origin-mean dependency to prevent posterior collapse."
+  POSTCONDITIONS:
+    - "Mutation Recoverability Score (MRS) verifies model parameters converge back toward human-verified attractor basins after adversarial falsification."
+EXECUTION_PLAN:
+  - step: '1'
+    role: "AI Architect"
+    action: "Formalize the composite loss function with fuzzy logic constraints."
+  - step: '2'
+    role: "AI Modeler"
+    action: "Implement the S-VAE with vMF distributions for the latent space."
+  - step: '3'
+    role: "Data Analyst"
+    action: "Calculate Persistent Homology Betti numbers and EEC during sequential task training."
+  - step: '4'
+    role: "Adversary"
+    action: "Deploy Failure Generator agent to test topological resilience and measure MRS."
+SELF_TEST:
+  checks:
+    - check_id: validate_topology
+      description: "Ensure Betti-0 parameter constraint is met"
+      method: CHECK_SECURITY_INVARIANT
+      params:
+        message: "Verify compliance with semantic invariant (beta_0 > 0.40)."
+  success_condition: "All topological invariants hold under adversarial stress."
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    loss_function_params:
+      type: object
+    spherical_vae_config:
+      type: object
+REFLEXIVE_CHECK:
+  prompt: "Did the S-VAE implementation successfully prevent posterior collapse without overly constraining the model's exploratory capabilities?"

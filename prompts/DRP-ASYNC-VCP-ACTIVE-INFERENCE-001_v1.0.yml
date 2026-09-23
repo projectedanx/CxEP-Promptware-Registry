@@ -1,0 +1,63 @@
+---
+PRP_ID: DRP-ASYNC-VCP-ACTIVE-INFERENCE-001_v1.0
+PRP_NAME: Asynchronous Verification Co-Processing on Distributed KV-Caches via Active Inference
+DOMAIN: Model Interpretability / Inference Control Architectures
+GOAL: >-
+  Engineer a decoupled, dual-model architecture where an independent, lightweight "Verifier Co-Processor" (VCP)
+  continuously audits, annotates, and regulates the latent trajectory of a frozen "Reasoner" model using the
+  Free Energy Principle, without introducing latency bottlenecks during token generation.
+CONTEXT_ENGINEERING:
+  PERSONA: "Systems Architecture Engineer / Distributed Inference Specialist"
+  REQUIRED_REPOSITORY:
+    name: REFLX_IDE_HARNESS_V2
+    initial_state: v2.9-beta
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: "Asynchronous Key-Value (KV) Eavesdropping"
+      definition: >-
+        Directly networking the VCP to Core 1's key-value memory blocks to asynchronously read the evolving
+        KV_Cache and project continuous thought vectors into a symbolic embedding space.
+    - concept: "Active Inference & Variational Free Energy"
+      definition: >-
+        Formalizing the VCP as an Active Inference agent that computes the Variational Free Energy (VFE)
+        of Core 1's trajectory based on a generative world model (RMSA knowledge graph).
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - "A dual-core cognitive system architecture (Reasoner and VCP) is initialized."
+  INVARIANTS:
+    - "Asynchronous auditing by VCP does not introduce latency bottlenecks to token generation."
+    - "VFE spikes trigger corrective epistemic actions."
+  POSTCONDITIONS:
+    - "Purpose Fidelity Collapse Curve (PFCC) is measured tracking semantic intent decay over 50+ recursive steps."
+EXECUTION_PLAN:
+  - step: '1'
+    role: "Systems Architect"
+    action: "Deploy the dual-core architecture with a frozen Reasoner and a lightweight VCP."
+  - step: '2'
+    role: "Integration Engineer"
+    action: "Implement Asynchronous KV Eavesdropping mechanism between Core 1 and VCP."
+  - step: '3'
+    role: "AI Scientist"
+    action: "Formalize the VCP Active Inference loop and RMSA knowledge graph."
+  - step: '4'
+    role: "Control Engineer"
+    action: "Implement closed-loop actuation via Differentiable Cache Augmentation."
+  - step: '5'
+    role: "Performance Analyst"
+    action: "Benchmark latency and measure PFCC over recursive generation steps."
+SELF_TEST:
+  checks:
+    - check_id: check_latency_impact
+      description: "Verify VCP eavesdropping overhead"
+      method: CALCULATE_METRIC
+      params:
+        message: "Assess throughput impact of asynchronous KV cache monitoring."
+  success_condition: "PFCC decay rate is minimized with negligible latency overhead."
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    vcp_architecture_spec:
+      type: object
+    vfe_monitoring_logs:
+      type: object
+REFLEXIVE_CHECK:
+  prompt: "Is the VCP truly asynchronous, or does it implicitly synchronize during Differentiable Cache Augmentation, affecting Reasoner throughput?"
