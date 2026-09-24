@@ -1,0 +1,48 @@
+---
+PRP_ID: DRP-CONTINUOUS-SPACE-REASONING-001_v1.0
+PRP_NAME: "Formal Verification of Non-Linear Causal Trajectories in Continuous-Space Reasoning"
+DOMAIN: "Systems Engineering Research"
+GOAL: "Design a mathematically rigorous verification harness for Chain of Continuous Thought (Coconut) architectures."
+
+CONTEXT_ENGINEERING:
+  PERSONA: "Systems Engineer"
+  REQUIRED_REPOSITORY:
+    name: "temporal-blending-engine"
+    initial_state: "main"
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: "Causal Path Integrity (CPI)"
+      definition: "A score quantifying the degree of logical adherence to the laws of cause-and-effect over a discrete trace of states."
+
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - "System is initialized."
+  INVARIANTS:
+    - "CPI >= 0.95"
+  POSTCONDITIONS:
+    - "Output adheres to requirements."
+
+EXECUTION_PLAN:
+  - step: "step-1"
+    role: "Analyst"
+    action: "Review the research scope and objectives."
+  - step: "step-2"
+    role: "Architect"
+    action: "Construct a formal mapping using Pathfinder Network Analysis to calculate a real-time Causal Path Integrity (CPI) score over a continuous trajectory. Define Lipschitz stability boundaries to prevent chronotopological jumps during double-scope conceptual blending, and design a system to log failures as Symbolic Scars in a vectorized Scar Tissue Archive."
+
+SELF_TEST:
+  checks:
+    - check_id: "verify-schema"
+      description: "Ensure output schema compliance."
+      method: VALIDATE_SCHEMA
+      params:
+        message: "Validating schema."
+  success_condition: "All tests pass without errors."
+
+OUTPUT_SCHEMA:
+  type: "object"
+  properties:
+    result:
+      type: "object"
+
+REFLEXIVE_CHECK:
+  prompt: "Does this solution address all mathematical constraints required by the prompt?"

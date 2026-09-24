@@ -1,0 +1,48 @@
+---
+PRP_ID: DRP-EPISTEMIC-IMMUNE-FIREWALLS-001_v1.0
+PRP_NAME: "Epistemic Immune Firewalls Against Engineered Solipsism in Automated Scientific Discovery"
+DOMAIN: "Systems Engineering Research"
+GOAL: "Build a production-grade Epistemic Integrity Audit (EIA) architecture to safeguard high-cost automated laboratories."
+
+CONTEXT_ENGINEERING:
+  PERSONA: "Systems Engineer"
+  REQUIRED_REPOSITORY:
+    name: "temporal-blending-engine"
+    initial_state: "main"
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: "Causal Path Integrity (CPI)"
+      definition: "A score quantifying the degree of logical adherence to the laws of cause-and-effect over a discrete trace of states."
+
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - "System is initialized."
+  INVARIANTS:
+    - "CPI >= 0.95"
+  POSTCONDITIONS:
+    - "Output adheres to requirements."
+
+EXECUTION_PLAN:
+  - step: "step-1"
+    role: "Analyst"
+    action: "Review the research scope and objectives."
+  - step: "step-2"
+    role: "Architect"
+    action: "Specify API schemas, data structures, and transport protocols for a multi-layered firewall (Prompt Inversion Engine, ACU, External Grounding Verifier). Detail mechanisms to detect and prevent Citation Circularity and generate cryptographically signed Verifiable Credentials (VCs)."
+
+SELF_TEST:
+  checks:
+    - check_id: "verify-schema"
+      description: "Ensure output schema compliance."
+      method: VALIDATE_SCHEMA
+      params:
+        message: "Validating schema."
+  success_condition: "All tests pass without errors."
+
+OUTPUT_SCHEMA:
+  type: "object"
+  properties:
+    result:
+      type: "object"
+
+REFLEXIVE_CHECK:
+  prompt: "Does this solution address all mathematical constraints required by the prompt?"
