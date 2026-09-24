@@ -1,0 +1,75 @@
+PRP_ID: DRP-PTOLEMAIC-OVER-FITTING-001_v1.0
+PRP_NAME: Reconstructing Ptolemaic Over-Fitting vs. Keplerian Parsimony
+DOMAIN: Promptware Engineering / Scientific Discovery
+GOAL: Specify a computational reasoning harness that programmatically distinguishes
+  between epicyclic curve-fitting and parsimonious law discovery.
+CONTEXT_ENGINEERING:
+  PERSONA: ISOMORPHIC ANOMALY TRACKER
+  REQUIRED_REPOSITORY:
+    name: scidiscover/harness
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: Ptolemaic Over-Fitting
+      definition: The failure mode of multiplying ad-hoc parameters (epicycles, deferents)
+        to fit data to an arbitrarily high accuracy, resting on a false physical foundation.
+    - concept: Bayesian Information Criterion (BIC)
+      definition: A criterion for model selection among a finite set of models; it
+        resolves the over-fitting problem by introducing a penalty term for the number
+        of parameters.
+    - concept: Modus Tollens Falsification
+      definition: A valid argument form and rule of inference where if P implies Q,
+        and Q is false, then P is false. Used to reject theories based on anomalous
+        data.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - Data stream of planetary orbital telemetry is available.
+    - Initial model is Geocentric with multi-nested epicycles.
+  INVARIANTS:
+    - The Occam-Loss Compiler must calculate BIC for competing models.
+    - Model evaluation must be based on mathematical and statistical rigor, penalizing
+      over-fitting.
+  POSTCONDITIONS:
+    - The system decisively rejects the geocentric coordinate frame when confronted
+      with Venusian phase-angle constraints.
+    - An abductive transition to a heliocentric coordinate system is executed.
+EXECUTION_PLAN:
+  - step: '1'
+    role: Schema Architect
+    action: Construct a typed schema that ingests planetary orbital telemetry.
+  - step: '2'
+    role: Loss Compiler
+    action: Specify an Occam-Loss Compiler that calculates the Bayesian Information
+      Criterion (BIC) of Model A (Geocentric, 20+ parameters) and Model B (Keplerian,
+      Sun at focus).
+  - step: '3'
+    role: Model Breaker
+    action: Simulate Galileo-type Model Breaking by introducing Venusian phase-angle
+      constraints into the data stream and execute Modus Tollens falsification.
+SELF_TEST:
+  checks:
+    - check_id: check_bic_calculation
+      description: Verify the Occam-Loss Compiler correctly penalizes Model A.
+      method: CALCULATE_METRIC
+      params:
+        message: Verify BIC for Model A > BIC for Model B
+    - check_id: check_falsification_logic
+      description: Ensure Modus Tollens execution correctly triggers the abductive
+        transition.
+      method: LOG_MESSAGE
+      params:
+        message: Falsification logic executed correctly.
+  success_condition: The Geocentric model is rejected in favor of the Keplerian model
+    based on BIC and Venusian constraints.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    telemetry_schema:
+      type: object
+    occam_loss_compiler:
+      type: object
+    falsification_report:
+      type: object
+REFLEXIVE_CHECK:
+  prompt: Evaluate whether the Occam-Loss Compiler appropriately penalizes parameter
+    bloat without discarding valid, complex signals. Ensure the Modus Tollens falsification
+    is logically sound and factually grounded.

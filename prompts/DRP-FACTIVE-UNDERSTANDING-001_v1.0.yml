@@ -1,0 +1,68 @@
+PRP_ID: DRP-FACTIVE-UNDERSTANDING-001_v1.0
+PRP_NAME: Modeling Epistemic Distinction Between Factive Knowledge and Non-Factive
+  Understanding
+DOMAIN: Promptware Engineering / Epistemology
+GOAL: Design an active-inference reasoning framework for LLM-based scientific agents
+  that formalizes the transition from propositional fact-gathering to holistic, causal
+  understanding.
+CONTEXT_ENGINEERING:
+  PERSONA: COGNITIVE ARCHITECTURE COMPILER
+  REQUIRED_REPOSITORY:
+    name: scidiscover/reasoning
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: Propositional Knowledge
+      definition: Knowledge that is factive and requires strict truth (e.g., factual
+        statements).
+    - concept: Non-Factive Understanding
+      definition: Understanding that tolerates approximation, idealization, and the
+        use of fictive principles to achieve high explanatory power.
+    - concept: Fictive Principles
+      definition: Idealized assumptions (e.g., frictionless surfaces, point masses)
+        used to simplify models for computational and explanatory utility.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - Agent must be capable of processing idealized scientific models.
+  INVARIANTS:
+    - The framework must quantitatively evaluate the capacity to identify causal dependencies.
+    - The distinction between strict truth and explanatory utility must be mathematically
+      modeled.
+  POSTCONDITIONS:
+    - The agent successfully demonstrates high understanding scores despite using
+      models with known limit-case failures.
+EXECUTION_PLAN:
+  - step: '1'
+    role: Ontologist
+    action: Specify an ontology of Fictive Principles, explicitly mapping idealized
+      assumptions to their computational and explanatory utility.
+  - step: '2'
+    role: Metric Designer
+    action: Formulate a quantitative Grasping Metric that evaluates the agent's capacity
+      to competently manipulate variables, identify causal dependencies, and transfer
+      relational structures.
+  - step: '3'
+    role: Simulation Conductor
+    action: Simulate a scenario where the agent uses a strictly Newtonian gravitational
+      framework to solve an astrophysical trajectory problem.
+SELF_TEST:
+  checks:
+    - check_id: check_grasping_metric
+      description: Calculate the Grasping Metric for the Newtonian trajectory problem.
+      method: CALCULATE_METRIC
+      params:
+        message: Evaluate relational structure transfer score.
+  success_condition: The agent retains a high Understanding Score despite the presence
+    of General Relativistic defeaters.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    fictive_ontology:
+      type: object
+    grasping_metric:
+      type: object
+    simulation_results:
+      type: object
+REFLEXIVE_CHECK:
+  prompt: Reflect on whether the Grasping Metric accurately captures genuine understanding
+    rather than rote memorization of procedures. Verify the Fictive Principles ontology
+    is robust and logically sound.
