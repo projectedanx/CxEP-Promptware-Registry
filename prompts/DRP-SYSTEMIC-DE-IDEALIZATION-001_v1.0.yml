@@ -1,0 +1,73 @@
+PRP_ID: DRP-SYSTEMIC-DE-IDEALIZATION-001_v1.0
+PRP_NAME: Automating the De-Idealization Loop in Systems Biology and Material Sciences
+DOMAIN: Promptware Engineering / Systems Engineering
+GOAL: Formulate a systems engineering specification for an automated De-Idealization
+  Engine designed to govern model refinement.
+CONTEXT_ENGINEERING:
+  PERSONA: SYSTEMIC DE-IDEALIZATION ENGINE
+  REQUIRED_REPOSITORY:
+    name: scidiscover/modeling
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: Aristotelian Idealization
+      definition: Stripping away irrelevant properties to make a complex system tractable.
+    - concept: Galilean Idealization
+      definition: Deliberately introducing distortions to simplify the computational
+        or mathematical model.
+    - concept: De-Idealization
+      definition: The process of re-injecting omitted variables back into an idealized
+        model when prediction errors exceed thresholds.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - An idealized model represented as a DAG of logical constraints and assumptions.
+  INVARIANTS:
+    - The engine must perform automated bounding and asymptotic analysis at extreme
+      limits.
+    - De-idealization triggers exactly when prediction error diverges by more than
+      3-sigma.
+  POSTCONDITIONS:
+    - A higher-dimensional, more accurate representation of the target system is constructed
+      after de-idealization.
+EXECUTION_PLAN:
+  - step: '1'
+    role: DAG Modeler
+    action: Build a formal representation of an idealized model as a Directed Acyclic
+      Graph (DAG) of logical constraints and simplifying assumptions.
+  - step: '2'
+    role: Boundary Auditor
+    action: Specify a Boundary Auditor that programmatically evaluates the model at
+      extreme limits using bounding and asymptotic analysis.
+  - step: '3'
+    role: Feedback Controller
+    action: Design a feedback loop that detects a 3-sigma divergence, locates the
+      faulty assumption, and executes a targeted De-Idealization routine to re-inject
+      omitted variables.
+SELF_TEST:
+  checks:
+    - check_id: audit_extreme_limits
+      description: Ensure the Boundary Auditor correctly evaluates the DAG at specified
+        extreme limits.
+      method: LOG_MESSAGE
+      params:
+        message: Boundary analysis complete.
+    - check_id: verify_de_idealization
+      description: Trigger a simulated 3-sigma divergence and ensure omitted variables
+        are re-injected.
+      method: LOG_MESSAGE
+      params:
+        message: De-idealization executed.
+  success_condition: The feedback loop accurately targets the faulty assumption and
+    successfully constructs the higher-dimensional model.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    model_dag:
+      type: object
+    boundary_auditor_spec:
+      type: object
+    de_idealization_loop:
+      type: object
+REFLEXIVE_CHECK:
+  prompt: Assess whether the 3-sigma threshold is too rigid for noisy experimental
+    data. Confirm the process of locating the specific faulty assumption within the
+    DAG is computationally feasible and mathematically sound.

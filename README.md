@@ -247,6 +247,10 @@ When formalizing the Reflexive Repair Loop (a dual-system, two-speed cybernetic 
 - **Fortification**: Serialized the three distinct research prompts into individual YAML PRPs (`prompts/SAE_VECTOR_STEERING_R_AND_D_v1.0.yml`, `prompts/TDA_MANIFOLD_TEARING_R_AND_D_v1.0.yml`, `prompts/PARACONSISTENT_ATTENTION_R_AND_D_v1.0.yml`). By mapping these complex blueprints strictly into the PRP schema (including specific execution plans, constraints, and schemas), we ensure they act as formal, deterministic execution boundaries that bypass the Principle of Explosion and maintain structural tension.
 
 
+### Lessons Learned: Invariant Verification Harness (IVH) Serialization
+- **Instability**: The user provided detailed blueprints for scientific discovery agents (e.g., Ptolemaic over-fitting tracking, epistemology modeling, and de-idealization engines). If not carefully translated, the strict boundary constraints and epistemological nuances could be lost or flattened in basic prompt templates.
+- **Fortification**: Serialized these complex tasks into three distinct PRPs (`prompts/DRP-PTOLEMAIC-OVER-FITTING-001_v1.0.yml`, `prompts/DRP-FACTIVE-UNDERSTANDING-001_v1.0.yml`, and `prompts/DRP-SYSTEMIC-DE-IDEALIZATION-001_v1.0.yml`). By meticulously following the schemas, the strict verification matrices (e.g., Modus Tollens falsification) and causal understanding checks are structurally preserved.
+
 ### 2024-05-18 - Verification Co-Processor (VCP) Harness Serialization
 
 **Instability:** We encountered a complex prompt description detailing the Verification Co-Processor (VCP) harness and its related research prompts. Directly pasting this into a single file or a generic Markdown format would violate the repository's strict schema enforcement.
