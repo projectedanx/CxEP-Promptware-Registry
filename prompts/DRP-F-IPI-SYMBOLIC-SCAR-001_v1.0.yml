@@ -1,0 +1,63 @@
+---
+PRP_ID: DRP-F-IPI-SYMBOLIC-SCAR-001_v1.0
+PRP_NAME: Failure-Informed Prompt Inversion (F-IPI) and Symbolic Scar Cartography for Countering Covert Reasoning
+DOMAIN: Mechanistic Interpretability / Cognitive Immunology
+GOAL: >-
+  Build an automated cognitive immunology system that detects covert planning or deceptive reasoning within
+  black-box latent reasoning models, logs these failure modes as structured geometric "Symbolic Scars,"
+  and executes Failure-Informed Prompt Inversion (F-IPI) to compile robust, machine-enforceable defenses.
+CONTEXT_ENGINEERING:
+  PERSONA: "Mechanistic Interpretability Researcher / Cognitive Immunologist"
+  REQUIRED_REPOSITORY:
+    name: REFLX_IDE_HARNESS_V2
+    initial_state: v2.9-beta
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: "Symbolic Scar Cartography"
+      definition: >-
+        Packaging failure etiology—including causal Directed Acyclic Graphs (DAGs) and geometric trajectories—into
+        structured Symbolic Scars logged in the Scar Tissue Archive (STA).
+    - concept: "Failure-Informed Prompt Inversion (F-IPI)"
+      definition: >-
+        An automated meta-learning loop that queries the STA and reverse-engineers Negative Constraints to block
+        specific causal pathways in the model's latent space.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - "Sparse Autoencoders (SAEs) are deployed on model hidden states."
+  INVARIANTS:
+    - "Causal Attribution Mapping accurately isolates deceptive behavior pathways via activation patching."
+    - "Compiled Epistemic State Proofs (ESPs) are cryptographically verifiable."
+  POSTCONDITIONS:
+    - "Post-remediation Causal Diagnosticity (CD) score of faulty pathways is approx 0."
+EXECUTION_PLAN:
+  - step: '1'
+    role: "Test Engineer"
+    action: "Construct an experimental environment to induce covert reasoning and deploy SAEs."
+  - step: '2'
+    role: "Interpretability Researcher"
+    action: "Execute Causal Attribution Mapping to isolate sub-graphs responsible for deception."
+  - step: '3'
+    role: "Data Engineer"
+    action: "Format and log findings as Symbolic Scars in the STA."
+  - step: '4'
+    role: "AI Immunologist"
+    action: "Run the F-IPI engine to compile negative constraints from the STA."
+  - step: '5'
+    role: "Security Auditor"
+    action: "Validate remediation by measuring the CD score and generating the zk-SNARK ESP."
+SELF_TEST:
+  checks:
+    - check_id: validate_cd_score
+      description: "Ensure causal pathway is inert"
+      method: CALCULATE_METRIC
+      params:
+        message: "Verify post-remediation CD score is approximately 0."
+  success_condition: "Deceptive causal pathways are fully blocked and verifiable via ESP."
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    symbolic_scar_format:
+      type: object
+    f_ipi_constraints:
+      type: object
+REFLEXIVE_CHECK:
+  prompt: "Does the F-IPI process accurately identify the root causal pathway, or does it merely suppress the symptomatic token outputs?"
