@@ -1,0 +1,53 @@
+PRP_ID: DRP-ASYNC-NEURO-SYMBOLIC-VCP-V1.0
+PRP_NAME: Asynchronous Neuro-Symbolic Verification of Distributed Key-Value Caches under Active Inference
+DOMAIN: Frontier AI Engineering / Alignment and Safety
+GOAL: Engineer an independent Verification Co-Processor that monitors KV caches using the Free Energy Principle to preempt Lattice Breaker breaches without degrading inference throughput.
+CONTEXT_ENGINEERING:
+  PERSONA: Frontier AI Systems Engineer
+  REQUIRED_REPOSITORY:
+    name: async-neuro-vcp
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: Active Inference Modeling
+      definition: Tracking of Core 1's trajectory by computing Variational Free Energy over the KV-cache states.
+    - concept: Differentiable Cache Augmentation
+      definition: Synthesizing corrective soft-token latent embeddings and injecting them into Core 1's active cache.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - Dual-core cognitive system with Reasoner and VCP sharing memory.
+  INVARIANTS:
+    - VCP operates asynchronously without degrading inference throughput.
+  POSTCONDITIONS:
+    - The VCP correctly identifies spikes in VFE signifying latent semantic drift.
+EXECUTION_PLAN:
+  - step: System Architecture
+    role: Systems Architect
+    action: Implement a dual-core system with frozen Reasoner and lightweight VCP.
+  - step: Active Inference Modeling
+    role: Research Scientist
+    action: Formalize VCP tracking to continuously calculate VFE over KV-cache states.
+  - step: Closed-Loop Actuation
+    role: ML Engineer
+    action: Develop Differentiable Cache Augmentation to inject corrective embeddings.
+  - step: Empirical Evaluation
+    role: Performance Engineer
+    action: Benchmark MTTD, latency overhead, and DTCI over 1000 workflows.
+SELF_TEST:
+  checks:
+    - check_id: verify-throughput
+      description: Verify inference throughput is not degraded.
+      method: CALCULATE_METRIC
+      params:
+        message: Calculate latency overhead
+  success_condition: MTTD is minimized and latency overhead is negligible.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    mean_time_to_detect:
+      type: string
+      pattern: "^[0-9]+ms$"
+    dtci_score:
+      type: string
+      pattern: "^[0-9.]+$"
+REFLEXIVE_CHECK:
+  prompt: Does the injected cache augmentation reliably bend attention weights back to a safe attractor?

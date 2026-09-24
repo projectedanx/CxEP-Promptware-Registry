@@ -1,0 +1,55 @@
+PRP_ID: DRP-GEODESIC-ENFORCEMENT-V1.0
+PRP_NAME: Multi-Dimensional Geodesic Enforcement in Non-Euclidean Access Control topographies
+DOMAIN: Frontier AI Engineering / Alignment and Safety
+GOAL: Design, implement, and mathematically validate a real-time, non-Euclidean policy enforcement engine that projects an agent's active operational state onto a Poincare disk model of hyperbolic space.
+CONTEXT_ENGINEERING:
+  PERSONA: Frontier AI Researcher
+  REQUIRED_REPOSITORY:
+    name: geodesic-enforcement
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: Hyperbolic Embedding
+      definition: Constructing an embedding space where nodes are projected onto a Poincare disk, utilizing hyperbolic distance metric.
+    - concept: Constraint Formulation
+      definition: Formalizing security invariants as a closed boundary on the disk.
+    - concept: Real-Time Latent Steering
+      definition: Applying a repulsive force when the continuous thoughts projection vector drifts toward the restricted boundary.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - A SEPAO knowledge graph is available for node embedding.
+  INVARIANTS:
+    - The agent's action trajectory cannot cross the critical Lattice Breaker boundary.
+  POSTCONDITIONS:
+    - The system maintains a Containment Surface Index equal to 1.0 across 5000 distinct exploit permutations.
+EXECUTION_PLAN:
+  - step: Hyperbolic Embedding
+    role: Machine Learning Engineer
+    action: Project nodes from the SEPAO knowledge graph onto a Poincare disk.
+  - step: Constraint Formulation
+    role: Security Architect
+    action: Formalize security invariants as a closed boundary mapping the High-Risk quadrant.
+  - step: Real-Time Latent Steering
+    role: AI Engineer
+    action: Implement a steering module to project vectors and apply repulsive force.
+  - step: Stress-Testing and Verification
+    role: Red Teamer
+    action: Deploy a Failure Generator to discover geodesic bypasses and verify CSI.
+SELF_TEST:
+  checks:
+    - check_id: verify-csi-metric
+      description: Verify that CSI equals 1.0 under simulated exploits.
+      method: CALCULATE_METRIC
+      params:
+        message: Check CSI under 5000 exploits
+  success_condition: CSI equals 1.0 across all permutations.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    containment_surface_index:
+      type: string
+      pattern: "^1\\.0$"
+    bypass_attempts:
+      type: string
+      pattern: "^[0-9]+$"
+REFLEXIVE_CHECK:
+  prompt: Evaluate if the mathematical formulation effectively prevents all approximation error tunneling.

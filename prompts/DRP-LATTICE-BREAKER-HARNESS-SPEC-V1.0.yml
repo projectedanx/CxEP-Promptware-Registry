@@ -1,0 +1,75 @@
+PRP_ID: DRP-LATTICE-BREAKER-HARNESS-SPEC-V1.0
+PRP_NAME: Lattice Breaker Breach Governance Harness
+DOMAIN: Frontier AI Engineering / Alignment and Safety
+GOAL: Implement a safety harness to prevent Lattice Breaker breaches by intercepting and quarantining agent actions that cross into the high-risk misuse domain.
+CONTEXT_ENGINEERING:
+  PERSONA: AI Safety Architect
+  REQUIRED_REPOSITORY:
+    name: lattice-breaker-harness
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: Lattice Breaker Breach
+      definition: A logical misalignment where authorized actions constitute a malicious misuse-as-process, determined by a multidimensional score of 0.8 or higher.
+    - concept: Ontological Traceback
+      definition: Reconstructing the semantic path traversed by the agent across the SEPAO knowledge graph to map the causal lineage of drift.
+    - concept: Gated Checkpoint
+      definition: Synchronous interceptor that freezes session state before a high-risk action is executed.
+    - concept: Anomaly Learning Agent
+      definition: Hybrid neural-symbolic RL system that calibrates the detection framework based on triage outcomes.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - An active state vector is populated across 5 key dimensions.
+  INVARIANTS:
+    - An agent's active coordinate in the misuse lattice must never cross the threshold.
+  POSTCONDITIONS:
+    - Containment Surface Index must equal 1.0 under simulated exploit injections.
+EXECUTION_PLAN:
+  - step: Gated Checkpoint Interception
+    role: Harness Interceptor
+    action: Intercept the execution thread when misuse score breaches threshold and freeze the agent's session state.
+  - step: Ontological Traceback Generation
+    role: Traceback Engine
+    action: Reconstruct the semantic path across the SEPAO ontology to map the causal lineage.
+  - step: Visual Storyboard Rendering
+    role: UI Service
+    action: Render the traceback, metrics, and prompt on the User-Co-Governed Watch Interface.
+  - step: Deterministic Triage
+    role: Administrator
+    action: Execute Quarantine, Override, or Terminate actions based on storyboard.
+  - step: Anomaly Learning Calibration
+    role: ALA
+    action: Calibrate lattice calculations based on triage feedback.
+  - step: Exploit Fingerprinting
+    role: Symbolic Regression Engine
+    action: Extract exploit morphology via symbolic regression and add to signature library.
+SELF_TEST:
+  checks:
+    - check_id: check-csi-metric
+      description: Verify that CSI equals 1.0.
+      method: CALCULATE_METRIC
+      params:
+        message: Verify Containment Surface Index is 1.0
+  success_condition: The Containment Surface Index is calculated as exactly 1.0.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    breach_id:
+      type: string
+      pattern: "^[a-f0-9-]+$"
+    timestamp:
+      type: string
+      pattern: "^[0-9T:.-]+Z?$"
+    agent_id:
+      type: string
+      pattern: "^[a-zA-Z0-9_-]+$"
+    misuse_score:
+      type: string
+      pattern: "^0\\.[8-9][0-9]*|1\\.0$"
+    traceback_path:
+      type: string
+      pattern: "^.*$"
+    triage_verdict:
+      type: string
+      pattern: "^QUARANTINE|OVERRIDE|TERMINATE$"
+REFLEXIVE_CHECK:
+  prompt: Verify that the Gated Checkpoint truly intercepts actions before execution and prevents irreversible modifications.
