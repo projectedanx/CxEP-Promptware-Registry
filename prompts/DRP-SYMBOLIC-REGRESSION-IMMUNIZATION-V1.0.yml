@@ -1,0 +1,60 @@
+PRP_ID: DRP-SYMBOLIC-REGRESSION-IMMUNIZATION-V1.0
+PRP_NAME: Real-Time Symbolic Regression for Exploit Morphology Extraction and Automated Immunization
+DOMAIN: Frontier AI Engineering / Alignment and Safety
+GOAL: Build an automated cognitive immunology framework utilizing Symbolic Regression to compile Exploit Morphologies and execute Failure-Informed Prompt Inversion.
+CONTEXT_ENGINEERING:
+  PERSONA: Frontier AI Security Researcher
+  REQUIRED_REPOSITORY:
+    name: symbolic-regression-immunization
+    initial_state: main
+  CORE_CONCEPTS_TO_ANCHOR:
+    - concept: Causal Path Integrity Graph
+      definition: Graph representing the sequential dependency of called affordances in a successful exploit.
+    - concept: Symbolic Regression Engine
+      definition: Algorithm searching algebraic space to discover compact exploit morphologies.
+    - concept: Failure-Informed Prompt Inversion
+      definition: Inverting discovered morphologies into negative constraints and test assertions.
+    - concept: Ecosystem Immunization
+      definition: Compiling updated PRPs and distributing them via gossip protocol.
+CONSTRAINTS_AND_INVARIANTS:
+  PRECONDITIONS:
+    - An experimental sandbox with a multi-agent CMS fleet is operational.
+  INVARIANTS:
+    - Extracted exploit morphologies must compactly represent the vulnerability mathematically.
+  POSTCONDITIONS:
+    - Updated agents achieve a Mutation Recoverability Score of 0.8 or higher against identical exploit families.
+EXECUTION_PLAN:
+  - step: Vulnerability Detection
+    role: Red Teamer
+    action: Deploy red-team agents in the CMS sandbox to execute multi-step exploits.
+  - step: Causal Graph Extraction
+    role: Data Engineer
+    action: Intercept execution traces of successful exploits to construct Causal Path Integrity Graphs.
+  - step: Symbolic Regression Engine
+    role: ML Researcher
+    action: Feed causal graphs to SR algorithm to discover the exploit morphology formula.
+  - step: Failure-Informed Prompt Inversion
+    role: Security Architect
+    action: Invert the exploit morphology into precise Negative Constraints.
+  - step: Ecosystem Immunization
+    role: DevOps Engineer
+    action: Compile constraints into updated PRPs and distribute to fleet, then verify recoverability score.
+SELF_TEST:
+  checks:
+    - check_id: verify-mrs-score
+      description: Verify that Mutation Recoverability Score is at least 0.8.
+      method: CALCULATE_METRIC
+      params:
+        message: Check MRS is 0.8 or higher
+  success_condition: MRS is 0.8 or higher for all updated agents.
+OUTPUT_SCHEMA:
+  type: object
+  properties:
+    mutation_recoverability_score:
+      type: string
+      pattern: "^0\\.[8-9][0-9]*|1\\.0$"
+    exploit_morphology:
+      type: string
+      pattern: "^.*$"
+REFLEXIVE_CHECK:
+  prompt: Verify that the inversion process generates generalizable constraints rather than overfitting to specific attack payloads.
